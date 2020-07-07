@@ -1,0 +1,21 @@
+
+  .carousel-caption{
+      padding: 30px 15px 100px !important;
+  }
+
+  .carousel-inner > .item > img {
+      width: 100% !important;
+      height: 60vh !important;
+  }
+
+  .nav.navbar-nav > li > a:link {
+    color: rgb(255, 255, 255) !important;
+    background: #113d61 !important;
+}
+.nav.navbar-nav > li > a:focus{
+    color: rgb(170, 170, 170) !important;
+    background-color: #0f2130 !important;
+}
+
+
+

@@ -1,0 +1,199 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 19/02/2016 14:50
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-abacus-with-stand:before { content: "\f100"; }
+.flaticon-appointment-book:before { content: "\f101"; }
+.flaticon-bank-safe-box:before { content: "\f102"; }
+.flaticon-bank-sign:before { content: "\f103"; }
+.flaticon-big-cart:before { content: "\f104"; }
+.flaticon-big-cloud:before { content: "\f105"; }
+.flaticon-big-envelope:before { content: "\f106"; }
+.flaticon-big-invoice:before { content: "\f107"; }
+.flaticon-big-lifesaver:before { content: "\f108"; }
+.flaticon-big-light:before { content: "\f109"; }
+.flaticon-big-telephone:before { content: "\f10a"; }
+.flaticon-big-towers:before { content: "\f10b"; }
+.flaticon-browser-with-text-lines:before { content: "\f10c"; }
+.flaticon-building-with-big-windows:before { content: "\f10d"; }
+.flaticon-business-cards:before { content: "\f10e"; }
+.flaticon-cactus-in-a-pot:before { content: "\f10f"; }
+.flaticon-cart-facing-left:before { content: "\f110"; }
+.flaticon-chair-with-wheels:before { content: "\f111"; }
+.flaticon-clipboard-with-blank-paper:before { content: "\f112"; }
+.flaticon-clock-with-clockwise:before { content: "\f113"; }
+.flaticon-closed-book:before { content: "\f114"; }
+.flaticon-computer-mouse-with-long-cable:before { content: "\f115"; }
+.flaticon-curriculum-with-picture:before { content: "\f116"; }
+.flaticon-desk-lamp-facing-left:before { content: "\f117"; }
+.flaticon-diagram-scheme:before { content: "\f118"; }
+.flaticon-editor-pencil:before { content: "\f119"; }
+.flaticon-factory-with-chimney:before { content: "\f11a"; }
+.flaticon-filing-cabinet:before { content: "\f11b"; }
+.flaticon-funds:before { content: "\f11c"; }
+.flaticon-glasses-with-reflection:before { content: "\f11d"; }
+.flaticon-hand-touching-button:before { content: "\f11e"; }
+.flaticon-headphones-with-thin-mic:before { content: "\f11f"; }
+.flaticon-horizontal-tablet-with-line:before { content: "\f120"; }
+.flaticon-hot-drink-facing-left:before { content: "\f121"; }
+.flaticon-inclined-clip:before { content: "\f122"; }
+.flaticon-inclined-compass:before { content: "\f123"; }
+.flaticon-inclined-key:before { content: "\f124"; }
+.flaticon-inclined-label:before { content: "\f125"; }
+.flaticon-inclined-magnifying-glass:before { content: "\f126"; }
+.flaticon-inclined-paper-plane:before { content: "\f127"; }
+.flaticon-inclined-pen:before { content: "\f128"; }
+.flaticon-inclined-pin:before { content: "\f129"; }
+.flaticon-inclined-rocket:before { content: "\f12a"; }
+.flaticon-letter-and-envelope:before { content: "\f12b"; }
+.flaticon-line-stats:before { content: "\f12c"; }
+.flaticon-list-with-text:before { content: "\f12d"; }
+.flaticon-long-tie:before { content: "\f12e"; }
+.flaticon-mathematic-calculator:before { content: "\f12f"; }
+.flaticon-megaphone-facing-right:before { content: "\f130"; }
+.flaticon-month-calendar:before { content: "\f131"; }
+.flaticon-networking-group:before { content: "\f132"; }
+.flaticon-offering-left-hand:before { content: "\f133"; }
+.flaticon-open-book-with-bookmark:before { content: "\f134"; }
+.flaticon-open-laptop:before { content: "\f135"; }
+.flaticon-package-with-parachute:before { content: "\f136"; }
+.flaticon-padlock-closed:before { content: "\f137"; }
+.flaticon-pc-tower-and-monitor:before { content: "\f138"; }
+.flaticon-pen-and-paper:before { content: "\f139"; }
+.flaticon-phone-on-circle:before { content: "\f13a"; }
+.flaticon-piggy-bank-with-coin:before { content: "\f13b"; }
+.flaticon-plane-facing-right:before { content: "\f13c"; }
+.flaticon-projector-screen:before { content: "\f13d"; }
+.flaticon-public-speech:before { content: "\f13e"; }
+.flaticon-quality-badge:before { content: "\f13f"; }
+.flaticon-repair-tools:before { content: "\f140"; }
+.flaticon-screen-with-at:before { content: "\f141"; }
+.flaticon-shop-with-sign:before { content: "\f142"; }
+.flaticon-shopping-bag-open:before { content: "\f143"; }
+.flaticon-speech-bubble-with-text:before { content: "\f144"; }
+.flaticon-teacher-briefcase:before { content: "\f145"; }
+.flaticon-three-bars:before { content: "\f146"; }
+.flaticon-three-binders:before { content: "\f147"; }
+.flaticon-truck-facing-right:before { content: "\f148"; }
+.flaticon-two-contacts:before { content: "\f149"; }
+.flaticon-two-gears:before { content: "\f14a"; }
+.flaticon-two-money-cards:before { content: "\f14b"; }
+.flaticon-wallet-closed:before { content: "\f14c"; }
+.flaticon-web-home:before { content: "\f14d"; }
+.flaticon-world-globe:before { content: "\f14e"; }
+.flaticon-you-are-here:before { content: "\f14f"; }
+    
+    $font-Flaticon-abacus-with-stand: "\f100";
+    $font-Flaticon-appointment-book: "\f101";
+    $font-Flaticon-bank-safe-box: "\f102";
+    $font-Flaticon-bank-sign: "\f103";
+    $font-Flaticon-big-cart: "\f104";
+    $font-Flaticon-big-cloud: "\f105";
+    $font-Flaticon-big-envelope: "\f106";
+    $font-Flaticon-big-invoice: "\f107";
+    $font-Flaticon-big-lifesaver: "\f108";
+    $font-Flaticon-big-light: "\f109";
+    $font-Flaticon-big-telephone: "\f10a";
+    $font-Flaticon-big-towers: "\f10b";
+    $font-Flaticon-browser-with-text-lines: "\f10c";
+    $font-Flaticon-building-with-big-windows: "\f10d";
+    $font-Flaticon-business-cards: "\f10e";
+    $font-Flaticon-cactus-in-a-pot: "\f10f";
+    $font-Flaticon-cart-facing-left: "\f110";
+    $font-Flaticon-chair-with-wheels: "\f111";
+    $font-Flaticon-clipboard-with-blank-paper: "\f112";
+    $font-Flaticon-clock-with-clockwise: "\f113";
+    $font-Flaticon-closed-book: "\f114";
+    $font-Flaticon-computer-mouse-with-long-cable: "\f115";
+    $font-Flaticon-curriculum-with-picture: "\f116";
+    $font-Flaticon-desk-lamp-facing-left: "\f117";
+    $font-Flaticon-diagram-scheme: "\f118";
+    $font-Flaticon-editor-pencil: "\f119";
+    $font-Flaticon-factory-with-chimney: "\f11a";
+    $font-Flaticon-filing-cabinet: "\f11b";
+    $font-Flaticon-funds: "\f11c";
+    $font-Flaticon-glasses-with-reflection: "\f11d";
+    $font-Flaticon-hand-touching-button: "\f11e";
+    $font-Flaticon-headphones-with-thin-mic: "\f11f";
+    $font-Flaticon-horizontal-tablet-with-line: "\f120";
+    $font-Flaticon-hot-drink-facing-left: "\f121";
+    $font-Flaticon-inclined-clip: "\f122";
+    $font-Flaticon-inclined-compass: "\f123";
+    $font-Flaticon-inclined-key: "\f124";
+    $font-Flaticon-inclined-label: "\f125";
+    $font-Flaticon-inclined-magnifying-glass: "\f126";
+    $font-Flaticon-inclined-paper-plane: "\f127";
+    $font-Flaticon-inclined-pen: "\f128";
+    $font-Flaticon-inclined-pin: "\f129";
+    $font-Flaticon-inclined-rocket: "\f12a";
+    $font-Flaticon-letter-and-envelope: "\f12b";
+    $font-Flaticon-line-stats: "\f12c";
+    $font-Flaticon-list-with-text: "\f12d";
+    $font-Flaticon-long-tie: "\f12e";
+    $font-Flaticon-mathematic-calculator: "\f12f";
+    $font-Flaticon-megaphone-facing-right: "\f130";
+    $font-Flaticon-month-calendar: "\f131";
+    $font-Flaticon-networking-group: "\f132";
+    $font-Flaticon-offering-left-hand: "\f133";
+    $font-Flaticon-open-book-with-bookmark: "\f134";
+    $font-Flaticon-open-laptop: "\f135";
+    $font-Flaticon-package-with-parachute: "\f136";
+    $font-Flaticon-padlock-closed: "\f137";
+    $font-Flaticon-pc-tower-and-monitor: "\f138";
+    $font-Flaticon-pen-and-paper: "\f139";
+    $font-Flaticon-phone-on-circle: "\f13a";
+    $font-Flaticon-piggy-bank-with-coin: "\f13b";
+    $font-Flaticon-plane-facing-right: "\f13c";
+    $font-Flaticon-projector-screen: "\f13d";
+    $font-Flaticon-public-speech: "\f13e";
+    $font-Flaticon-quality-badge: "\f13f";
+    $font-Flaticon-repair-tools: "\f140";
+    $font-Flaticon-screen-with-at: "\f141";
+    $font-Flaticon-shop-with-sign: "\f142";
+    $font-Flaticon-shopping-bag-open: "\f143";
+    $font-Flaticon-speech-bubble-with-text: "\f144";
+    $font-Flaticon-teacher-briefcase: "\f145";
+    $font-Flaticon-three-bars: "\f146";
+    $font-Flaticon-three-binders: "\f147";
+    $font-Flaticon-truck-facing-right: "\f148";
+    $font-Flaticon-two-contacts: "\f149";
+    $font-Flaticon-two-gears: "\f14a";
+    $font-Flaticon-two-money-cards: "\f14b";
+    $font-Flaticon-wallet-closed: "\f14c";
+    $font-Flaticon-web-home: "\f14d";
+    $font-Flaticon-world-globe: "\f14e";
+    $font-Flaticon-you-are-here: "\f14f";
