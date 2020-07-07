@@ -15,7 +15,6 @@ class CreateImmobilierLocationsTable extends Migration
     {
         Schema::create('immobilier_locations', function (Blueprint $table) {
             $table->id();
-            $table->id();
             $table->foreignId('id_commune');
             $table->string('designation');
 

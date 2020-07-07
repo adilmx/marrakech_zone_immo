@@ -17,9 +17,9 @@ class CreateReservationVentesTable extends Migration
             $table->id();
             $table->foreignId('id_customer');
             $table->foreignId('id_immo_ventes');
-              
+
             $table->foreign('id_customer')->references('id')->on('customers');
-            $table->foreign('id_immo_ventes ')->references('id')->on('immobilier_ventes');
+            $table->foreign('id_immo_ventes')->references('id')->on('immobilier_ventes');
 
             $table->timestamps();
         });

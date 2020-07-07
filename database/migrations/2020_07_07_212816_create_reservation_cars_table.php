@@ -22,9 +22,9 @@ class CreateReservationCarsTable extends Migration
             $table->date('date_fin_reservation');
             $table->time('time_fin_reservation');
             $table->boolean('car_driver');
-            
+
             $table->foreign('id_customer')->references('id')->on('customers');
-            $table->foreign('id_car ')->references('id')->on('cars');
+            $table->foreign('id_car')->references('id')->on('cars');
 
             $table->timestamps();
         });

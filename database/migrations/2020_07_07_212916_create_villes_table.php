@@ -17,10 +17,10 @@ class CreateVillesTable extends Migration
             $table->id();
             $table->foreignId('id_region');
             $table->string('libelle');
-              
+
             $table->foreign('id_region')->references('id')->on('regions');
-           
-          
+
+
             $table->timestamps();
         });
     }
