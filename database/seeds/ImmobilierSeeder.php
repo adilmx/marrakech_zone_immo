@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ImmobilierVenteSeeder extends Seeder
+class ImmobilierSeeder extends Seeder
 {
     /**
      * Run the database seeds.

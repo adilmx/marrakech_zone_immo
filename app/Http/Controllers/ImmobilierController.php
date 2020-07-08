@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\ImmobilierLocation;
+use App\Immobilier;
 use Illuminate\Http\Request;
 
-class ImmobilierLocationController extends Controller
+class ImmobilierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ImmobilierLocationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ImmobilierLocation  $immobilierLocation
+     * @param  \App\Immobilier  $immobilier
      * @return \Illuminate\Http\Response
      */
-    public function show(ImmobilierLocation $immobilierLocation)
+    public function show(Immobilier $immobilier)
     {
         //
     }
@@ -52,10 +52,10 @@ class ImmobilierLocationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ImmobilierLocation  $immobilierLocation
+     * @param  \App\Immobilier  $immobilier
      * @return \Illuminate\Http\Response
      */
-    public function edit(ImmobilierLocation $immobilierLocation)
+    public function edit(Immobilier $immobilier)
     {
         //
     }
@@ -64,10 +64,10 @@ class ImmobilierLocationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ImmobilierLocation  $immobilierLocation
+     * @param  \App\Immobilier  $immobilier
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ImmobilierLocation $immobilierLocation)
+    public function update(Request $request, Immobilier $immobilier)
     {
         //
     }
@@ -75,10 +75,10 @@ class ImmobilierLocationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ImmobilierLocation  $immobilierLocation
+     * @param  \App\Immobilier  $immobilier
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ImmobilierLocation $immobilierLocation)
+    public function destroy(Immobilier $immobilier)
     {
         //
     }

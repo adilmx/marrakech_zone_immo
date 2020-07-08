@@ -25,6 +25,8 @@ class CreateCarsTable extends Migration
             $table->double('prix_max_per_day');
             $table->string('couleur');
             $table->double('charge_max');
+            $table->string('deleted');
+
             $table->string('pic_src');
             $table->timestamps();
 
