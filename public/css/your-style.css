@@ -1,21 +1,244 @@
 
-  .carousel-caption{
-      padding: 30px 15px 100px !important;
-  }
+/*------------------------------------------------------------------
+* Project:        Togoby
+* Author:         Crenoveative
+* URL:            http://crenoveative.com or https://themeforest.net/user/crenoveative/portfolio
+* Created:        08/03/2017
+-------------------------------------------------------------------*/
 
-  .carousel-inner > .item > img {
-      width: 100% !important;
-      height: 60vh !important;
-  }
 
-  .nav.navbar-nav > li > a:link {
-    color: rgb(255, 255, 255) !important;
-    background: #113d61 !important;
+/**
+ * Add your style here
+ */
+
+
+ .mx-container-1 , .mx-container-2{
+    position: relative;
+    padding-left: 0 !important;
+    padding-right: 0 !important ;
+    margin: 0 auto !important;
+    /*margin-left: ;
+    margin-right: ; */
 }
-.nav.navbar-nav > li > a:focus{
-    color: rgb(170, 170, 170) !important;
-    background-color: #0f2130 !important;
+
+
+
+ .carousel-caption{
+     padding: 30px 15px 100px !important;
+ }
+
+ .carousel-inner > .item > img {
+     width: 100% !important;
+     height: 60vh !important;
+ }
+ .mx-trip-guide-content {
+}
+.mx-trip-guide-content h3{
+  color: rgb(19, 51, 66);
+}
+ .mx-trip-guide-item {
+   background: #c1c1c1;
+   border: 1.5px solid #2c2c2c;
+   border-radius: 0 0 .50rem .50rem;
+   -webkit-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   -moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   position: relative;
+   transform: scale(1);
 }
 
+.mx-trip-guide-item:hover {
+   transform: scale(0.99);
+}
+ .mx-trip-guide-image img{
+  width: 100%;
+  height: 25vh;
+  transform: scale(1.1);
+  transition: transform 1000ms ease;
+}
+.mx-trip-guide-image img:hover{
+   transform: scale(1);
+}
+
+.mx-trip-guide-person {
+   line-height: 1;
+   padding: 0 15px 1px;
+   border-bottom: 4px solid #3f3f3f;
+   border-top: 1px solid #414142;
+   margin-left: -15px;
+   margin-right: -15px;
+
+
+}
+.mx-trip-guide-person-color {
+   position: relative;
+}
+
+.mx-trip-guide-person i{
+   width: 40px;
+   height: 40px;
+   font-size: 1.5em;
+   float: left;
+   overflow: hidden;
+   color: #2e2b29 ;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.mx-trip-guide-person p {
+   margin: 0;
+   line-height: 1.2;
+   margin-left: 50px;
+   font-size: 15px;
+}
+
+.mx-trip-guide-person p.name {
+   margin-top: 10px;
+   font-weight: 600;
+   font-size: 1em;
+   color: rgb(0, 0, 0);
+}
+
+.mx-trip-guide-person p.name span{
+   margin-top: 10px;
+   font-weight: 600;
+   font-size: 1em;
+   color: rgb(255, 102, 0);
+}
+
+.mx-trip-guide-person .color-ico{
+}
+.mx-trip-guide-person .color-txt{
+   position: absolute;
+   width: 50%;
+   left: 5%;
+}
+.mx-trip-guide-person .color-fill{
+   width: 20px;
+   height: 20px;
+   margin: auto 0;
+   position: absolute;
+   left:53%;
+   top:25%;
+   bottom:25%;
+   border: 2px solid rgb(22, 22, 22) ;
+   -webkit-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   -moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   border-radius: .90rem;
+}
+
+.mx-price{
+   margin-top: 10px;
+}
+
+[class*=GridLex-grid]>[class*=_mx-widget] {
+   height: 30em;
+}
+
+.mx-breadcrumb-image-bg {
+   text-align: center;
+   color: #FFF;
+   line-height: 1.2;
+   padding: 100px 0 0;
+   background-color: #1C1C1F;
+   background-position: center center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   margin-bottom: 5px;
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+}
+.mx-breadcrumb-image-bg h2 {
+   color: rgb(255, 102, 0);
+   line-height: 1.2;
+   margin: 0 auto;
+   font-size: 42px;
+   font-weight: 600;
+}
+.mx-breadcrumb-image-bg p{
+   margin-top: 10px;
+   font-size: 18px;
+   letter-spacing: 0.5px;
+
+}
+
+.mx-breadcrumb-image-bg .mx-row{
+   margin-right: -15px ;
+   margin-left: -15px;
+   margin-bottom: 100px;
+}
+
+.mx-pt-30{
+   padding-top: 1px !important;
+}
+
+@media only screen and (min-width: 1200px) {
+   .mx-container-1{
+       width: 100% !important;
+   }
+   .mx-container-2{
+       width: 90% !important;
+   }
+
+}
+@media only screen and (min-width: 920px) {
+   .mx-container-1{
+       width: 100% !important;
+   }
+   .mx-container-2{
+       width: 90% !important;
+   }
+
+}
+@media only screen and (min-width: 768px) {
+   .mx-container-1{
+       width: 100% !important;
+   }
+   .mx-container-2{
+       width: 90% !important;
+   }
+
+}
+
+@media only screen and (max-width: 767px) {
+   [class*=GridLex-grid]>[class*=_mx-widget] {
+       -webkit-flex-basis: 100%;
+       -ms-flex-preferred-size: 100%;
+       flex-basis: 100%;
+       max-width: 100% ;
+       height: 35em;
+   }
+
+   .mx-trip-guide-person .color-fill{
+       left:190px;
+       top:25%;
+       bottom:25%;
+       border-radius: .90rem;
+   }
+   }
+   @media only screen and (max-width: 268px) {
+
+       .mx-trip-guide-person .color-fill{
+           left:80%;
+           top:25%;
+           bottom:25%;
+           border-radius: .90rem;
+       }
+       }
+@media only screen and (max-width: 250px) {
+   [class*=GridLex-grid]>[class*=_mx-widget] {
+       -webkit-flex-basis: 100%;
+       -ms-flex-preferred-size: 100%;
+       flex-basis: 100%;
+       max-width: 100% ;
+       /* mx-ch */
+       height: 100vh;
+   }
+
+
+   }
 
 

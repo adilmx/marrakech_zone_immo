@@ -20,3 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/* ces routes sont pour le test seulement  */
+Route::get('/cars', 'CarController@index')->name('car.index');
+Route::get('/details', 'CarController@show')->name('car.show');

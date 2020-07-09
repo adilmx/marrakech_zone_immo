@@ -14,8 +14,20 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        return view('cars.index');
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Car  $car
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+        return view('cars.details');
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -38,16 +50,7 @@ class CarController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Car  $car
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Car $car)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.

@@ -15,7 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- Fav and Touch Icons -->
- 
+
 	<link rel="shortcut icon"  href="images/ico/logo-zh-tours.png">
 
 	<!-- CSS Plugins -->
@@ -27,7 +27,13 @@
 	<link href="css/style.css" rel="stylesheet">
 
 	<!-- Add your style -->
-	<link href="css/your-style.css" rel="stylesheet">
+    <link href="css/your-style.css" rel="stylesheet">
+
+    <!-- AOS libs -->
+    <link href="dist/aos.css" rel="stylesheet">
+
+    <!-- FontAwesome Style File -->
+    <link rel="stylesheet" href="css/all.min.css">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -56,7 +62,7 @@
 
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="#"><img src="images/ico/logo-zh-tours.png" alt="Logo" /></a>
+							<a href="#"><img src="images/ico/logo-zh-tours-mx.png" alt="Logo" /></a>
 						</div>
 					</div>
 
@@ -213,6 +219,14 @@
 
 <!-- end Back To Top -->
 
+
+<!-- AOS libs -->
+
+<script src="dist/aos.js"></script>
+
+<script>
+    AOS.init();
+  </script>
 
 
 <!-- Core JS -->
