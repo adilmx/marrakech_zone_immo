@@ -12,7 +12,9 @@
                     <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                         <div data-aos="zoom-out-left">
                         <h2>Voitures de luxe</h2>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odi dipisicing elit. Odi</p>
+                        <p>Lorem ipsum dolor sit amet consec ritatis eos! Ex, consequatur maxime. Sint nihil corporis reprehenderit.</p>
+
+
                     </div>
                     </div>
 
@@ -32,13 +34,62 @@
 						<div class="GridLex-gap-20 GridLex-gap-15-mdd GridLex-gap-10-xs">
 
 							<div class="GridLex-grid-noGutter-equalHeight GridLex-grid-center">
+
+                        @foreach ($cars_s as $car)
+                                <!-- start car widget -->
+								<div class="GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget " data-aos="fade-up" data-aos-duration="2000">
+
+									<div class="mx-trip-guide-item trip-guide-item" >
+                                     <a href="#">
+										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
+                                            <img src="/storage/{{ $car->pic_src }}" alt="images" />
+                                        </div>
+                                     </a>
+
+										<div class="trip-guide-content mx-trip-guide-content">
+											<h3>{{ $car->libelle }}</h3></div>
+
+										<div class="trip-guide-bottom">
+                                            <div class="trip-guide-person mx-trip-guide-person clearfix">
+                                                      <i class="fas fa-car-side"> </i>
+												<p class="name">Nombre de places : <span>{{ $car->nbr_place }}</span></p>
+											</div>
+                                            <div class="trip-guide-person mx-trip-guide-person-color mx-trip-guide-person clearfix">
+												<i class="fas fa-palette color-ico"> </i>
+                                                <p class="name color-txt">Couleur : </p>
+                                                <div class="color-fill" style="background-color: {{ $car->couleur }}"></div>
+											</div>
+											<div class="trip-guide-person mx-trip-guide-person clearfix">
+												<i class="fas fa-briefcase"> </i>
+												<p class="name">charge maximale: <span>{{ $car->charge_max }}Kg</span></p>
+											</div>
+											<div class="row gap-10 mx-price">
+												<div class="col-xs-12 col-sm-6">
+													<div class="trip-guide-price">
+														Á partir de
+														<span class="number">{{ $car->prix_min_per_day }}$</span>
+													</div>
+												</div>
+												<div class="col-xs-12 col-sm-6 text-right">
+													<a href="#" class="btn btn-primary">Reserver</a>
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+                            <!-- end car widget -->
+                            @endforeach
+
                             <!-- start car widget -->
 								<div class="GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget " data-aos="fade-up" data-aos-duration="2000">
 
 									<div class="mx-trip-guide-item trip-guide-item" >
                                      <a href="#">
 										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
-                                            <img src="images/trip/bg.jpg" alt="images" />
+                                            <img src="{{ asset('/') }}images/trip/bg.jpg" alt="images" />
                                         </div>
                                      </a>
 
@@ -84,7 +135,7 @@
 									<div class="mx-trip-guide-item trip-guide-item" >
                                      <a href="#">
 										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
-                                            <img src="images/trip/bg.jpg" alt="images" />
+                                            <img src="{{ asset('/') }}images/trip/bg.jpg" alt="images" />
                                         </div>
                                      </a>
 
@@ -130,7 +181,7 @@
 									<div class="mx-trip-guide-item trip-guide-item" >
                                      <a href="#">
 										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
-                                            <img src="images/trip/bg.jpg" alt="images" />
+                                            <img src="{{ asset('/') }}images/trip/bg.jpg" alt="images" />
                                         </div>
                                      </a>
 
@@ -176,7 +227,7 @@
 									<div class="mx-trip-guide-item trip-guide-item" >
                                      <a href="#">
 										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
-                                            <img src="images/trip/bg.jpg" alt="images" />
+                                            <img src="{{ asset('/') }}images/trip/bg.jpg" alt="images" />
                                         </div>
                                      </a>
 
@@ -222,7 +273,7 @@
 									<div class="mx-trip-guide-item trip-guide-item" >
                                      <a href="#">
 										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
-                                            <img src="images/trip/bg.jpg" alt="images" />
+                                            <img src="{{ asset('/') }}images/trip/bg.jpg" alt="images" />
                                         </div>
                                      </a>
 
@@ -268,7 +319,7 @@
 									<div class="mx-trip-guide-item trip-guide-item" >
                                      <a href="#">
 										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
-                                            <img src="images/trip/bg.jpg" alt="images" />
+                                            <img src="{{ asset('/') }}images/trip/bg.jpg" alt="images" />
                                         </div>
                                      </a>
 
@@ -314,7 +365,7 @@
 									<div class="mx-trip-guide-item trip-guide-item" >
                                      <a href="#">
 										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
-                                            <img src="images/trip/bg.jpg" alt="images" />
+                                            <img src="{{ asset('/') }}images/trip/bg.jpg" alt="images" />
                                         </div>
                                      </a>
 
@@ -360,53 +411,7 @@
 									<div class="mx-trip-guide-item trip-guide-item" >
                                      <a href="#">
 										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
-                                            <img src="images/trip/bg.jpg" alt="images" />
-                                        </div>
-                                     </a>
-
-										<div class="trip-guide-content mx-trip-guide-content">
-											<h3>Mercedes Benz GC Example MARQUE MX</h3></div>
-
-										<div class="trip-guide-bottom">
-                                            <div class="trip-guide-person mx-trip-guide-person clearfix">
-                                                      <i class="fas fa-car-side"> </i>
-												<p class="name">Nombre de places : <span>5</span></p>
-											</div>
-                                            <div class="trip-guide-person mx-trip-guide-person-color mx-trip-guide-person clearfix">
-												<i class="fas fa-palette color-ico"> </i>
-                                                <p class="name color-txt">Couleur : </p>
-                                                <div class="color-fill" style="background-color: #0083cf"></div>
-											</div>
-											<div class="trip-guide-person mx-trip-guide-person clearfix">
-												<i class="fas fa-briefcase"> </i>
-												<p class="name">charge maximale: <span>50kg</span></p>
-											</div>
-											<div class="row gap-10 mx-price">
-												<div class="col-xs-12 col-sm-6">
-													<div class="trip-guide-price">
-														Á partir de
-														<span class="number">687.00$</span>
-													</div>
-												</div>
-												<div class="col-xs-12 col-sm-6 text-right">
-													<a href="#" class="btn btn-primary">Reserver</a>
-												</div>
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-                            <!-- end car widget -->
-
-                            <!-- start car widget -->
-								<div class="GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget " data-aos="fade-up" data-aos-duration="2000">
-
-									<div class="mx-trip-guide-item trip-guide-item" >
-                                     <a href="#">
-										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
-                                            <img src="images/trip/bg.jpg" alt="images" />
+                                            <img src="{{ asset('/') }}images/trip/bg.jpg" alt="images" />
                                         </div>
                                      </a>
 

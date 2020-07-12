@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -16,24 +16,24 @@
 
 	<!-- Fav and Touch Icons -->
 
-	<link rel="shortcut icon"  href="images/ico/logo-zh-tours.png">
+	<link rel="shortcut icon"  href="{{ asset('/') }}images/ico/logo-zh-tours.png">
 
 	<!-- CSS Plugins -->
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" media="screen">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/plugin.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{ asset('/') }}bootstrap/css/bootstrap.min.css" media="screen">
+	<link href="{{ asset('/') }}css/main.css" rel="stylesheet">
+	<link href="{{ asset('/') }}css/plugin.css" rel="stylesheet">
 
 	<!-- CSS Custom -->
-	<link href="css/style.css" rel="stylesheet">
+	<link href="{{ asset('/') }}css/style.css" rel="stylesheet">
 
 	<!-- Add your style -->
-    <link href="css/your-style.css" rel="stylesheet">
+    <link href="{{ asset('/') }}css/your-style.css" rel="stylesheet">
 
     <!-- AOS libs -->
-    <link href="dist/aos.css" rel="stylesheet">
+    <link href="{{ asset('/') }}dist/aos.css" rel="stylesheet">
 
     <!-- FontAwesome Style File -->
-    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -62,7 +62,7 @@
 
 					<div class="logo-wrapper">
 						<div class="logo">
-							<a href="#"><img src="images/ico/logo-zh-tours-mx.png" alt="Logo" /></a>
+							<a href="#"><img src="{{ asset('/') }}images/ico/logo-zh-tours-mx.png" alt="Logo" /></a>
 						</div>
 					</div>
 
@@ -83,12 +83,12 @@
 							</li>
 
 							<li>
-								<a href="#">Voitures de luxe</a>
+								<a href="{{ route('car.index',['categorie' => 1]) }}">Voitures de luxe</a>
 
 							</li>
 
 							<li>
-								<a href="#">Transport touristique</a>
+								<a href="{{ route('car.index',['categorie' => 2]) }}">Transport touristique</a>
 
 							</li>
 
@@ -123,7 +123,7 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="first-slide" src="images/hero-header/04.jpg" alt="First slide">
+                    <img class="first-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="First slide">
 
                     <div class="carousel-caption ">
                         <h1>WELCOME</h1>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="second-slide" src="images/hero-header/04.jpg" alt="Second slide">
+                    <img class="second-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Second slide">
 
                     <div class="carousel-caption">
                         <h1>WELCOME 2</h1>
@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="third-slide" src="images/hero-header/04.jpg" alt="Third slide">
+                    <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide">
 
                     <div class="carousel-caption">
                         <h1>WELCOME 3</h1>
@@ -222,7 +222,7 @@
 
 <!-- AOS libs -->
 
-<script src="dist/aos.js"></script>
+<script src="{{ asset('/') }}dist/aos.js"></script>
 
 <script>
     AOS.init();
@@ -230,13 +230,23 @@
 
 
 <!-- Core JS -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/core-plugins.js"></script>
-<script type="text/javascript" src="js/customs.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/core-plugins.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/customs.js"></script>
 
 <!-- Only in Home Page -->
-<script type="text/javascript" src="js/jquery.flexdatalist.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/jquery.flexdatalist.js"></script>
+
+<!-- Detail Page JS -->
+<script type="text/javascript" src="{{ asset('/') }}js/jquery.stickit.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/bootstrap-tokenfield.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/typeahead.bundle.min.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/jquery.sumogallery.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/images-grid.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/jquery.bootstrap-touchspin.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/customs-detail.js"></script>
+
 
 </body>
 

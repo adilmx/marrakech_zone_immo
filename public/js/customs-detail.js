@@ -6,7 +6,7 @@ jQuery(function($) {
 	/**
 	 * Smooth scroll to anchor
 	 */
-	 
+
 	$('.with-multiple-sticky a.anchor[href*=#]:not([href=#])').on("click",function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $(this.hash);
@@ -19,12 +19,12 @@ jQuery(function($) {
 			}
 		}
 	});
-	
-	
+
+
 	/**
 	 * Sidebar Sticky
 	*/
-	 
+
 	$('.sidebar-sticky').stickit({
 		screenMinWidth: 992,
 		top: 45,
@@ -33,7 +33,7 @@ jQuery(function($) {
 		overflowScrolling: true,
 		extraHeight: 0
 	});
-	
+
 	$('.sidebar-sticky.sidebar-sticky-extra-height').stickit({
 		screenMinWidth: 992,
 		top: 45,
@@ -42,7 +42,7 @@ jQuery(function($) {
 		overflowScrolling: true,
 		extraHeight: 100
 	});
-	
+
 	$('#sidebar-sticky').stickit({
 		screenMinWidth: 992,
 		top: 45,
@@ -51,57 +51,45 @@ jQuery(function($) {
 		overflowScrolling: true,
 		extraHeight: 100,
 	});
-	
-	
+
+
 	/**
 	 * Image Grid with Lightbox
-	*/	
-	
+	*/
+
 	$('#gallery1').imagesGrid({
 	images: [
-			{ src: 'images/diff-size/01.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption One' },
-			{ src: 'images/diff-size/02.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Two' },
-			{ src: 'images/diff-size/03.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Three' },
-			{ src: 'images/diff-size/04.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Fpur' },
-			{ src: 'images/diff-size/05.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Five' },
-			{ src: 'images/diff-size/06.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Six' },
-			{ src: 'images/diff-size/07.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Seven' },
-			{ src: 'images/diff-size/08.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Eight' },
-			{ src: 'images/diff-size/09.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Nine' },
-			{ src: 'images/diff-size/10.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Ten' },
-		],
+			{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption One' },
+			{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Two' },
+			{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Three' },
+			{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Fpur' },
+			],
 		cells: 5,
 		align: true
 	});
-	
+
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		$('#gallery-in-tab').imagesGrid({
 			images: [
-				{ src: 'images/diff-size/01.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption One' },
-				{ src: 'images/diff-size/02.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Two' },
-				{ src: 'images/diff-size/03.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Three' },
-				{ src: 'images/diff-size/04.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Fpur' },
-				{ src: 'images/diff-size/05.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Five' },
-				{ src: 'images/diff-size/06.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Six' },
-				{ src: 'images/diff-size/07.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Seven' },
-				{ src: 'images/diff-size/08.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Eight' },
-				{ src: 'images/diff-size/09.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Nine' },
-				{ src: 'images/diff-size/10.jpg', alt: 'Second image', title: 'Second image', caption: 'Image Caption Ten' },
-			],
+				{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption One' },
+				{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Two' },
+				{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Three' },
+				{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Fpur' },
+				],
 			cells: 5,
 			align: true
 		});
-		
+
 		$('.selectpicker-in-tab').selectpicker({ });
 	});
-	
+
 	/**
 	 * Tokenfield for Bootstrap
 	 * http://sliptree.github.io/bootstrap-tokenfield/
 	*/
-	 
+
 	$('.tokenfield').tokenfield()
-	
+
 	// Autocomplete Tagging
 	var engine = new Bloodhound({
 		local: [{value: 'Paris'}, {value: 'London'}, {value: 'Bangkok'} , {value: 'Bali'}, {value: 'Hongkong'}, {value: 'Rome'}, {value: 'Dubai'}, {value: 'Cairo'}, {value: 'Istanbul'}],
@@ -115,8 +103,8 @@ jQuery(function($) {
 		typeahead: [null, { source: engine.ttAdapter() }],
 		limit: '4',
 	});
-		
-		
+
+
 	/**
 	 * Input Spinner
 	*/
@@ -127,6 +115,6 @@ jQuery(function($) {
 		buttonup_txt: '<i class="ion-plus"></i>'
 	});
 
-	
+
 });
 

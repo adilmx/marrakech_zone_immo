@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +24,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 /* ces routes sont pour le test seulement  */
 Route::get('/cars', 'CarController@index')->name('car.index');
 Route::get('/details', 'CarController@show')->name('car.show');
+
+/*********** */
+Route::get('/cars/{categorie}', 'CarController@index')->name('car.index');
+Route::get('/details', 'CarController@show')->name('car.show');
+Route::get('/reservation', 'ReservationCarController@create')->name('reservationCar.create');
+Route::get('/admin', 'CarController@create')->name('car.create');
+Route::post('/R', 'CarController@store')->name('car.store');
+

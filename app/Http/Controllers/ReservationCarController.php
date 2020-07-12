@@ -24,7 +24,8 @@ class ReservationCarController extends Controller
      */
     public function create()
     {
-        //
+        return view('cars.reservation');
+
     }
 
     /**

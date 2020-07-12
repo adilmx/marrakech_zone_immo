@@ -16,9 +16,9 @@ class CreateMarquesTable extends Migration
         Schema::create('marques', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('id_categorie');
+            $table->foreignId('categorie_id');
             $table->string('libelle');
-            $table->foreign('id_categorie')->references('id')->on('categories');
+            $table->foreign('categorie_id')->references('id')->on('categories');
 
             $table->timestamps();
         });

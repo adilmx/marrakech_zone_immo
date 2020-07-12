@@ -135,6 +135,7 @@
 
 [class*=GridLex-grid]>[class*=_mx-widget] {
    height: 30em;
+   width: 10%;
 }
 
 .mx-breadcrumb-image-bg {
@@ -242,3 +243,278 @@
    }
 
 
+/* start of details design */
+[class*=GridLex-grid-mx]{
+   background: linear-gradient(45deg, rgb(143, 143, 143) ,rgb(255, 255, 255), rgb(143, 143, 143)) !important;
+   align-self: center;
+   border:  solid #2e2b29 ;
+   border-width: 1px 5px;
+   border-radius: .90rem;
+   -webkit-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   -moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+
+   transform: scale(1);
+   transition: all 500ms ease ;
+}
+[class*=GridLex-grid-mx]:hover{
+   transform: scale(0.99);
+
+}
+[class*=GridLex-grid-mx]>[class*=_sm-4-mx] {
+   flex-basis: auto;
+   max-width: none;
+}
+
+[class*=GridLex-grid-mx] .txt-box-infos{
+
+   width: 80%;
+   display: flex;
+   justify-content: space-around;
+   flex-direction: column;
+   padding-left: 1em;
+}
+
+[class*=GridLex-grid-mx] .txt-box-infos .mx-txt-detail {
+   color: rgb(32, 32, 32);
+   font-size: 1.2em;
+   font-weight: bold;
+}
+
+[class*=GridLex-grid-mx] .txt-box-infos .mx-txt-detail span{
+   color: rgb(252, 147, 10);
+   font-size: 1.2em;
+   width: 10%;
+}
+
+
+
+[class*=GridLex-grid-mx] i{
+   font-size: 1em;
+   margin: 1px ;
+   color: #2e2b29;
+}
+
+[class*=GridLex-grid-mx][class*=-equalHeight]>[class*=GridLex-col-mx]{
+   width: 100%;
+   display: flex;
+   justify-content: start;
+   flex-direction: row;
+   margin: auto 0;
+}
+
+
+
+.GridLex-gap-30-mx > div > div > div{
+margin: 0;
+}
+
+
+.col-md-9-mx{
+   width: 100%;
+   float: none;
+}
+
+.mx-dtl-breadcrumb-image-bg{
+   border: 1px solid #1C1C1F;
+   border-radius: .90rem;
+}
+.mx-dtl-breadcrumb-image-bg::before {
+   position: absolute;
+   border-radius: .90rem;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.4);
+   content: "";
+}
+
+/**/
+.mx-color-trip-guide-person {
+   line-height: 1;
+   padding: 0 15px 1px;
+   margin-left: -15px;
+   margin-right: -15px;
+   height: 100%;
+   width: 80%;
+   position: relative;
+
+}
+
+
+
+.mx-color-trip-guide-person p {
+   margin: 0;
+   line-height: 1.2;
+   font-size: 15px;
+}
+
+.mx-color-trip-guide-person p.name {
+   position: absolute;
+   left:1%;
+   top:25%;
+   font-weight: 600;
+   font-size: 1em;
+   color: rgb(0, 0, 0);
+}
+
+.mx-color-trip-guide-person p.name span{
+   margin-top: 10px;
+   font-weight: 600;
+   font-size: 1em;
+   color: rgb(255, 102, 0);
+}
+
+.mx-color-trip-guide-person .color-txt{
+   position: absolute;
+   left: 1%;
+}
+.mx-color-trip-guide-person .color-fill{
+   width: 40%;
+   height: 16px;
+   position: absolute;
+   left:50%;
+   top:25%;
+   bottom:25%;
+   border: 2px solid rgb(22, 22, 22) ;
+   -webkit-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   -moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   border-radius: .90rem;
+}
+
+.mx-btn-reserver{
+   margin: 10px;
+   float: right;
+   overflow: hidden;
+   transform: scale(1);
+}
+.mx-btn-reserver:hover{
+   transform: scale(1.1);
+}
+
+.imgs-grid-image{
+   width: 25% !important;
+   border-radius: .90rem;
+   -webkit-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   -moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   transform: scale(1);
+}
+.imgs-grid-image > .image-wrap{
+   height: 35vh !important;
+   border: 3px solid #adadb9;
+   border-radius: .90rem;
+}
+.imgs-grid-image:hover{
+   width: 25% !important;
+   transform: scale(0.96);
+}
+
+.imgs-grid-image > .image-wrap > img{
+   height: 35vh !important;
+
+}
+/*
+@media only screen and (max-width: 990px) {
+
+[class*=GridLex-grid-mx] .txt-box-infos .mx-txt-detail {
+   color: rgb(32, 32, 32);
+   font-size: .9em;
+   font-weight: bold;
+}
+
+[class*=GridLex-grid-mx] .txt-box-infos .mx-txt-detail span{
+   color: rgb(252, 147, 10);
+   font-size: .9em;
+   width: 10%;
+}
+}
+*/
+
+@media only screen and (max-width: 1060px) {
+   .imgs-grid-image{
+       width: 33.3333% !important;
+   }
+}
+
+@media only screen and (max-width: 850px) {
+   .imgs-grid-image{
+       width: 50% !important;
+   }
+}
+@media only screen and (max-width: 390px) {
+   .mx-color-trip-guide-person .color-fill{
+       width: 40%;
+       right: 8%;
+   }
+}
+@media only screen and (max-width: 490px) {
+
+   [class*=GridLex-grid-mx][class*=-equalHeight]>[class*=GridLex-col-mx]{
+
+       display: flex;
+       justify-content: start;
+       flex-direction: column;
+       margin: 0 auto;
+   }
+
+   [class*=GridLex-grid-mx] .txt-box-infos{
+
+       width: 100%;
+       display: flex;
+       justify-content: space-around;
+       flex-direction: column;
+       align-self: center;
+       padding-left: 1em;
+   }
+
+   [class*=GridLex-grid-mx] .txt-box-infos .mx-txt-detail {
+       align-self: center;
+   }
+
+   [class*=GridLex-grid-mx] .txt-box-infos .mx-txt-detail span{
+       align-self: center;
+   }
+
+   .mx-color-trip-guide-person {
+       height: 90px;
+       width: 100%;
+   }
+
+   .imgs-grid-image{
+   width: 100% !important;
+}
+   }
+
+
+   /* design de reservation car */
+
+   .form-group input{
+       border-style: solid;
+       border-color: rgb(241, 112, 6);
+       border-width: 0 0 2px 0;
+   }
+   .form-group input:focus{
+    border-style: solid;
+    border-color: rgb(241, 112, 6);
+    border-width: 1px 1.5px;
+    border-radius: .50rem;
+}
+
+.form-group select{
+    border-style: solid;
+    border-color: rgb(241, 112, 6);
+    border-width: 0 0 2px 0;
+}
+.form-group select:hover{
+ border-style: solid;
+ border-color: rgb(241, 112, 6);
+ border-width: 1px 1.5px;
+ border-radius: .50rem;
+}
+.invalid-feedback-mx{
+  color: rgb(231, 4, 4);
+  font-size: .9em;
+}
