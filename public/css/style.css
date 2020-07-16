@@ -68,7 +68,8 @@
 }
 
 .transparent-header .navbar-default {
-    background: rgba(0, 0, 0, 0.6);
+    background: #1e1f20;
+    border-radius: 0 0 .90rem .90rem;
 }
 
 .bg-color-header .navbar-default {
@@ -124,12 +125,32 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
     padding-left: 14px;
-    color: rgb(170, 170, 170);
+    color: rgb(255, 255, 255);
     position: relative;
     font-weight: 700;
-    background-color: #0f2130;
+    background-color: #1e1f20;
     border: 2px solid rgb(255, 102, 0);
-    border-radius: .90rem;
+    border-radius: 0 .90rem 0 .90rem;
+}
+.nav.navbar-nav > li > a:hover ,.nav.navbar-nav > li > a:focus{
+    line-height: 36px;
+    font-size: 14px;
+    padding-top: 0;
+    padding-bottom: 0;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-left: 14px;
+    color: rgb(0, 0, 0);
+    position: relative;
+    font-weight: 700;
+    background-color: rgb(255, 102, 0) !important;
+    border: 2px solid #ffffff ;
+    border-radius: 0 .90rem 0 .90rem;
 }
 /*
 .nav.navbar-nav > li:last-child > a {
@@ -243,7 +264,7 @@
 .navbar-nav > li.active > a {
     color: #ffffff !important;
     text-decoration: none !important;
-    background: #113d61 !important;
+    background: rgb(255, 102, 0) !important; 
 }
 
 .mega-menu-inner {

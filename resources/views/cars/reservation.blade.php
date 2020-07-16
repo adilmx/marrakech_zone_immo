@@ -11,60 +11,71 @@
 
 						<div class="col-xs-12 col-sm-8 col-md-8 mt-20">
 
-                            <form action="/p" enctype="multipart/form-data" method="POST">
+                            <form action="/rs" enctype="multipart/form-data" method="POST">
                                 @csrf
 
                                     <div class="row">
                                         <div class="col-8 offset-2">
 
+                                   <!-- <div class="form-group row">
+                                                <label for="raison_sociale" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __("raison sociale *en cas d'une personne morale") }}</label>
 
+
+                                                    <input id="raison_sociale" type="raison_sociale" class="form-control @error('raison_sociale') is-invalid @enderror" name="raison_sociale" value="{{ old('raison_sociale') }}"  autocomplete="raison_sociale">
+
+                                                    @error('raison_sociale')
+                                                        <span class="invalid-feedback-mx invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror */
+                                    </div> -->
                                     <div class="form-group row">
-                                                <label for="nom" class="col-md-4 col-form-label text-md-right">{{ __('nom') }}</label>
+                                                <label for="nom" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('nom') }}</label>
 
 
                                                     <input id="nom" type="nom" class="form-control @error('nom') is-invalid @enderror" name="nom" value="{{ old('nom') }}"  autocomplete="nom">
 
                                                     @error('nom')
-                                                        <span class="invalid-feedback" role="alert">
+                                                        <span class="invalid-feedback-mx invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                     @enderror
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="prenom" class="col-md-4 col-form-label text-md-right">{{ __('Prenom') }}</label>
+                                        <label for="prenom" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('Prenom') }}</label>
 
 
                                             <input id="prenom" type="prenom" class="form-control @error('prenom') is-invalid @enderror" name="prenom" value="{{ old('prenom') }}"  autocomplete="prenom">
 
                                             @error('prenom')
-                                                <span class="invalid-feedback" role="alert">
+                                                <span class="invalid-feedback-mx invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="tele" class="col-md-4 col-form-label text-md-right">{{ __('Telephone') }}</label>
+                                        <label for="tele" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('Telephone') }}</label>
 
 
                                             <input id="tele" type="tele" class="form-control @error('tele') is-invalid @enderror" name="tele" value="{{ old('tele') }}"  autocomplete="tele">
 
                                             @error('tele')
-                                                <span class="invalid-feedback" role="alert">
+                                                <span class="invalid-feedback-mx invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('email') }}</label>
+                                        <label for="email" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('email') }}</label>
 
 
                                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
 
                                             @error('email')
-                                                <span class="invalid-feedback" role="alert">
+                                                <span class="invalid-feedback-mx invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
@@ -72,52 +83,67 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="date_debut_reservation" class="col-md-4 col-form-label text-md-right">{{ __('date de debut de reservation') }}</label>
+                                        <label for="date_debut_reservation" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('date de debut de reservation') }}</label>
 
 
                                             <input id="date_debut_reservation" type="date" class="form-control @error('date_debut_reservation') is-invalid @enderror" name="date_debut_reservation" value="{{ old('date_debut_reservation') }}"  autocomplete="date_debut_reservation">
 
                                             @error('date_debut_reservation')
-                                                <span class="invalid-feedback" role="alert">
+                                                <span class="invalid-feedback-mx invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="time_debut_reservation" class="col-md-4 col-form-label text-md-right">{{ __('temps debut de reservation') }}</label>
+                                        <label for="time_debut_reservation" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('temps debut de reservation') }}</label>
 
 
                                             <input id="time_debut_reservation" type="time" class="form-control @error('time_debut_reservation') is-invalid @enderror" name="time_debut_reservation" value="{{ old('time_debut_reservation') }}"  autocomplete="time_debut_reservation">
 
                                             @error('time_debut_reservation')
-                                                <span class="invalid-feedback" role="alert">
+                                                <span class="invalid-feedback-mx invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="date_fin_reservation" class="col-md-4 col-form-label text-md-right">{{ __('date de fin de reservation') }}</label>
+                                        <label for="date_fin_reservation" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('date de fin de reservation') }}</label>
 
 
                                             <input id="date_fin_reservation" type="date" class="form-control @error('date_fin_reservation') is-invalid @enderror" name="date_fin_reservation" value="{{ old('date_fin_reservation') }}"  autocomplete="date_fin_reservation">
 
                                             @error('date_fin_reservation')
-                                                <span class="invalid-feedback" role="alert">
+                                                <span class="invalid-feedback-mx invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="time_fin_reservation" class="col-md-4 col-form-label text-md-right">{{ __('temps de fin de reservation') }}</label>
+                                        <label for="car_driver" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('temps de fin de reservation') }}</label>
 
 
                                             <input id="time_fin_reservation" type="time" class="form-control @error('time_fin_reservation') is-invalid @enderror" name="time_fin_reservation" value="{{ old('time_fin_reservation') }}"  autocomplete="time_fin_reservation">
 
                                             @error('time_fin_reservation')
-                                                <span class="invalid-feedback" role="alert">
+                                                <span class="invalid-feedback-mx invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="car_driver" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('avec chauffeur') }}</label>
+
+
+                                        <select name="car_driver" class="form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="">
+                                            <option value="1">oui</option>
+                                            <option value="0">non</option>
+                                        </select>
+                                            @error('car_driver')
+                                                <span class="invalid-feedback-mx invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
@@ -134,7 +160,7 @@
 
 						</div>
 
-						<div id="sidebar-sticky" class="col-xs-12 col-sm-4 col-md-4 mt-20 sticky-mt-30 mt-50-sm">
+						<div id="sidebar-sticky" class="col-xs-12 col-sm-4 col-md-4-mx col-md-4 mt-20 sticky-mt-30 mt-50-sm">
 
 							<aside class="sidebar-wrapper with-box-shadow">
 
@@ -142,7 +168,7 @@
 
 									<div class="sidebar-booking-header pt-20 pb-15 clearfix">
 
-										<h3 class="text-white text-uppercase spacing-3 mb-0 line-1">MERCEDES MARQUE EXEMPLE</h3>
+										<h3 class="text-white text-uppercase spacing-3 mb-0 line-1">{{ $car[0]->libelle }}</h3>
 
 									</div>
 
@@ -159,7 +185,7 @@
                                                         <div class="font-smaller " style="color: rgb(241, 64, 10)">* depend de duree que vous avez choisie</div>
                                                     </div>
 													<div class="col-xs-5 col-sm-5 text-right">
-														<span class="font600 font26 block text-primary mt-5">$1,300</span>
+														<span class="font600 font26 block text-primary mt-5">{{ $car[0]->prix_min_per_day }}$</span>
 													</div>
 												</div>
 											</li>
@@ -167,12 +193,12 @@
 											<li class="divider"></li>
 
 											<li>
-												<a href="#" class="btn btn-primary btn-sm mt-5">CHOISIR UNE AUTRE VOITURE</a>
+												<a href="{{ route('car.index',['categorie' => $car[0]->categorie_id ]) }}" class="btn btn-primary btn-sm mt-5">CHOISIR UNE AUTRE VOITURE</a>
                                             </li>
                                             <li class="divider"></li>
 
 											<li>
-												<a href="#" class="btn btn-primary btn-sm mt-5">RETOUR AU DETAILS</a>
+												<a href="{{ route('car.show',['car' => $car[0]->id]) }}" class="btn btn-primary btn-sm mt-5">RETOUR AU DETAILS</a>
 											</li>
 
 										</ul>
@@ -193,4 +219,14 @@
 
 		</div>
 </div>
+@endsection
+@section('script-details-car')
+<!-- Detail Page JS -->
+<script type="text/javascript" src="{{ asset('/') }}js/jquery.stickit.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/bootstrap-tokenfield.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/typeahead.bundle.min.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/jquery.sumogallery.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/images-grid.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/jquery.bootstrap-touchspin.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/customs-detail.js"></script>
 @endsection

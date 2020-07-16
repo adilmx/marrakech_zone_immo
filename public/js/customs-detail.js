@@ -56,17 +56,20 @@ jQuery(function($) {
 	/**
 	 * Image Grid with Lightbox
 	*/
-
-	$('#gallery1').imagesGrid({
-	images: [
-			{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption One' },
-			{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Two' },
-			{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Three' },
-			{ src: 'images/trip/bg.jpg', alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Fpur' },
-			],
-		cells: 5,
-		align: true
-	});
+   /*  $(document).ready(function(){
+            var data = 0;
+            $.ajax({
+                type: "POST",
+                url: "ajaxRequest.post",
+                data:{ data : data },
+                cache: false,
+                success: function(res)
+                {
+                  alert(res);
+                }
+            });
+           }); */
+/*
 
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		$('#gallery-in-tab').imagesGrid({
@@ -81,7 +84,7 @@ jQuery(function($) {
 		});
 
 		$('.selectpicker-in-tab').selectpicker({ });
-	});
+	}); */
 
 	/**
 	 * Tokenfield for Bootstrap

@@ -27,8 +27,13 @@ Route::get('/details', 'CarController@show')->name('car.show');
 
 /*********** */
 Route::get('/cars/{categorie}', 'CarController@index')->name('car.index');
-Route::get('/details', 'CarController@show')->name('car.show');
-Route::get('/reservation', 'ReservationCarController@create')->name('reservationCar.create');
+Route::get('/details/{car}', 'CarController@show')->name('car.show');
+Route::get('/reservation/{car}', 'ReservationCarController@create')->name('reservationCar.create');
 Route::get('/admin', 'CarController@create')->name('car.create');
 Route::post('/R', 'CarController@store')->name('car.store');
+Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store');
+
+
+Route::get('ajaxRequest', 'AjaxController@ajaxRequestPost');
+Route::post('ajaxRequest', 'AjaxController@ajaxRequestPost')->name('ajaxRequest.post');
 

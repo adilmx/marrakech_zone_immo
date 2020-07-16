@@ -71,7 +71,7 @@
 						<ul class="nav navbar-nav" id="responsive-menu">
 
 							<li>
-								<a href="{{ route('login') }}" >Accueil</a>
+								<a href="{{ asset('/') }}" >Accueil</a>
 							</li>
 
 							<li>
@@ -123,7 +123,7 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="first-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="First slide">
+                    <img class="first-slide sl-ovelay" src="{{ asset('/') }}storage/uploads-mx/BG-LAMBO.jpg" alt="First slide">
 
                     <div class="carousel-caption ">
                         <h1>WELCOME</h1>
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="second-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Second slide">
+                    <img class="second-slide sl-ovelay" src="{{ asset('/') }}storage/uploads-mx/BG-LAMBO.jpg" alt="Second slide">
 
                     <div class="carousel-caption">
                         <h1>WELCOME 2</h1>
@@ -139,7 +139,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide">
+                    <img class="third-slide sl-ovelay" src="{{ asset('/') }}storage/uploads-mx/BG-LAMBO.jpg" alt="Third slide">
 
                     <div class="carousel-caption">
                         <h1>WELCOME 3</h1>
@@ -238,14 +238,8 @@
 <!-- Only in Home Page -->
 <script type="text/javascript" src="{{ asset('/') }}js/jquery.flexdatalist.js"></script>
 
-<!-- Detail Page JS -->
-<script type="text/javascript" src="{{ asset('/') }}js/jquery.stickit.js"></script>
-<script type="text/javascript" src="{{ asset('/') }}js/bootstrap-tokenfield.js"></script>
-<script type="text/javascript" src="{{ asset('/') }}js/typeahead.bundle.min.js"></script>
-<script type="text/javascript" src="{{ asset('/') }}js/jquery.sumogallery.js"></script>
-<script type="text/javascript" src="{{ asset('/') }}js/images-grid.js"></script>
-<script type="text/javascript" src="{{ asset('/') }}js/jquery.bootstrap-touchspin.js"></script>
-<script type="text/javascript" src="{{ asset('/') }}js/customs-detail.js"></script>
+@yield('script-details-car')
+
 
 
 </body>

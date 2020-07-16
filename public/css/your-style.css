@@ -1,12 +1,3 @@
-
-/*------------------------------------------------------------------
-* Project:        Togoby
-* Author:         Crenoveative
-* URL:            http://crenoveative.com or https://themeforest.net/user/crenoveative/portfolio
-* Created:        08/03/2017
--------------------------------------------------------------------*/
-
-
 /**
  * Add your style here
  */
@@ -17,8 +8,13 @@
     padding-left: 0 !important;
     padding-right: 0 !important ;
     margin: 0 auto !important;
-    /*margin-left: ;
-    margin-right: ; */
+}
+.mx-container-4{
+    margin-bottom: 25%;
+}
+
+.hero h1{
+    color: rgb(245, 93, 22);
 }
 
 
@@ -29,7 +25,7 @@
 
  .carousel-inner > .item > img {
      width: 100% !important;
-     height: 60vh !important;
+     height: 70vh !important;
  }
  .mx-trip-guide-content {
 }
@@ -143,7 +139,6 @@
    color: #FFF;
    line-height: 1.2;
    padding: 100px 0 0;
-   background-color: #1C1C1F;
    background-position: center center;
    background-repeat: no-repeat;
    background-size: cover;
@@ -152,6 +147,40 @@
    flex-direction: column;
    justify-content: start;
 }
+.mx-bg{
+    text-align: center;
+    color: #FFF;
+    line-height: 1.2;
+    padding: 100px 0 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+ clip-path: polygon(0 0%, 100% 0% , 100% 84%, 0% 100%);
+}
+
+.mx-breadcrumb-image-bg::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 234, 0.24);
+    content: "";
+ }
+ .mx-breadcrumb-image-bg::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.37);
+    content: "";
+    clip-path: polygon(0 1%, 100% 0% , 100% 100%, 0% 84%);
+ }
 .mx-breadcrumb-image-bg h2 {
    color: rgb(255, 102, 0);
    line-height: 1.2;
@@ -163,13 +192,14 @@
    margin-top: 10px;
    font-size: 18px;
    letter-spacing: 0.5px;
-
+   color: rgb(0, 0, 0);
+   font-weight: bold;
 }
 
 .mx-breadcrumb-image-bg .mx-row{
-   margin-right: -15px ;
+  /* margin-right: -15px ;
    margin-left: -15px;
-   margin-bottom: 100px;
+   margin-bottom: 100px; */
 }
 
 .mx-pt-30{
@@ -245,14 +275,12 @@
 
 /* start of details design */
 [class*=GridLex-grid-mx]{
-   background: linear-gradient(45deg, rgb(143, 143, 143) ,rgb(255, 255, 255), rgb(143, 143, 143)) !important;
    align-self: center;
-   border:  solid #2e2b29 ;
    border-width: 1px 5px;
    border-radius: .90rem;
-   -webkit-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
-   -moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
-   box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   -webkit-box-shadow: inset 1px 0px 6px 1px rgba(0,0,0,1);
+   -moz-box-shadow: inset 1px 0px 6px 1px rgba(0,0,0,1);
+   box-shadow: inset 1px 0px 6px 1px rgba(0,0,0,1);
 
    transform: scale(1);
    transition: all 500ms ease ;
@@ -291,8 +319,17 @@
 
 [class*=GridLex-grid-mx] i{
    font-size: 1em;
-   margin: 1px ;
-   color: #2e2b29;
+   color: #ffbb00;
+}
+.featured-icon-simple-item .mx-icone{
+
+   margin-bottom: 0px;
+   padding: .1em;
+   font-size: 2.5em;
+}
+
+h3.section-title-mx{
+
 }
 
 [class*=GridLex-grid-mx][class*=-equalHeight]>[class*=GridLex-col-mx]{
@@ -408,7 +445,6 @@ margin: 0;
    border-radius: .90rem;
 }
 .imgs-grid-image:hover{
-   width: 25% !important;
    transform: scale(0.96);
 }
 
@@ -517,4 +553,209 @@ margin: 0;
 .invalid-feedback-mx{
   color: rgb(231, 4, 4);
   font-size: .9em;
+}
+
+.mx-pr{
+    -webkit-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   -moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
+   border-radius: .90rem;
+}
+
+@media only screen and (max-width: 1199px){
+.content-wrapper.pr {
+    padding-right: 0;
+    text-shadow: 0 0 black;
+}
+}
+.mx-pr {
+    padding-right: 0px !important;
+    text-shadow: 0 0 black;
+}
+
+/*** home */
+.sec-mx-v2{
+    height: 100vh;
+}
+.mx-bg-v2{
+    text-align: center;
+    color: #FFF;
+    line-height: 1.2;
+    padding: 100px 0 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+ clip-path: polygon(0 15%, 100% 0% , 100% 84%, 0% 100%);
+ height: 100vh;
+}
+
+.mx-bg-v2 button{
+    z-index: 99999;
+}
+
+
+
+ .mx-bg-v2{
+     text-align: center;
+     color: #FFF;
+     line-height: 1.2;
+     padding: 100px 0 0;
+     background-position: center center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     margin-bottom: 5px;
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+  clip-path: polygon(0 10%, 100% 0% , 100% 90%, 0% 100%);
+ }
+
+ .mx-bg-v2::before {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     background:  linear-gradient(to right, rgb(0, 0, 0) , rgba(77, 77, 77, 0.4) 100%);;
+     content: "";
+     height: 100vh;
+  }
+ .mx-bg-v2 h2 {
+    color: rgb(255, 102, 0);
+    line-height: 1.2;
+    margin: 0 auto;
+    font-size: 42px;
+    font-weight: 600;
+ }
+ .mx-bg-v2 p{
+    margin-top: 10px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+ }
+ .mx-bg-v2 a {
+        line-height: 36px;
+        font-size: 14px;
+        padding-top: 0;
+        padding: 10px;
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;
+        -o-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: rgb(255, 255, 255);
+        position: relative;
+        font-weight: 700;
+        background-color: #1e1f20;
+        border: 2px solid rgb(255, 102, 0);
+        border-radius: 0 .90rem 0 .90rem;
+
+ }
+ .mx-bg-v2 a:hover {
+    line-height: 36px;
+    font-size: 14px;
+    padding-top: 0;
+    padding: 10px;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgb(0, 0, 0);
+    position: relative;
+    font-weight: 700;
+    background:  linear-gradient(to right, rgb(235, 97, 5) , rgba(77, 77, 77, 0.4) 100%);
+    border: 3px solid rgb(206, 206, 206);
+    border-radius: 0 .90rem 0 .90rem;
+
+}
+
+ .mx-bg-v2 .mx-row{
+    margin-right: -15px ;
+    margin-left: -15px;
+    margin-bottom: 100px;
+ }
+
+ .caption-mx-1 .txt1{
+     color: #f55d16;
+     font-size: 6vw;
+     font-weight: bold;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+ }
+ .caption-mx-1 .txt2{
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-bottom: 3px;
+}
+.caption-mx-1 a {
+    line-height: 36px;
+    font-size: 3vw;
+    padding:8px;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-left: 14px;
+    color: rgb(170, 170, 170);
+    font-weight: 700;
+    background-color: #1e1f20;
+    border: 2px solid rgb(255, 102, 0);
+    border-radius: 0 .90rem 0 .90rem;
+}
+
+
+.mx-container-3{
+    position: relative;
+    padding-left: 0 !important;
+    padding-right: 0 !important ;
+    margin-right: 0 !important;
+    margin-left: 2px !important;
+}
+@media screen and (max-width: 1700px){
+.caption-mx-1 .txt1{
+   font-size: 5vw;
+}
+.caption-mx-1 .txt2{
+    margin-bottom: 10px;
+}
+}
+@media screen and (max-width: 752px){
+    .mx-bg-v2::before {
+        background:  linear-gradient(to bottom, rgb(0, 0, 0) , rgba(77, 77, 77, 0.4) 100%);
+     }
+}
+@media screen and (max-width: 479px){
+    .caption-mx-1 .txt1{
+        margin-top: 0;
+        margin-bottom: 5%;
+        font-size: 34px;
+        line-height: 40px;
+    }
+    }
+
+    /* carasoul */
+    .carousel-inner > .item::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,0.4);
+    content: "";
 }

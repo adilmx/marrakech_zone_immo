@@ -49,9 +49,15 @@ class CarController extends Controller
      * @param  \App\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(\App\Car $car)
     {
-        return view('cars.details');
+        $car = DB::table('cars')->where('cars.id',$car->id)
+                ->join('marques','marque_id','=','marques.id')
+                ->join('categories','categories.id','=','marques.categorie_id')
+                ->join('etats','etat_id','=','etats.id')
+                ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
+                ->get();
+        return view('cars.details',compact('car'));
     }
 
 
