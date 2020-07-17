@@ -90,9 +90,9 @@
 }
 
 .navbar-nav-wrapper {
-    width: 70%;
+    width: 80%;
 }
-
+ 
 .nav-mini-wrapper {
     width: 15%;
 }
@@ -125,6 +125,7 @@
     text-transform: uppercase;
     letter-spacing: 1.5px;
     padding-left: 14px;
+<<<<<<< HEAD
     color: rgb(255, 255, 255);
     position: relative;
     font-weight: 700;
@@ -151,6 +152,11 @@
     background-color: rgb(255, 102, 0) !important;
     border: 2px solid #ffffff ;
     border-radius: 0 .90rem 0 .90rem;
+=======
+    color: #FFF;
+    position: relative;
+    font-weight: 700;
+>>>>>>> fach bdlt navbar o zedt l carousel
 }
 /*
 .nav.navbar-nav > li:last-child > a {
@@ -266,7 +272,10 @@
     text-decoration: none !important;
     background: rgb(255, 102, 0) !important; 
 }
+.navbar-nav > li.dropdown > .earth:hover{
+    background: #ffffff !important;
 
+}
 .mega-menu-inner {
     padding: 0 20px;
 }
