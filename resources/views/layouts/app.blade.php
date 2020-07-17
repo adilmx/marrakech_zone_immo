@@ -234,6 +234,7 @@
 <script type="text/javascript" src="{{ asset('/') }}bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="{{ asset('/') }}js/core-plugins.js"></script>
 <script type="text/javascript" src="{{ asset('/') }}js/customs.js"></script>
+<script type="text/javascript" src="{{ asset('/') }}js/mx.js"></script>
 
 <!-- Only in Home Page -->
 <script type="text/javascript" src="{{ asset('/') }}js/jquery.flexdatalist.js"></script>

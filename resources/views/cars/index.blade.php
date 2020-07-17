@@ -9,10 +9,15 @@
             <div class="page-title">
 
                 <div class="mx-row row">
+                    @foreach ($cars_s as $car)
+                      @php
+                          $car_cat = $car->designation ;
+                      @endphp
+                    @endforeach
 
                     <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                         <div data-aos="zoom-out-left">
-                        <h2>Voitures de luxe</h2>
+                        <h2>{{ $car_cat }}</h2>
                         <p>Les meilleurs voitures à choisir</p>
                     </div>
                     </div>
@@ -23,7 +28,7 @@
         </div>
 
     </div>
-<div class="pt-30 mx-pt-30 pb-50">
+<div id="link-top" class="pt-30 mx-pt-30 pb-50">
 
 				<div class="container mx-container-2 ">
 
@@ -32,23 +37,35 @@
 						<div class="GridLex-gap-20 GridLex-gap-15-mdd GridLex-gap-10-xs">
 
 							<div class="GridLex-grid-noGutter-equalHeight GridLex-grid-center">
-
+                                @php
+                                $c_data= 1;
+                                $key_c = 0;
+                                @endphp
                         @foreach ($cars_s as $key=>$car)
                                 @php
                                     ++$key;
+                                    ++$key_c;
                                 @endphp
-                                @if($key < 5)
+                                <!-- real number + 1 mx-n -->
+                                @if($key < 7)
                                 @php
                                     $style = "";
                                 @endphp
                                 @else
                                 @php
-                                    $style = "none";
+                                    $style = "display-wd";
+                                @endphp
+                                @endif
+                                <!-- real number mx-n -->
+                                @if($key_c == 6)
+                                @php
+                                    ++$c_data;
+                                    $key_c = 1;
                                 @endphp
                                 @endif
 
                                 <!-- start car widget -->
-								<div class="GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget " style="display:{{ $style }}" data-aos="fade-up" data-aos-duration="2000">
+								<div class="GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget {{ $style }}" data-widget="{{ $c_data }}" data-aos="fade-up" data-aos-duration="2000">
 
 									<div class="mx-trip-guide-item trip-guide-item" >
                                      <a href="{{ route('car.show',['car' => $car->id]) }}">
@@ -117,30 +134,34 @@
 									<nav class="pager-center">
 										<ul class="pagination">
 											<li>
-												<a href="#" aria-label="Previous">
+												<a href="#link-top" aria-label="prev-pg">
 													<span aria-hidden="true">&laquo;</span>
 												</a>
                                             </li>
                                             @php
-                                                $counter_nbr = 0 ;
+                                                $counter_nbr =  1;
                                                 $counter = 0 ;
                                             @endphp
 
                                             @foreach ($cars_s as $car)
                                             @php
                                                 ++$counter;
-                                                $cm = $counter%4 ;
+                                                /* real number mx-n */
+                                                $cm = $counter%6 ;
                                             @endphp
                                             @if($cm == 1 or $counter == 1)
                                             @if($counter == 1)
-                                            <li class="active"><a href="#">{{ ++$counter_nbr }}</a></li>
+                                            <li data-id="page-li" id-pg="{{ $counter_nbr }}" class="active"><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
                                             @else
-                                            <li><a href="#">{{ ++$counter_nbr }}</a></li>
+                                            <li data-id="page-li" id-pg="{{ $counter_nbr }}" ><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
                                             @endif
+                                            @php
+                                                $counter_nbr++;
+                                            @endphp
                                             @endif
                                             @endforeach
 											<li>
-												<a href="#" aria-label="Next">
+												<a href="#link-top" aria-label="next-pg">
 													<span aria-hidden="true">&raquo;</span>
 												</a>
 											</li>

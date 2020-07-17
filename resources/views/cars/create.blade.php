@@ -23,8 +23,8 @@
 
 
                                                     <select name="categorie" class="form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="">
-                                                        <option value="Voiture de luxe">Voiture de luxe</option>
-                                                        <option value="Voiture touristique">Voiture touristique</option>
+                                                        <option value="Voitures de luxe">Voitures de luxe</option>
+                                                        <option value="Transports touristique">Transports touristique</option>
                                                     </select>
 
                                                     @error('categorie')

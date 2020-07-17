@@ -10,7 +10,7 @@
     margin: 0 auto !important;
 }
 .mx-container-4{
-    margin-bottom: 25%;
+    margin-bottom: 10%;
 }
 
 .hero h1{
@@ -758,4 +758,9 @@ margin: 0;
     height: 100%;
     background: rgba(0, 0, 0,0.4);
     content: "";
+}
+
+/**/
+.display-wd{
+    display: none !important;
 }
