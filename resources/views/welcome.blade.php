@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
-
-@section('content')
+@section('carousel-section')
 <style>
 	/* .carousel { z-index: -99; } keeps this behind all content */
 
@@ -41,21 +40,8 @@
 		-moz-background-size: cover;
 	}
 
-	.carousel .active.left {
-		left: 0;
-		opacity: 0;
-		z-index: 2;
-	}
 </style>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.carousel').carousel({
-			interval: 2000
-		});
-	});
-</script>
-<!-- Carousel
+    <!-- Carousel
                 ================================================== -->
 <div id="myCarousel" class="carousel slide hero" data-ride="carousel">
 	<!-- Indicators -->
@@ -68,7 +54,7 @@
 	</ol>
 	<div class="carousel-inner" role="listbox">
 		<div class="item one active d-block w-100">
-			<!-- <img class="first-slide 
+			<!-- <img class="first-slide
 					" src="{{ asset('/') }}images/bg/bg1.jpg"  alt="First slide">
   -->
 			<div class="carousel-caption">
@@ -113,14 +99,16 @@
 	</a>
 </div>
 <!-- /.carousel -->
+@endsection
 
+@section('content')
 <div class="container">
 
-	<div class="post-hero clearfix">
+    <div class="post-hero clearfix">
 
-		<div class="container">
+        <div class="container">
 
-			<div class="row">
+            <div class="row">
 				<div class="col-xs-12 col-sm-4 mb-20-xs">
 					<div class="horizontal-featured-icon-sm clearfix">
 						<div class="icon"> <i class="ri ri-user"></i></div>
@@ -154,75 +142,68 @@
 
 			</div>
 
-		</div>
+        </div>
 
-	</div>
+    </div>
 
-	<!---->
+    <!---->
 
+    <div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/storage/uploads-mx/bg-car.jpg')">
 
+        <div class="container mx-container-3">
 
+            <div class="page-title">
 
+                <div class="mx-row row">
 
-	<div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/images/bg/bg1.jpg')">
+                    <div class="col-sm-8  col-md-6 ">
+                        <div class="caption-mx-1" data-aos="zoom-out-left">
+                        <h2 class="txt1">VOITURES DE LUXE ET TRANSPORT TOURISTIQUE</h2>
+                        <p class="txt2">Nous vous proposons un large parc de voitures de luxe avec ou sans chauffeur
+                            Avec des services de transport touristique,
+                            Nous sommes certains que la qualité de nos services sera à la hauteur de vos attentes.</p>
 
-		<div class="container mx-container-3">
+                        </div>
 
-			<div class="page-title">
+                    <a  href="#">
+                        DECOUVRIR MAINTENANT
+                    </a>
+                    </div>
+                </div>
 
-				<div class="mx-row row">
+            </div>
 
-					<div class="col-sm-8  col-md-6 ">
-						<div class="caption-mx-1" data-aos="zoom-out-left">
-							<h5 class="txt1">VOITURES DE LUXE ET TRANSPORT TOURISTIQUE</h5>
-							<p class="txt2">Nous vous proposons un large parc de voitures de luxe avec ou sans chauffeur
-								Avec des services de transport touristique,
-								Nous sommes certains que la qualité de nos services sera à la hauteur de vos attentes.</p>
+        </div>
 
-						</div>
+    </div>
 
-						<a href="#" class="">
-							DECOUVRIR MAINTENANT
-						</a>
-					</div>
-				</div>
+    <div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/storage/uploads-mx/bg-home.jpg')">
 
-			</div>
+        <div class="container mx-container-3">
 
-		</div>
+            <div class="page-title">
 
-	</div>
+                <div class="mx-row row">
 
+                    <div class="col-sm-8  col-md-6 ">
+                        <div class="caption-mx-1" data-aos="zoom-out-left">
+                        <h2 class="txt1">IMMOBILIERS DE LUXE ET DE QUALITE</h2>
+                        <p class="txt2">Nous vous proposons des immobiliers de luxe à vendre ou à louer
+                            Nous sommes certains que la qualité de nos services sera à la hauteur de vos attentes.</p>
 
-</div>
-<div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/images/bg/bg2.jpg')">
+                        </div>
 
-	<div class="container mx-container-3">
+                    <a  href="#">
+                        DECOUVRIR MAINTENANT
+                    </a>
+                    </div>
+                </div>
 
-		<div class="page-title">
+            </div>
 
-			<div class="mx-row row">
+        </div>
 
-				<div class="col-sm-8  col-md-6 ">
-					<div class="caption-mx-1" data-aos="zoom-out-left">
-						<h2 class="txt1">IMMOBILIERS DE LUXE ET DE QUALITE</h2>
-						<p class="txt2">Nous vous proposons des immobiliers de luxe à vendre ou à louer
-							Nous sommes certains que la qualité de nos services sera à la hauteur de vos attentes.</p>
-
-					</div>
-
-					<a href="#">
-						DECOUVRIR MAINTENANT
-					</a>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
+    </div>
 
 </div>
-
-</div>
-
 @endsection

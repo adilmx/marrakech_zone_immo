@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container
+<div class="container mx-container-5" >
 
         <div class="pt-30 pb-50">
 
@@ -10,7 +10,26 @@
 					<div class="row">
 
 						<div class="col-xs-12 col-sm-8 col-md-8 mt-20">
+                            <div class="breadcrumb-image-bg mx-breadcrumb-image-bg mx-dtl-breadcrumb-image-bg " style="background-image: url(/storage/{{ $car[0]->pic_src }}); background-size: cover;">
+                                <div class="container" >
 
+                                    <div class="page-title">
+
+                                        <div class="mx-row row">
+
+                                            <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" >
+                                                <div data-aos="zoom-out-left">
+                                                <h2>l'aventure commence ici</h2>
+                                            </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
                             <form action="/rs" enctype="multipart/form-data" method="POST">
                                 @csrf
 

@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('/') }}bootstrap/css/bootstrap.min.css" media="screen">
 	<link href="{{ asset('/') }}css/main.css" rel="stylesheet">
 	<link href="{{ asset('/') }}css/plugin.css" rel="stylesheet">
- 
+
 	<!-- CSS Custom -->
 	<link href="{{ asset('/') }}css/style.css" rel="stylesheet">
 
@@ -104,7 +104,7 @@
 						</li>
 						<li>
 							<a href="#" class="earth"> <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
-    height: 37;  
+    height: 37;
 "></i> Fr
 								<ul>
 									<li><a href="#">Arabe</a></li>
@@ -118,18 +118,18 @@
 
 						<li>
 							<a href="#"><em> <i class="fas fa-phone-alt" aria-hidden="true" style="width: 40;
-    height: 40; 
-"></i>  </em> 
+    height: 40;
+"></i>  </em>
 								<ul>
 									<li><a href="#">Tel : +212524808080</a></li>
 									<li class="active">  <a href="#" class="active"> <i class="fab fa-whatsapp" style="display:inline-block"></i> +212625109819</a></li>
-								 
+
 
 								</ul>
 							</a>
 
 						</li>
-					 
+
 						</ul>
 
 					</div>
@@ -149,17 +149,18 @@
 		<!-- start Main Wrapper -->
 
 
-
-
+        <div class="main-wrapper scrollspy-container">
+            @yield('carousel-section')
 
 		<!-- start our content -->
-		 
-			@yield('content')
-		 
+        <main class="py-4">
+            @yield('content')
+        </main>
 
+        </div>
 		<!-- end our content -->
 
-		<!-- end Main Wrapper --> 
+		<!-- end Main Wrapper -->
 		<!-- start Footer Wrapper -->
 
 		<div class="footer-wrapper scrollspy-footer">

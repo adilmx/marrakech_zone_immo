@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-container-1">
+<div class="container mx-container-1 ">
     <div class="pt-50 pb-50">
 
         <div id="detail-content-sticky-nav-01" >
