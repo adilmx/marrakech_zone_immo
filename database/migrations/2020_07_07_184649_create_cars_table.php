@@ -30,8 +30,8 @@ class CreateCarsTable extends Migration
             $table->string('pic_src');
             $table->timestamps();
 
-            $table->foreign('etat_id')->references('id')->on('etats');
-            $table->foreign('marque_id')->references('id')->on('marques');
+            $table->foreign('etat_id')->references('id')->on('etats')->onDelete('cascade');;
+            $table->foreign('marque_id')->references('id')->on('marques')->onDelete('cascade');;
         });
     }
 

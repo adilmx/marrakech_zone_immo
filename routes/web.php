@@ -36,3 +36,8 @@ Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store
 Route::get('ajaxRequest', 'AjaxController@ajaxRequestPost');
 Route::post('ajaxRequest', 'AjaxController@ajaxRequestPost')->name('ajaxRequest.post');
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
