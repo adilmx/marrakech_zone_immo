@@ -6,8 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Title Of Site -->
+ 	<!-- Title Of Site -->
 	<title>Marrakech Zone Immo</title>
 	<meta name="description" content="HTML template for multiple tour agency, local agency, traveller, tour hosting based on Twitter Bootstrap 3.x.x" />
 	<meta name="keywords" content="tour agency, tour guide, travel, trip, holiday, vocation, relax, adventure, virtual tour, tour planner" />
@@ -22,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('/') }}bootstrap/css/bootstrap.min.css" media="screen">
 	<link href="{{ asset('/') }}css/main.css" rel="stylesheet">
 	<link href="{{ asset('/') }}css/plugin.css" rel="stylesheet">
-
+ 
 	<!-- CSS Custom -->
 	<link href="{{ asset('/') }}css/style.css" rel="stylesheet">
 
@@ -34,7 +33,9 @@
 
 	<!-- FontAwesome Style File -->
 	<link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">
-
+	<link href="{{ asset('/') }}myIcons/css/fontawesome.css" rel="stylesheet">
+  <link href="{{ asset('/') }}myIcons/css/brands.css" rel="stylesheet">
+  <link href="{{ asset('/') }}myIcons/css/solid.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -66,16 +67,12 @@
 						</div>
 					</div>
 
-					<div id="navbar" class="navbar-nav-wrapper pull-right "  >
+					<div id="navbar" class="navbar-nav-wrapper pull-right ">
 
 						<ul class="nav navbar-nav" id="responsive-menu">
-  
+
 							<li>
-<<<<<<< HEAD
-								<a href="{{ asset('/') }}" >Accueil</a>
-=======
-								<a href="{{ route('login') }}">Accueil</a>
->>>>>>> fach bdlt navbar o zedt l carousel
+								<a href="{{ asset('/') }}">Accueil</a>
 							</li>
 
 							<li>
@@ -100,26 +97,39 @@
 							<a href="{{ route('car.index',['categorie' => 1]) }}">Voitures de luxe</a>
 
 						</li>
-						 
+
 						<li>
 							<a href="{{ route('car.index',['categorie' => 2]) }}">Transport touristique</a>
 
 						</li>
-<li>
-<a href="#" class="earth"  > <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
+						<li>
+							<a href="#" class="earth"> <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
     height: 37;  
 "></i> Fr
-<ul>
-											<li><a href="#">Arabe</a></li>
-											<li class="active"><a href="#" class="active"> Français</a></li>
-											<li><a href="#">Anglais</a></li>
+								<ul>
+									<li><a href="#">Arabe</a></li>
+									<li class="active"><a href="#" class="active"> Français</a></li>
+									<li><a href="#">Anglais</a></li>
 
-										</ul>
-</a>
- 
-</li> 
+								</ul>
+							</a>
 
+						</li>
 
+						<li>
+							<a href="#"><em> <i class="fas fa-phone-alt" aria-hidden="true" style="width: 40;
+    height: 40; 
+"></i>  </em> 
+								<ul>
+									<li><a href="#">Tel : +212524808080</a></li>
+									<li class="active">  <a href="#" class="active"> <i class="fab fa-whatsapp" style="display:inline-block"></i> +212625109819</a></li>
+								 
+
+								</ul>
+							</a>
+
+						</li>
+					 
 						</ul>
 
 					</div>
@@ -143,54 +153,13 @@
 
 
 		<!-- start our content -->
-		<main class="py-4">
+		 
 			@yield('content')
-		</main>
+		 
 
 		<!-- end our content -->
 
-		<!-- end Main Wrapper -->
-		<div class="post-hero pt-80 pb-80 clearfix">
-
-			<div class="container">
-
-				<div class="row">
-
-					<div class="col-xs-12 col-sm-4 mb-20-xs">
-						<div class="horizontal-featured-icon-sm clearfix">
-							<div class="icon"><i class="ri ri-location"></i></div>
-							<div class="content">
-								<h6>Looking for a tour program?</h6>
-								<span>Inhabiting discretion the her dispatched decisively boisterous joy.</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-xs-12 col-sm-4 mb-20-xs">
-						<div class="horizontal-featured-icon-sm clearfix">
-							<div class="icon"> <i class="ri ri-user"></i></div>
-							<div class="content">
-								<h6>Need someone to guide tour?</h6>
-								<span>Great asked oh under together prospect kindness securing six.</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-xs-12 col-sm-4 mb-20-xs">
-						<div class="horizontal-featured-icon-sm clearfix">
-							<div class="icon"> <i class="ri ri-equal-circle"></i></div>
-							<div class="content">
-								<h6>Want to earn money as guide?</h6>
-								<span>Sometimes studied evident. Conduct replied removal her cordially. </span>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
+		<!-- end Main Wrapper --> 
 		<!-- start Footer Wrapper -->
 
 		<div class="footer-wrapper scrollspy-footer">
@@ -251,37 +220,18 @@
 	</script>
 
 
-<<<<<<< HEAD
-<!-- Core JS -->
-<script type="text/javascript" src="{{ asset('/') }}js/jquery.min.js"></script>
-<script type="text/javascript" src="{{ asset('/') }}bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="{{ asset('/') }}js/core-plugins.js"></script>
-<script type="text/javascript" src="{{ asset('/') }}js/customs.js"></script>
-<script type="text/javascript" src="{{ asset('/') }}js/mx.js"></script>
-=======
 	<!-- Core JS -->
 	<script type="text/javascript" src="{{ asset('/') }}js/jquery.min.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}js/core-plugins.js"></script>
 	<script type="text/javascript" src="{{ asset('/') }}js/customs.js"></script>
->>>>>>> fach bdlt navbar o zedt l carousel
+	<script type="text/javascript" src="{{ asset('/') }}js/mx.js"></script>
 
 	<!-- Only in Home Page -->
 	<script type="text/javascript" src="{{ asset('/') }}js/jquery.flexdatalist.js"></script>
 
-<<<<<<< HEAD
-@yield('script-details-car')
+	@yield('script-details-car')
 
-=======
-	<!-- Detail Page JS -->
-	<script type="text/javascript" src="{{ asset('/') }}js/jquery.stickit.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/bootstrap-tokenfield.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/typeahead.bundle.min.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/jquery.sumogallery.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/images-grid.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/jquery.bootstrap-touchspin.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/customs-detail.js"></script>
->>>>>>> fach bdlt navbar o zedt l carousel
 
 
 </body>
