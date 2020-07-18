@@ -28,6 +28,19 @@
         </div>
 
     </div>
+    <div class="hero-mx-srch">
+    <div class="container">
+
+        <form>
+            <div class="form-group">
+                <input type="text" placeholder="Ferrari..." class="form-control" title="Acces rapide!trouvez ici votre preferable voiture facilement" >
+                <button class="btn"><i class="icon-magnifier"></i></button>
+            </div>
+            <button class="btn btn-all-mx display-wd">Afficher touts</button>
+        </form>
+
+    </div>
+    </div>
 <div id="link-top" class="pt-30 mx-pt-30 pb-50">
 
 				<div class="container mx-container-2 ">
@@ -43,11 +56,10 @@
                                 @endphp
                         @foreach ($cars_s as $key=>$car)
                                 @php
-                                    ++$key;
                                     ++$key_c;
                                 @endphp
-                                <!-- real number + 1 mx-n -->
-                                @if($key < 7)
+                                <!-- real number  mx-n -->
+                                @if($key < 6)
                                 @php
                                     $style = "";
                                 @endphp
@@ -56,11 +68,11 @@
                                     $style = "display-wd";
                                 @endphp
                                 @endif
-                                <!-- real number mx-n -->
-                                @if($key_c == 6)
+                                <!-- real number +1 mx-n -->
+                                @if($key_c == 7)
                                 @php
                                     ++$c_data;
-                                    $key_c = 1;
+                                    $key_c = 0;
                                 @endphp
                                 @endif
 
@@ -75,7 +87,7 @@
                                      </a>
 
 										<div class="trip-guide-content mx-trip-guide-content">
-											<h3>{{ $car->libelle }}</h3></div>
+											<h3 class="hi">{{ $car->libelle }}</h3></div>
 
 										<div class="trip-guide-bottom">
                                             <div class="trip-guide-person mx-trip-guide-person clearfix">
@@ -146,8 +158,8 @@
                                             @foreach ($cars_s as $car)
                                             @php
                                                 ++$counter;
-                                                /* real number mx-n */
-                                                $cm = $counter%6 ;
+                                                /* real number +1 mx-n */
+                                                $cm = $counter%7 ;
                                             @endphp
                                             @if($cm == 1 or $counter == 1)
                                             @if($counter == 1)

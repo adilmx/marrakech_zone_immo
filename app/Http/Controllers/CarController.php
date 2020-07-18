@@ -16,21 +16,17 @@ class CarController extends Controller
      */
     public function index(\App\Categorie $categorie)
     {
-        $marques = DB::table('marques')->where('categorie_id',$categorie->id)->get();
-        if(Car::count()!=0){
+        $marques = DB::table('marques')->where('categorie_id',$categorie->id)
+        ->join('cars','cars.marque_id','=','marques.id')
+        ->join('categories','marques.categorie_id','=','categories.id')
+        ->join('etats','cars.etat_id','=','etats.id')
+        ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
+        ->get();
 
-            $cars_s = array();
-            foreach( $marques as $marque){
-                $cars = DB::table('cars')->where('marque_id',$marque->id)
-                ->join('marques','marque_id','=','marques.id')
-                ->join('categories','categories.id','=','marques.categorie_id')
-                ->join('etats','etat_id','=','etats.id')
-                ->get();
-                $cars_arr = $cars->toArray();
-                $cars_s = array_merge($cars_s , $cars_arr);
-            }
-            return view('cars.index',compact('cars_s'));
-        }
+            return view('cars.index',[
+                'cars_s' => $marques
+            ]);
+    
     }
 
     /*
@@ -51,12 +47,14 @@ class CarController extends Controller
      */
     public function show(\App\Car $car)
     {
+
         $car = DB::table('cars')->where('cars.id',$car->id)
                 ->join('marques','marque_id','=','marques.id')
                 ->join('categories','categories.id','=','marques.categorie_id')
                 ->join('etats','etat_id','=','etats.id')
                 ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
                 ->get();
+
         return view('cars.details',compact('car'));
     }
 

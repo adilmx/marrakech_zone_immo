@@ -727,6 +727,69 @@ margin: 0;
     margin-right: 0 !important;
     margin-left: 2px !important;
 }
+.hero-mx-srch {
+    margin: 10px auto 25px;
+}
+.hero-mx-srch .form-group {
+    width: 660px;
+    margin: 25px auto 0;
+    position: relative;
+}
+.hero-mx-srch form .btn{
+    background: none;
+    color: rgb(66, 65, 64);
+    font-size: 1vw;
+    transform: scale(1);
+}
+.hero-mx-srch form .btn:hover{
+    background: none;
+    color: rgb(255, 128, 0);
+    font-size: 1vw;
+    transform: scale(1.2);
+}
+.hero-mx-srch .form-group .btn{
+    background: none;
+    color: rgb(66, 65, 64);
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    font-size: 20px;
+    transform: scale(1);
+}
+.hero-mx-srch .form-group .btn:hover{
+    background: none;
+    color: rgb(255, 103, 1);
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    font-size: 20px;
+    transform: scale(.9);
+}
+.hero-mx-srch .form-group .form-control {
+    background: none;
+    color: rgb(65, 62, 62);
+    height: 50px;
+    border-width: 1px;
+    padding-left: 15px;
+    padding-right: 60px;
+    font-size: 18px;
+    border-style: solid;
+    border-color: rgb(241, 112, 6);
+    border-width: 0 0 2px 0;
+}
+.hero-mx-srch .form-group .form-control:focus {
+    background: none;
+    color: rgb(65, 62, 62);
+    height: 50px;
+    border-width: 1px;
+    padding-left: 15px;
+    padding-right: 60px;
+    font-size: 18px;
+    border-style: solid;
+ border-color: rgb(241, 112, 6);
+ border-width: 1px 1.5px;
+ border-radius: .50rem;
+}
 @media screen and (max-width: 1700px){
 .caption-mx-1 .txt1{
    font-size: 5vw;

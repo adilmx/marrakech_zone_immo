@@ -43,22 +43,18 @@ class ReservationCarController extends Controller
     public function store(Request $request)
     {
         $data= request()->validate([
-            'raison_sociale' => ['required'],
             'nom' => ['required','string'],
             'prenom' => ['required','string'],
             'tele' => ['required','string'],
             'email' => ['required','email'],
             'date_debut_reservation' => ['required','date'],
-            'time_debut_reservation' => ['required'],
-            'date_fin_reservation' => ['required','date'],
-            'time_fin_reservation' => ['required'],
+            'date_fin_reservation' => ['required','date','after:date_debut_reservation'],
             'car_driver' => ['required'],
 
          ]);
 
         $id_customer = DB::table('customers')->insertGetId(
             [
-                'raison_sociale' => $data['raison_sociale'] ,
                 'first_name' => $data['prenom'] ,
                 'last_name' => $data['nom'] ,
                 'email' => $data['email'] ,
@@ -70,9 +66,7 @@ class ReservationCarController extends Controller
                 'customer_id' => $id_customer ,
                 'car_id' => 1 ,
                 'date_debut_reservation' => $data['date_debut_reservation'],
-                'time_debut_reservation' => $data['time_debut_reservation'],
                 'date_fin_reservation' => $data['date_fin_reservation'],
-                'time_fin_reservation' => $data['time_fin_reservation'],
                 'car_driver' => $data['car_driver'],
             ],
         );

@@ -16,19 +16,6 @@
 
                                     <div class="row">
                                         <div class="col-8 offset-2">
-
-                                   <!-- <div class="form-group row">
-                                                <label for="raison_sociale" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __("raison sociale *en cas d'une personne morale") }}</label>
-
-
-                                                    <input id="raison_sociale" type="raison_sociale" class="form-control @error('raison_sociale') is-invalid @enderror" name="raison_sociale" value="{{ old('raison_sociale') }}"  autocomplete="raison_sociale">
-
-                                                    @error('raison_sociale')
-                                                        <span class="invalid-feedback-mx invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                    @enderror */
-                                    </div> -->
                                     <div class="form-group row">
                                                 <label for="nom" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('nom') }}</label>
 
@@ -96,38 +83,12 @@
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="time_debut_reservation" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('temps debut de reservation') }}</label>
-
-
-                                            <input id="time_debut_reservation" type="time" class="form-control @error('time_debut_reservation') is-invalid @enderror" name="time_debut_reservation" value="{{ old('time_debut_reservation') }}"  autocomplete="time_debut_reservation">
-
-                                            @error('time_debut_reservation')
-                                                <span class="invalid-feedback-mx invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                    </div>
-                                    <div class="form-group row">
                                         <label for="date_fin_reservation" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('date de fin de reservation') }}</label>
 
 
                                             <input id="date_fin_reservation" type="date" class="form-control @error('date_fin_reservation') is-invalid @enderror" name="date_fin_reservation" value="{{ old('date_fin_reservation') }}"  autocomplete="date_fin_reservation">
 
                                             @error('date_fin_reservation')
-                                                <span class="invalid-feedback-mx invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="car_driver" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('temps de fin de reservation') }}</label>
-
-
-                                            <input id="time_fin_reservation" type="time" class="form-control @error('time_fin_reservation') is-invalid @enderror" name="time_fin_reservation" value="{{ old('time_fin_reservation') }}"  autocomplete="time_fin_reservation">
-
-                                            @error('time_fin_reservation')
                                                 <span class="invalid-feedback-mx invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

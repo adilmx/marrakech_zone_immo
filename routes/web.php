@@ -33,7 +33,6 @@ Route::get('/admin', 'CarController@create')->name('car.create');
 Route::post('/R', 'CarController@store')->name('car.store');
 Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store');
 
-
 Route::get('ajaxRequest', 'AjaxController@ajaxRequestPost');
 Route::post('ajaxRequest', 'AjaxController@ajaxRequestPost')->name('ajaxRequest.post');
 
