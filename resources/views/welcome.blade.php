@@ -146,9 +146,15 @@
 
     </div>
 
-    <!---->
+	<!---->
+	<div class="card" style="width: 50%;">
+  <img class="card-img-top" src="/images/bg/bg1.jpg" alt="Card image cap" style="height: 30rem;width:80vh" >
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
 
-    <div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/storage/uploads-mx/bg-car.jpg')">
+    <div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/images/bg/bg1.jpg')">
 
         <div class="container mx-container-3">
 
@@ -177,7 +183,7 @@
 
     </div>
 
-    <div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/storage/uploads-mx/bg-home.jpg')">
+    <div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/images/bg/bg1.jpg')">
 
         <div class="container mx-container-3">
 
