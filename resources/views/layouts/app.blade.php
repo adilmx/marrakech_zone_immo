@@ -121,10 +121,8 @@
     height: 40;
 "></i>  </em>
 								<ul>
-									<li><a href="#">Tel : +212524808080</a></li>
-									<li class="active">  <a href="#" class="active"> <i class="fab fa-whatsapp" style="display:inline-block"></i> +212625109819</a></li>
-
-
+									<li><a>Tel : +212524808080</a></li>
+									<li class="active">  <aclass="active"> <i class="fab fa-whatsapp" style="display:inline-block"></i> +212625109819</aclass=></li>
 								</ul>
 							</a>
 

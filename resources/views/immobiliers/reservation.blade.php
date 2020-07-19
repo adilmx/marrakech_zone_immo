@@ -114,19 +114,10 @@
 
                                     </div>
                                     <div class="form-group row">
-                                        @php
-                                            $ds = "" ;
-                                        @endphp
-                                        @if($car[0]->categorie_id = 2)
-                                        @php
-                                            $ds = "disabled" ;
-                                        @endphp
-
-                                        @endif
                                         <label for="car_driver" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('avec chauffeur') }}</label>
 
 
-                                        <select name="car_driver" class="form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="" {{ $ds }}>
+                                        <select name="car_driver" class="form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="">
                                             <option value="1">oui</option>
                                             <option value="0">non</option>
                                         </select>

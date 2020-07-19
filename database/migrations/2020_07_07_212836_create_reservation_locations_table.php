@@ -22,7 +22,6 @@ class CreateReservationLocationsTable extends Migration
             $table->time('time_debut_reservation');
             $table->date('date_fin_reservation');
             $table->time('time_fin_reservation');
-            $table->boolean('car_driver');
 
             $table->foreign('id_customer')->references('id')->on('customers');
             $table->foreign('id_immo_loc')->references('id')->on('immobilier_locations');

@@ -114,7 +114,7 @@
 						<div class="icon"> <i class="ri ri-user"></i></div>
 						<div class="content text-center">
 							<h6 style="color:#F07D37">Besoin d'un chauffeur qui vous guide?</h6>
-							<span>Great asked oh under together prospect kindness securing six.</span>
+							<span>nous somme ici pour vous aider.</span>
 						</div>
 					</div>
 				</div>
@@ -205,5 +205,69 @@
 
     </div>
 
+    <!-- -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-8 col-md-9 col-md-9-mx">
+
+
+                <div class="content-wrapper pr mx-pr">
+                    <h3 class="section-title section-title-mx">Les meilleurs immobiliers pour votre confort</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="grid-container">
+        <div class="big-item">
+            <img src="/storage/uploads-mx/bg-home.jpg" alt="images" />
+            <div class="caption">
+                <h1>title goes here</h1>
+            </div>
+            <a  href="#">
+                DETAILS
+            </a>
+        </div>
+
+        <div class="item1">
+            <img src="/storage/uploads-mx/bg-home.jpg" alt="images" />
+            <div class="caption">
+                <h1>title goes here</h1>
+            </div>
+            <a  href="#">
+                DETAILS
+            </a>
+        </div>
+        <div class="item2">
+            <img src="/storage/uploads-mx/bg-home.jpg" alt="images" />
+            <div class="caption">
+                <h1>title goes here</h1>
+            </div>
+            <a  href="#">
+                DETAILS
+            </a>
+        </div>
+        <div class="item3">
+            <img src="/storage/uploads-mx/bg-home.jpg" alt="images" />
+            <div class="caption">
+                <h1>Title Goes Here</h1>
+            </div>
+            <a  href="#">
+                DETAILS
+            </a>
+        </div>
+        <div class="item4">
+            <img src="/storage/uploads-mx/bg-home.jpg" alt="images" />
+            <div class="caption">
+                <h1>title goes here</h1>
+            </div>
+            <a  href="#">
+                DETAILS
+            </a>
+                </div>
+    </div>
 </div>
 @endsection
