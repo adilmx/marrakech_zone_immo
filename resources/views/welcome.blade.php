@@ -5,7 +5,7 @@
 	/* .carousel { z-index: -99; } keeps this behind all content */
 
 	.carousel .one {
-		background: url(/images/bg/bg8.jpg);
+		background: url(/images/bg/bg3.jpg);
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -23,7 +23,7 @@
 	}
 
 	.carousel .three {
-		background: url(/images/bg/bg3.jpg);
+		background: url(/images/bg/annie-spratt-IDdpNyXPEjg-unsplash.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
 
@@ -38,10 +38,16 @@
 
 		background-size: cover;
 		-moz-background-size: cover;
+	}	.carousel-caption {
+		padding: 70px 15px 70px !important;
 	}
-.carousel-caption{
-	 padding: 60px 15px 60px !important;
-}
+	.fas .fa-star{
+		background-color:#C89005;
+	}
+	.icon:hover{
+		color: orangered !important;
+	}
+
 </style>
     <!-- Carousel
                 ================================================== -->
@@ -60,7 +66,9 @@
 					" src="{{ asset('/') }}images/bg/bg1.jpg"  alt="First slide">
   -->
 			<div class="carousel-caption">
-				<h1>Voitures Luxieuses</h1>
+			 
+			<h1><span><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star "
+			 style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i></span> <br>Voitures </h1>
 				<p>Garantir la meilleure qualité des voitures est notre plaisir </p>
 
 			</div>
@@ -70,28 +78,38 @@
 			<!-- <img class="second-slide" src="/images/bg/bg2.jpg" style="height:inherit"> -->
 
 			<div class="carousel-caption">
-				<h1>Villas 
-				
-				<p>	Trouvez votre place avec une expérience photo immersive et le plus grand nombre d'annonces</p>
-			 
+			<h1><span><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" >
+		</i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i>
+	</span> <br>Villas
+
+<p> Trouvez votre place avec une expérience photo immersive </p>
+
+
 			</div>
 		</div>
 		<div class="item three d-block w-100">
 			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
-				<h1>Transport Touristique</h1>
-				<p>Vous trouverez du confort et de la sécurité  que vous ne trouverez nulle part ailleurs. </p>
-		 
+			<h1><span><i class="fas fa-star " style="font-size:4vw" 
+			></i><i class="fas fa-star " style="font-size:4vw" 
+			></i><i class="fas fa-star " style="font-size:4vw" 
+			></i><i class="fas fa-star " style="font-size:4vw" 
+			></i><i class="fas fa-star " style="font-size:4vw" 
+			></i> </span> <br>Transport Touristique</h1>
+				<p>Le confort et la sécurité que vous ne trouverez nulle part ailleurs </p>
+
 			</div>
 		</div>
 		<div class="item four d-block w-100">
 			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
-				<h1>Appartements </h1>
-				<h1 style="display:none">HHHH</h1>
+			<h1><span><i class="fas fa-star " style="font-size:4vw" 
+			></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i> </span> <br>Appartements </h1>
+			 
 				<p>Nous vous aidons à trouvez l'appartement que vous aimerez</p>
+		
 			</div>
 		</div>
 	</div>
@@ -106,39 +124,32 @@
 </div>
 <!-- /.carousel -->
 @endsection
- <style>.kYRSMk {
-    background-color:  #F07D37;
-    height: 2px;
-    width: 140px;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom:50px;
-    
-}</style>
-<!-- <script>function insertAfter(referenceNode, newNode) {
-  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-} -->
-<!-- 
-// var el = document.getElementById("myCarousel");
-//  var div = document.getElementById("bt");
-// insertAfter(div, el);</script> -->
+
 @section('content')
 <div class="container">
 
     <div class="post-hero clearfix">
 
         <div class="container">
-		<h4 class="text-center">Nous avons le plus de listes et de mises à jour constantes. 
-Vous ne manquerez donc jamais rien.</h4>
 		<div data-showcovidmsg="false" class="sc-10ww3i-0 kYRSMk" id="bt"></div>
+		<style>
+	.kYRSMk {
+		background-color: #F07D37;
+		height: 2px;
+		width: 140px;
+		margin: auto;
+		margin-top: 30px;
+		margin-bottom: 50px;
 
+	}
+</style>
             <div class="row">
 				<div class="col-xs-12 col-sm-4 mb-20-xs">
 					<div class="horizontal-featured-icon-sm clearfix">
 						<div class="icon"> <i class="ri ri-user"></i></div>
 						<div class="content text-center">
 							<h6 style="color:#F07D37">Besoin d'un chauffeur qui vous guide?</h6>
-							<span>Great asked oh under together prospect kindness securing six.</span>
+							<span>Nous somme ici pour vous aider.</span>
 						</div>
 					</div>
 				</div>
@@ -152,14 +163,15 @@ Vous ne manquerez donc jamais rien.</h4>
 					</div>
 				</div>
 
- 
+
 
 				<div class="col-xs-12 col-sm-4 mb-20-xs">
 					<div class="horizontal-featured-icon-sm clearfix">
 						<div class="icon"> <i class="ri ri-equal-circle"></i></div>
 						<div class="content text-center">
 							<h6 style="color:#F07D37">Besoin d'une voiture luxe pour une longue durée?</h6>
-							<span>Vous étes dans le meilleur choix. </span>
+							<span>Vous êtes dans la meilleures voie.,
+                             </span>
 						</div>
 					</div>
 				</div>
@@ -170,56 +182,27 @@ Vous ne manquerez donc jamais rien.</h4>
 
     </div>
 
-	<!---->
-	<div class="card" style="width: 50%;">
-  <img class="card-img-top" src="/images/bg/bg1.jpg" alt="Card image cap" style="height: 30rem;width:80vh" >
-  <div class="card-body">
-   </div>
-</div>
+    <!---->
+	<div data-showcovidmsg="false" class="sc-10ww3i-0 kYRSMk" id="bt"></div>
 
-    <div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/images/bg/bg1.jpg')">
+    <div class="breadcrumb-image-bg  meri-bg-v2" style="background-image: url('/images/bg/bg2.jpg')">
 
         <div class="container mx-container-3">
-
+	 
             <div class="page-title">
-
+	 
                 <div class="mx-row row">
 
                     <div class="col-sm-8  col-md-6 ">
-                        <div class="caption-mx-1" data-aos="zoom-out-left" style="    margin-bottom: 150px;
-">
+                        <div class="caption-mx-1" data-aos="zoom-out-left">
                         <h2 class="txt1">VOITURES DE LUXE ET TRANSPORT TOURISTIQUE</h2>
-                         </div>
+                        <p class="txt2">Nous vous proposons un large parc de voitures de luxe avec ou sans chauffeur
+                            Avec des services de transport touristique </p>
 
-                    <a  href="#">
-                        DECOUVRIR MAINTENANT
-                    </a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/images/bg/bg1.jpg')">
-
-        <div class="container mx-container-3">
-
-            <div class="page-title">
-
-                <div class="mx-row row">
-
-                    <div class="col-sm-8  col-md-6 ">
-                        <div class="caption-mx-1" data-aos="zoom-out-left"style="    margin-bottom: 150px;
-">
-                        <h2 class="txt1">IMMOBILIERS DE LUXE ET DE QUALITE</h2>
-                       
                         </div>
 
-                    <a  href="#" class="my-4">
-                        DECOUVRIR MAINTENANT
+                    <a  href="#">
+                        DÉCOUVRIR MAINTENANT
                     </a>
                     </div>
                 </div>
@@ -230,5 +213,99 @@ Vous ne manquerez donc jamais rien.</h4>
 
     </div>
 
+    <div class="breadcrumb-image-bg  meri2-bg-v2" style="background-image: url('/images/bg/bg1.jpg')">
+
+        <div class="container mx-container-3">
+
+            <div class="page-title">
+
+                <div class="mx-row row">
+
+                    <div class="col-sm-8  col-md-6 ">
+                        <div class="caption-mx-1" data-aos="zoom-out-left">
+                        <h2 class="txt1 ">IMMOBILIERS DE LUXE ET DE QUALITÉ</h2>
+                        <p class="txt2">Nous vous proposons des immobiliers de luxe à vendre ou à louer
+                            </p>
+
+                        </div>
+
+                    <a  href="#">
+                        DÉCOUVRIR MAINTENANT
+                    </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- -->
+    <div class="container">
+	<div data-showcovidmsg="false" class="sc-10ww3i-0 kYRSMk" id="bt"></div>
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-8 col-md-9 col-md-9-mx">
+
+
+            
+                    <h2 class="text-center" ><span><i class="fas fa-star " style="font-size:4vw;color:orangered" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw;color:orangered" >
+		</i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw;color:orangered" ></i>
+	</span> <br>Les Meilleurs immobiliers pour  votre confort</h2>
+                 
+            </div>
+        </div>
+    </div>
+	<div data-showcovidmsg="false" class="sc-10ww3i-0 kYRSMk" id="bt"></div>
+
+    <div class="grid-container">
+        <div class="big-item">
+            <img src="/images/bg/bg1.jpg" alt="images" />
+            <div class="caption">
+                <h1>title goes here</h1>
+            </div>
+            <a  href="#">
+                DETAILS
+            </a>
+        </div>
+
+        <div class="item1">
+            <img src="/images/bg/bg2.jpg" alt="images" />
+            <div class="caption">
+                <h1>title goes here</h1>
+            </div>
+            <a  href="#">
+                DETAILS
+            </a>
+        </div>
+        <div class="item2">
+            <img src="/images/bg/bg3.jpg" alt="images" />
+            <div class="caption">
+                <h1>title goes here</h1>
+            </div>
+            <a  href="#">
+                DETAILS
+            </a>
+        </div>
+        <div class="item3">
+            <img src="/images/bg/bg4.jpg" alt="images" />
+            <div class="caption">
+                <h1>Title Goes Here</h1>
+            </div>
+            <a  href="#">
+                DETAILS
+            </a>
+        </div>
+        <div class="item4">
+            <img src="/images/bg/bg7.jpg" alt="images" />
+            <div class="caption">
+                <h1>title goes here</h1>
+            </div>
+            <a  href="#">
+                DETAILS
+            </a>
+                </div>
+    </div>
 </div>
 @endsection

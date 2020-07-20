@@ -92,7 +92,7 @@
 .navbar-nav-wrapper {
     width: 80%;
 }
- 
+
 .nav-mini-wrapper {
     width: 15%;
 }
@@ -128,6 +128,9 @@
     color: #FFF;
     position: relative;
     font-weight: 700;
+}
+.nav.navbar-nav > li > a:hover {
+    border: 1px solid #1C1C1F;
 }
 /*
 .nav.navbar-nav > li:last-child > a {
@@ -242,6 +245,7 @@
     color: #ffffff !important;
     text-decoration: none !important;
     background: #EE7229 !important;
+    border-radius: 0 .90rem 0 .90rem;
 }
 .navbar-nav > li.dropdown > .earth:hover{
     background: #ffffff !important;

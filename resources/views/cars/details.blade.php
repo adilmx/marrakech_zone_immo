@@ -2,6 +2,28 @@
 
 @section('content')
 <div class="container mx-container-1 ">
+    <div class="breadcrumb-image-bg mx-breadcrumb-image-bg mx-bg-v3" style="background-image: url(/storage/{{ $car[0]->pic_src }}); background-size: cover;">
+
+        <div class="container mx-container-4">
+
+            <div class="page-title">
+
+                <div class="mx-row row">
+
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                        <div data-aos="zoom-out-left">
+                        <h2>hoo</h2>
+                        <p>Les meilleurs voitures à choisir</p>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
     <div class="pt-50 pb-50">
 
         <div id="detail-content-sticky-nav-01" >
@@ -11,26 +33,8 @@
                 <div class="row">
 
                     <div class="col-xs-12 col-sm-8 col-md-9 col-md-9-mx">
-                        <div class="breadcrumb-image-bg mx-breadcrumb-image-bg mx-dtl-breadcrumb-image-bg " style="background-image: url(/storage/{{ $car[0]->pic_src }}); background-size: cover;">
-                            <div class="container" >
 
-                                <div class="page-title">
 
-                                    <div class="mx-row row">
-
-                                        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" >
-                                            <div data-aos="zoom-out-left">
-                                            <h2>l'aventure commence ici</h2>
-                                        </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
                         <div class="content-wrapper pr mx-pr">
 
                             <h3 class="section-title section-title-mx">{{ $car[0]->libelle }}</h3>
@@ -54,8 +58,8 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">PRIX POUR moins DE 7 JOUR : <span>{{ $car[0]->prix_min_per_day }}$</span></div>
-                                            <div class="mx-txt-detail">PRIX POUR plus DE 7 JOUR : <span>{{ $car[0]->prix_max_per_day }}$</span></div>
+                                            <div class="mx-txt-detail">PRIX POUR moins DE 7 JOUR : <span>{{ $car[0]->prix_min_per_day }}$/jour</span></div>
+                                            <div class="mx-txt-detail">PRIX POUR plus DE 7 JOUR : <span>{{ $car[0]->prix_max_per_day }}$/jour</span></div>
                                             </div>
                                         </div>
 

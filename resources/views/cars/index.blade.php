@@ -31,13 +31,13 @@
     <div class="hero-mx-srch">
     <div class="container">
 
-        <form>
+        <div class="form">
             <div class="form-group">
-                <input type="text" placeholder="Ferrari..." class="form-control" title="Acces rapide!trouvez ici votre preferable voiture facilement" >
+                <input type="text" placeholder="Ferrari..." class="form-control fmx" title="Acces rapide!trouvez ici votre preferable voiture facilement" >
                 <button class="btn"><i class="icon-magnifier"></i></button>
             </div>
             <button class="btn btn-all-mx display-wd">Afficher touts</button>
-        </form>
+        </div>
 
     </div>
     </div>
@@ -129,7 +129,7 @@
 
 					</div>
 
-					<div class="pager-wrappper clearfix">
+					<div class="pager-wrappper clearfix pmx">
 
 						<div class="pager-innner">
 
@@ -138,11 +138,14 @@
                                     ++$key;
                                 @endphp
                                 @endforeach
-								<div class="clearfix">
+								<div class="clearfix tmx">
 									plus de {{ $key }} marques de voitures à choisir
+                                </div>
+                                <div class="clearfix smx display-wd">
+                                 Pas de resultat à afficher pour cette recherche!
 								</div>
 
-								<div class="clearfix">
+								<div class="clearfix tmx">
 									<nav class="pager-center">
 										<ul class="pagination">
 											<li>

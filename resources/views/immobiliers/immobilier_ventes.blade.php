@@ -170,10 +170,7 @@
                                                       <i class="fas fa-car-side"> </i>
 												<p class="name">Nombre d'etage : <span>{{ $immo->nbr_etage }}</span></p>
 											</div>
-                                            <div class="trip-guide-person mx-trip-guide-person-color mx-trip-guide-person clearfix">
-                                            <i class="fas fa-car-side"> </i>
-												<p class="name">Nombre d'etage : <span>{{ $immo->nbr_chambre }}</span></p>
-											</div>
+                                            
 									
 											<div class="row gap-10 mx-price">
 												<div class="col-xs-12 col-sm-6">
