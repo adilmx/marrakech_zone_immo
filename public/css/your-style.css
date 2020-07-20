@@ -7,6 +7,7 @@
 -------------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@800&display=swap');
 /**
  * Add your style here
  */
@@ -858,4 +859,8 @@ margin: 0;
 /**/
 .display-wd{
     display: none !important;
+}
+/*Meriem custom  styles*/
+.meri-titles{
+   font-family: 'Inconsolata', monospace !important;
 }

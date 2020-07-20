@@ -39,7 +39,9 @@
 		background-size: cover;
 		-moz-background-size: cover;
 	}
-
+.carousel-caption{
+	 padding: 60px 15px 60px !important;
+}
 </style>
     <!-- Carousel
                 ================================================== -->
@@ -58,8 +60,8 @@
 					" src="{{ asset('/') }}images/bg/bg1.jpg"  alt="First slide">
   -->
 			<div class="carousel-caption">
-				<h1>WELCOME</h1>
-				<p>BEST PLACE FOR YOU</p>
+				<h1>Voitures Luxieuses</h1>
+				<p>Garantir la meilleure qualité des voitures est notre plaisir </p>
 
 			</div>
 
@@ -68,24 +70,28 @@
 			<!-- <img class="second-slide" src="/images/bg/bg2.jpg" style="height:inherit"> -->
 
 			<div class="carousel-caption">
-				<h1>WELCOME 2</h1>
-				<p>BEST CAR FOR YOU</p>
+				<h1>Villas 
+				
+				<p>	Trouvez votre place avec une expérience photo immersive et le plus grand nombre d'annonces</p>
+			 
 			</div>
 		</div>
 		<div class="item three d-block w-100">
 			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
-				<h1>WELCOME 3</h1>
-				<p>BEST HOUSE FOR YOU</p>
+				<h1>Transport Touristique</h1>
+				<p>Vous trouverez du confort et de la sécurité  que vous ne trouverez nulle part ailleurs. </p>
+		 
 			</div>
 		</div>
 		<div class="item four d-block w-100">
 			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
-				<h1>WELCOME 3</h1>
-				<p>BEST HOUSE FOR YOU</p>
+				<h1>Appartements </h1>
+				<h1 style="display:none">HHHH</h1>
+				<p>Nous vous aidons à trouvez l'appartement que vous aimerez</p>
 			</div>
 		</div>
 	</div>
@@ -100,13 +106,31 @@
 </div>
 <!-- /.carousel -->
 @endsection
-
+ <style>.kYRSMk {
+    background-color:  #F07D37;
+    height: 2px;
+    width: 140px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom:50px;
+    
+}</style>
+<!-- <script>function insertAfter(referenceNode, newNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+} -->
+<!-- 
+// var el = document.getElementById("myCarousel");
+//  var div = document.getElementById("bt");
+// insertAfter(div, el);</script> -->
 @section('content')
 <div class="container">
 
     <div class="post-hero clearfix">
 
         <div class="container">
+		<h4 class="text-center">Nous avons le plus de listes et de mises à jour constantes. 
+Vous ne manquerez donc jamais rien.</h4>
+		<div data-showcovidmsg="false" class="sc-10ww3i-0 kYRSMk" id="bt"></div>
 
             <div class="row">
 				<div class="col-xs-12 col-sm-4 mb-20-xs">
@@ -128,7 +152,7 @@
 					</div>
 				</div>
 
-
+ 
 
 				<div class="col-xs-12 col-sm-4 mb-20-xs">
 					<div class="horizontal-featured-icon-sm clearfix">
@@ -150,8 +174,7 @@
 	<div class="card" style="width: 50%;">
   <img class="card-img-top" src="/images/bg/bg1.jpg" alt="Card image cap" style="height: 30rem;width:80vh" >
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
+   </div>
 </div>
 
     <div class="breadcrumb-image-bg  mx-bg-v2" style="background-image: url('/images/bg/bg1.jpg')">
@@ -163,13 +186,10 @@
                 <div class="mx-row row">
 
                     <div class="col-sm-8  col-md-6 ">
-                        <div class="caption-mx-1" data-aos="zoom-out-left">
+                        <div class="caption-mx-1" data-aos="zoom-out-left" style="    margin-bottom: 150px;
+">
                         <h2 class="txt1">VOITURES DE LUXE ET TRANSPORT TOURISTIQUE</h2>
-                        <p class="txt2">Nous vous proposons un large parc de voitures de luxe avec ou sans chauffeur
-                            Avec des services de transport touristique,
-                            Nous sommes certains que la qualité de nos services sera à la hauteur de vos attentes.</p>
-
-                        </div>
+                         </div>
 
                     <a  href="#">
                         DECOUVRIR MAINTENANT
@@ -192,14 +212,13 @@
                 <div class="mx-row row">
 
                     <div class="col-sm-8  col-md-6 ">
-                        <div class="caption-mx-1" data-aos="zoom-out-left">
+                        <div class="caption-mx-1" data-aos="zoom-out-left"style="    margin-bottom: 150px;
+">
                         <h2 class="txt1">IMMOBILIERS DE LUXE ET DE QUALITE</h2>
-                        <p class="txt2">Nous vous proposons des immobiliers de luxe à vendre ou à louer
-                            Nous sommes certains que la qualité de nos services sera à la hauteur de vos attentes.</p>
-
+                       
                         </div>
 
-                    <a  href="#">
+                    <a  href="#" class="my-4">
                         DECOUVRIR MAINTENANT
                     </a>
                     </div>

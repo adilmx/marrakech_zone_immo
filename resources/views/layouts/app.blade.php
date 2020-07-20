@@ -78,7 +78,7 @@
 							<li>
 								<a href="#">Immobilier</a>
 								<ul>
-									<li><a href="#">Immobilier Vente</a>
+									<li><a href="{{ route('immobilier_vente.index') }}">Immobilier Vente</a>
 									</li>
 									<li><a href="#">Immobilier Location</a>
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Immobilier;
 use Illuminate\Http\Request;
-
+use DB;
 class ImmobilierController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class ImmobilierController extends Controller
      */
     public function index()
     {
-        //
+        $query=DB::table('immobiliers')->where('categorie',3)->get();
+        return view('immobiliers.immobilier_ventes',['immos'=>$query]);
     }
 
     /**

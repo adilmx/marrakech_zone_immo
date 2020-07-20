@@ -41,3 +41,12 @@ Route::post('ajaxRequest', 'AjaxController@ajaxRequestPost')->name('ajaxRequest.
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+//routes just for testing images
+Route::post('/mytest', 'TestController@edit') ;
+Route::get('/test', function(){
+    return view('test');
+}) ;
+//routes for immobiliers ventes
+ 
+Route::get('/immo_vente', 'ImmobilierController@index')->name('immobilier_vente.index');
