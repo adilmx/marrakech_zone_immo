@@ -14,11 +14,11 @@ class CarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(\App\Categorie $categorie)
+    public function index(\App\CategorieCar $categorie)
     {
         $marques = DB::table('marques')->where('categorie_id',$categorie->id)
         ->join('cars','cars.marque_id','=','marques.id')
-        ->join('categories','marques.categorie_id','=','categories.id')
+        ->join('categorie_cars','marques.categorie_id','=','categorie_cars.id')
         ->join('etats','cars.etat_id','=','etats.id')
         ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
         ->get();
@@ -26,7 +26,7 @@ class CarController extends Controller
             return view('cars.index',[
                 'cars_s' => $marques
             ]);
-    
+
     }
 
     /*
@@ -50,7 +50,7 @@ class CarController extends Controller
 
         $car = DB::table('cars')->where('cars.id',$car->id)
                 ->join('marques','marque_id','=','marques.id')
-                ->join('categories','categories.id','=','marques.categorie_id')
+                ->join('categorie_cars','categorie_cars.id','=','marques.categorie_id')
                 ->join('etats','etat_id','=','etats.id')
                 ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
                 ->get();
@@ -104,7 +104,7 @@ class CarController extends Controller
         $id_etat = DB::table('etats')->insertGetId(
             ['description' => $data['etat']],
         );
-        $id_categorie = DB::table('categories')->where('designation',$data['categorie'])->get();
+        $id_categorie = DB::table('categorie_cars')->where('designation',$data['categorie'])->get();
         $id_marque = DB::table('marques')->insertGetId(
             ['categorie_id' => $id_categorie[0]->id,'libelle' => $data['marque']],
         );

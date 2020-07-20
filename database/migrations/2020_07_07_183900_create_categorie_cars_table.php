@@ -15,6 +15,7 @@ class CreateCategorieCarsTable extends Migration
     {
         Schema::create('categorie_cars', function (Blueprint $table) {
             $table->id();
+            $table->string('designation');
             $table->timestamps();
         });
     }

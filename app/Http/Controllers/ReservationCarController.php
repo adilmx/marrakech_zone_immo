@@ -27,7 +27,7 @@ class ReservationCarController extends Controller
     {
         $car = DB::table('cars')->where('cars.id',$car->id)
                 ->join('marques','marque_id','=','marques.id')
-                ->join('categories','categories.id','=','marques.categorie_id')
+                ->join('categorie_cars','categorie_cars.id','=','marques.categorie_id')
                 ->join('etats','etat_id','=','etats.id')
                 ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
                 ->get();
@@ -50,7 +50,8 @@ class ReservationCarController extends Controller
             'date_debut_reservation' => ['required','date'],
             'date_fin_reservation' => ['required','date','after:date_debut_reservation'],
             'car_driver' => ['required'],
-
+            'id' => 'required',
+            'c_id' => 'required',
          ]);
 
         $id_customer = DB::table('customers')->insertGetId(
@@ -64,7 +65,7 @@ class ReservationCarController extends Controller
         $id_car = DB::table('reservation_cars')->insertGetId(
             [
                 'customer_id' => $id_customer ,
-                'car_id' => 1 ,
+                'car_id' => $data['id'] ,
                 'date_debut_reservation' => $data['date_debut_reservation'],
                 'date_fin_reservation' => $data['date_fin_reservation'],
                 'car_driver' => $data['car_driver'],
@@ -73,7 +74,9 @@ class ReservationCarController extends Controller
 
 
 
-         return redirect()->route('car.index',['categorie' => 1]);
+         return view('cars.reservationDone',[
+             'data' => $data
+         ]);
     }
 
     /**

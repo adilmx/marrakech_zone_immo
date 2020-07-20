@@ -25,6 +25,11 @@
     padding-top: 3%;
     width: 95%;
 }
+.mx-container-7{
+    padding-top: 3%;
+    width: 95%;
+    height: 100vh;
+}
 
 .hero h1{
     color: rgb(245, 93, 22);

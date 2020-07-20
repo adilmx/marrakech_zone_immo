@@ -33,11 +33,19 @@ Route::get('/admin', 'CarController@create')->name('car.create');
 Route::post('/R', 'CarController@store')->name('car.store');
 Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store');
 
-Route::get('ajaxRequest', 'AjaxController@ajaxRequestPost');
-Route::post('ajaxRequest', 'AjaxController@ajaxRequestPost')->name('ajaxRequest.post');
+Route::get('/reservationimmol/{immobilier}', 'ReservationLocationController@create')->name('reservationLocation.create');
+Route::post('/rsimmol', 'ReservationLocationController@store')->name('reservationLocation.store');
 
+Route::get('/reservationimmov/{immobilier}', 'ReservationVenteController@create')->name('reservationVente.create');
+Route::post('/rsimmov', 'ReservationVenteController@store')->name('reservationVente.store');
+/*
+Route::get('/reservationDone/{car}', 'ReservationCarController@done')->name('car.done');
+Route::get('/reservationDoneimmol/{immobilier}', 'ReservationLocationController@done')->name('immol.done');
+Route::get('/reservationDoneimmov/{immobilier}', 'ReservationVenteController@done')->name('immov.done'); */
 
+/*
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+*/

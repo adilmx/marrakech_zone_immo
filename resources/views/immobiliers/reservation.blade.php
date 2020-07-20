@@ -10,7 +10,7 @@
 					<div class="row">
 
 						<div class="col-xs-12 col-sm-8 col-md-8 mt-20">
-                            <div class="breadcrumb-image-bg mx-breadcrumb-image-bg mx-dtl-breadcrumb-image-bg " style="background-image: url(/storage/{{ $car[0]->pic_src }}); background-size: cover;">
+                            <div class="breadcrumb-image-bg mx-breadcrumb-image-bg mx-dtl-breadcrumb-image-bg " style="background-image: url(/storage/{{ $immobilier->pic_src }}); background-size: cover;">
                                 <div class="container" >
 
                                     <div class="page-title">
@@ -29,7 +29,7 @@
                                 </div>
 
                             </div>
-                            <form action="/rs" enctype="multipart/form-data" method="POST">
+                            <form action="/rsimmol" enctype="multipart/form-data" method="POST">
                                 @csrf
 
                                     <div class="row">
@@ -114,19 +114,20 @@
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="car_driver" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('avec chauffeur') }}</label>
+                                        <label for="nbr_personnes" class="col-md-4-mx col-md-4 col-form-label text-md-right">{{ __('nombre de personnes') }}</label>
 
 
-                                        <select name="car_driver" class="form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="">
-                                            <option value="1">oui</option>
-                                            <option value="0">non</option>
-                                        </select>
-                                            @error('car_driver')
+                                        <input id="nbr_personnes" type="nbr_personnes" class="form-control @error('nbr_personnes') is-invalid @enderror" name="nbr_personnes" value="{{ old('nbr_personnes') }}"  autocomplete="nbr_personnes">
+
+                                            @error('nbr_personnes')
                                                 <span class="invalid-feedback-mx invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
 
+                                    </div>
+                                    <div class="id">
+                                        <input type="text" value="{{ $immobilier->id }}" name="id" hidden>
                                     </div>
                                     <div class="form-group row  mt-0 ml-auto">
                                         <button class="btn btn-primary">RESERVER</button>
@@ -147,7 +148,7 @@
 
 									<div class="sidebar-booking-header pt-20 pb-15 clearfix">
 
-										<h3 class="text-white text-uppercase spacing-3 mb-0 line-1">{{ $car[0]->libelle }}</h3>
+										<h3 class="text-white text-uppercase spacing-3 mb-0 line-1">{{ $immobilier->designation }}</h3>
 
 									</div>
 
@@ -164,7 +165,7 @@
                                                         <div class="font-smaller " style="color: rgb(241, 64, 10)">* depend de duree que vous avez choisie</div>
                                                     </div>
 													<div class="col-xs-5 col-sm-5 text-right">
-														<span class="font600 font26 block text-primary mt-5 mx-price" pmin="{{ $car[0]->prix_min_per_day }}" pmax="{{ $car[0]->prix_max_per_day }}">{{ $car[0]->prix_min_per_day }}$</span>
+														<span class="font600 font26 block text-primary mt-5 mx-price" pmin="{{ $immobilier->price_min }}" pmax="{{ $immobilier->price_max }}">{{ $immobilier->price_min }}$</span>
 													</div>
 												</div>
 											</li>
@@ -172,12 +173,12 @@
 											<li class="divider"></li>
 
 											<li>
-												<a href="{{ route('car.index',['categorie' => $car[0]->categorie_id ]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE VOITURE</a>
+												<a href="#" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE</a>
                                             </li>
                                             <li class="divider"></li>
 
 											<li>
-												<a href="{{ route('car.show',['car' => $car[0]->id]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
+												<a href="#" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
 											</li>
 
 										</ul>

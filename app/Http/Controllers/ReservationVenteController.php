@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ReservationVente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReservationVenteController extends Controller
 {
@@ -22,9 +23,9 @@ class ReservationVenteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(\App\Immobilier $immobilier)
     {
-        //
+        return view('immobiliers.reservationv',compact('immobilier'));
     }
 
     /**
@@ -35,7 +36,35 @@ class ReservationVenteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data= request()->validate([
+            'nom' => ['required','string'],
+            'prenom' => ['required','string'],
+            'tele' => ['required','string'],
+            'email' => ['required','email'],
+            'id' => 'required',
+         ]);
+
+        $id_customer = DB::table('customers')->insertGetId(
+            [
+                'first_name' => $data['prenom'] ,
+                'last_name' => $data['nom'] ,
+                'email' => $data['email'] ,
+                'tele' => $data['tele'] ,
+            ],
+        );
+
+        $id_car = DB::table('reservation_ventes')->insertGetId(
+            [
+                'id_customer' => $id_customer ,
+                'id_immo_ventes' => $data['id'] ,
+            ],
+        );
+
+
+
+
+
+        return view('immobiliers.reservationDone');
     }
 
     /**
