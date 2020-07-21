@@ -2,7 +2,21 @@
 
 @section('content')
 <div class="container mx-container-1">
-    <div class="breadcrumb-image-bg mx-breadcrumb-image-bg mx-bg" style="background-image: url('/storage/uploads-mx/bg-car.jpg')">
+    @foreach ($cars_s as $car)
+                      @php
+                          $car_cat = $car->categorie_id ;
+                      @endphp
+    @endforeach
+    @if($car_cat == 1)
+        @php
+            $url = "/storage/uploads-mx/bg-car.jpg"
+        @endphp
+    @else
+    @php
+            $url = "/storage/uploads-mx/bg-car-travel.jpg"
+        @endphp
+    @endif
+    <div class="breadcrumb-image-bg mx-breadcrumb-image-bg mx-bg" style="background-image: url('{{ $url }}')">
 
         <div class="container mx-container-4">
 

@@ -13,17 +13,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+ 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 /* ces routes sont pour le test seulement  */
 Route::get('/cars', 'CarController@index')->name('car.index');
-Route::get('/details', 'CarController@show')->name('car.show');
+// Route::get('/details', 'CarController@show')->name('car.show');
 
 /*********** */
 Route::get('/cars/{categorie}', 'CarController@index')->name('car.index');
@@ -33,10 +29,17 @@ Route::get('/admin', 'CarController@create')->name('car.create');
 Route::post('/R', 'CarController@store')->name('car.store');
 Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store');
 
-Route::get('ajaxRequest', 'AjaxController@ajaxRequestPost');
-Route::post('ajaxRequest', 'AjaxController@ajaxRequestPost')->name('ajaxRequest.post');
+Route::get('/reservationimmol/{immobilier}', 'ReservationLocationController@create')->name('reservationLocation.create');
+Route::post('/rsimmol', 'ReservationLocationController@store')->name('reservationLocation.store');
 
+Route::get('/reservationimmov/{immobilier}', 'ReservationVenteController@create')->name('reservationVente.create');
+Route::post('/rsimmov', 'ReservationVenteController@store')->name('reservationVente.store');
+/*
+Route::get('/reservationDone/{car}', 'ReservationCarController@done')->name('car.done');
+Route::get('/reservationDoneimmol/{immobilier}', 'ReservationLocationController@done')->name('immol.done');
+Route::get('/reservationDoneimmov/{immobilier}', 'ReservationVenteController@done')->name('immov.done'); */
 
+/*
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -49,4 +52,9 @@ Route::get('/test', function(){
 }) ;
 //routes for immobiliers ventes
  
+ */
 Route::get('/immo_vente', 'ImmobilierController@index')->name('immobilier_vente.index');
+Route::get('/immo_location', 'ImmobilierController@show_location')->name('immobilier_loc.index');
+
+Route::get('/details_immo/{immobilier}', 'ImmobilierController@show')->name('immo.show');
+ 

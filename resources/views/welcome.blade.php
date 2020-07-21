@@ -185,7 +185,7 @@
     <!---->
 	<div data-showcovidmsg="false" class="sc-10ww3i-0 kYRSMk" id="bt"></div>
 
-    <div class="breadcrumb-image-bg  meri-bg-v2" style="background-image: url('/images/bg/bg2.jpg')">
+    <div class="breadcrumb-image-bg  meri-bg-v2" style="background-image: url('/images/bg/bg3.jpg')">
 
         <div class="container mx-container-3">
 	 
@@ -261,48 +261,52 @@
 
     <div class="grid-container">
         <div class="big-item">
-            <img src="/images/bg/bg1.jpg" alt="images" />
+            <img src="/storage/{{$myQueri[0]->pic_src}}" alt="images" />
             <div class="caption">
-                <h1>title goes here</h1>
+                <h1>{{$myQueri[0]->designation}}</h1>
             </div>
-            <a  href="#">
+            <a  href="{{route('immo.show',['immobilier'=>$myQueri[0]->id])}}">
                 DETAILS
             </a>
         </div>
 
         <div class="item1">
-            <img src="/images/bg/bg2.jpg" alt="images" />
+		<img src="/storage/{{$myQueri[1]->pic_src}}" alt="images" />
+
             <div class="caption">
-                <h1>title goes here</h1>
+                <h1>{{$myQueri[1]->designation}}</h1>
             </div>
-            <a  href="#">
+            <a  href="{{route('immo.show',['immobilier'=>$myQueri[1]->id])}}">
                 DETAILS
             </a>
         </div>
         <div class="item2">
-            <img src="/images/bg/bg3.jpg" alt="images" />
+		<img src="/storage/{{$myQueri[2]->pic_src}}" alt="images" />
+
             <div class="caption">
-                <h1>title goes here</h1>
+                <h1>{{$myQueri[2]->designation}}</h1>
             </div>
-            <a  href="#">
+            <a  href="{{route('immo.show',['immobilier'=>$myQueri[2]->id])}}">
                 DETAILS
             </a>
         </div>
         <div class="item3">
-            <img src="/images/bg/bg4.jpg" alt="images" />
+		<img src="/storage/{{$myQueri[3]->pic_src}}" alt="images" />
+
             <div class="caption">
-                <h1>Title Goes Here</h1>
+                <h1>{{$myQueri[3]->designation}}</h1>
             </div>
-            <a  href="#">
+            <a  href="{{route('immo.show',['immobilier'=>$myQueri[3]->id])}}">
                 DETAILS
             </a>
         </div>
         <div class="item4">
-            <img src="/images/bg/bg7.jpg" alt="images" />
+		<img src="/storage/{{$myQueri[4]->pic_src}}" alt="images" />
+
             <div class="caption">
-                <h1>title goes here</h1>
+                <h1>{{$myQueri[4]->designation}}</h1>
             </div>
-            <a  href="#">
+            <a  href="{{route('immo.show',['immobilier'=>$myQueri[4]->id])}}">
                 DETAILS
             </a>
                 </div>

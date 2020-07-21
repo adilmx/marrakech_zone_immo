@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\GalleryImmo;
 use App\Immobilier;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\DB as FacadesDB;
+
 class ImmobilierController extends Controller
 {
     /**
@@ -47,7 +50,10 @@ class ImmobilierController extends Controller
      */
     public function show(Immobilier $immobilier)
     {
-        //
+       
+        $gallery=DB::table('gallery_immos')->where('immobilier_id',$immobilier->id)->get();
+     
+      return view('immobiliers.details',['immobilier'=>$immobilier,'gallery'=>$gallery]);
     }
 
     /**
@@ -56,9 +62,11 @@ class ImmobilierController extends Controller
      * @param  \App\Immobilier  $immobilier
      * @return \Illuminate\Http\Response
      */
-    public function edit(Immobilier $immobilier)
+    public function show_location()
     {
-        //
+        $query=DB::table('immobiliers')->where('categorie',1)->get();
+        return view('immobiliers.immobilier_location',['immos'=>$query]);
+   
     }
 
     /**

@@ -39,9 +39,8 @@
 		background-size: cover;
 		-moz-background-size: cover;
 	}
-
 </style>
-    <!-- Carousel
+<!-- Carousel
                 ================================================== -->
 <div id="myCarousel" class="carousel slide hero" data-ride="carousel">
 	<!-- Indicators -->
@@ -58,7 +57,7 @@
 					" src="{{ asset('/') }}images/bg/bg1.jpg"  alt="First slide">
   -->
 			<div class="carousel-caption">
-				 
+
 				<p class="meri-titles">BEST PLACE FOR YOU</p>
 
 			</div>
@@ -68,7 +67,7 @@
 			<!-- <img class="second-slide" src="/images/bg/bg2.jpg" style="height:inherit"> -->
 
 			<div class="carousel-caption">
-				 
+
 				<p class="meri-titles">BEST CAR FOR YOU</p>
 			</div>
 		</div>
@@ -76,7 +75,7 @@
 			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
-				 
+
 				<p class="meri-titles">BEST HOUSE FOR YOU</p>
 			</div>
 		</div>
@@ -84,7 +83,7 @@
 			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
-			 
+
 				<p class="meri-titles">BEST HOUSE FOR YOU</p>
 			</div>
 		</div>
@@ -103,160 +102,158 @@
 
 @section('content')
 <div class="container mx-container-1">
-     
-    <div class="hero-mx-srch">
-    <div class="container">
 
-        <form>
-            <div class="form-group">
-                <input type="text" placeholder="Ferrari..." class="form-control" title="Acces rapide!trouvez ici votre preferable voiture facilement" >
-                <button class="btn"><i class="icon-magnifier"></i></button>
-            </div>
-            <button class="btn btn-all-mx display-wd">Afficher tous</button>
-        </form>
+	<div class="hero-mx-srch">
+		<div class="container">
 
-    </div>
-    </div>
-<div id="link-top" class="pt-30 mx-pt-30 pb-50">
+			<form>
+				<div class="form-group">
+					<input type="text" placeholder="Immobilier..." class="form-control" title="Acces rapide!trouvez ici votre preferable voiture facilement">
+					<button class="btn"><i class="icon-magnifier"></i></button>
+				</div>
+				<button class="btn btn-all-mx display-wd">Afficher tous</button>
+			</form>
 
-				<div class="container mx-container-2 ">
+		</div>
+	</div>
+	<div id="link-top" class="pt-30 mx-pt-30 pb-50">
 
-					<div class="trip-guide-wrapper">
+		<div class="container mx-container-2 ">
 
-						<div class="GridLex-gap-20 GridLex-gap-15-mdd GridLex-gap-10-xs">
+			<div class="trip-guide-wrapper">
 
-							<div class="GridLex-grid-noGutter-equalHeight GridLex-grid-center">
-                                @php
-                                $c_data= 1;
-                                $key_c = 0;
-                                @endphp
-                        @foreach ($immos as $key=>$immo)
-                                @php
-                                    ++$key_c;
-                                @endphp
-                                <!-- real number  mx-n -->
-                                @if($key < 6)
-                                @php
-                                    $style = "";
-                                @endphp
-                                @else
-                                @php
-                                    $style = "display-wd";
-                                @endphp
-                                @endif
-                                <!-- real number +1 mx-n -->
-                                @if($key_c == 7)
-                                @php
-                                    ++$c_data;
-                                    $key_c = 0;
-                                @endphp
-                                @endif
+				<div class="GridLex-gap-20 GridLex-gap-15-mdd GridLex-gap-10-xs">
 
-                                <!-- start car widget -->
-								<div class="GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget {{ $style }}" data-widget="{{ $c_data }}" data-aos="fade-up" data-aos-duration="2000">
+					<div class="GridLex-grid-noGutter-equalHeight GridLex-grid-center">
+						@php
+						$c_data= 1;
+						$key_c = 0;
+						@endphp
+						@foreach ($immos as $key=>$immo)
+						@php
+						++$key_c;
+						@endphp
+						<!-- real number  mx-n -->
+						@if($key < 6) @php $style="" ; @endphp @else @php $style="display-wd" ; @endphp @endif <!-- real number +1 mx-n -->
+							@if($key_c == 7)
+							@php
+							++$c_data;
+							$key_c = 0;
+							@endphp
+							@endif
 
-									<div class="mx-trip-guide-item trip-guide-item" >
-                                     <a href="#">
-										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
-                                            <img src="/storage/{{ $immo->pic_src }}" alt="images" />
-                                        </div>
-                                     </a>
+							<!-- start car widget -->
+							<div class="GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget {{ $style }}" data-widget="{{ $c_data }}" data-aos="fade-up" data-aos-duration="2000">
 
-										<div class="trip-guide-content mx-trip-guide-content">
-											<h3 class="hi">{{ $immo->designation }}</h3></div>
+								<div class="mx-trip-guide-item trip-guide-item" style="background-color:white">
+									<a href="#">
+										<div class="trip-guide-image mx-trip-guide-image meri-widget" title="cliquez ici pour plus de details">
+											<img src="/storage/{{ $immo->pic_src }}" alt="images" />
+										</div>
+									</a>
 
-										<div class="trip-guide-bottom">
-                                            <div class="trip-guide-person mx-trip-guide-person clearfix">
-                                                      <i class="fas fa-car-side"> </i>
-												<p class="name">Nombre d'etage : <span>{{ $immo->nbr_etage }}</span></p>
-											</div>
-                                            
-									
-											<div class="row gap-10 mx-price">
-												<div class="col-xs-12 col-sm-6">
-													<div class="trip-guide-price">
-														Á partir de
-														<span class="number">{{ $immo->price_min }}$</span>
-													</div>
+									<div class="trip-guide-content mx-trip-guide-content" style="margin-bottom: 20px;">
+										<h3 class="hi">{{ $immo->designation }}</h3><br>
+									</div>
+
+									<div class="trip-guide-bottom" style="padding:10px">
+
+										<div class="trip-guide-person mx-trip-guide-person clearfix" style="border: 0px;">
+											<i class="fas fa-home"></i>
+											<p class="name">Nombre d'étage : <span>{{ $immo->nbr_etage }}</span></p>
+											 
+										</div><div class="trip-guide-person mx-trip-guide-person clearfix" style="border: 0px;">
+										<i class="fas fa-home"></i>
+											<p class="name">Nombre de chambre : <span>{{ $immo->nbr_chambre }}</span></p>
+  
+										</div>
+										 
+
+										<div class="row gap-10 mx-price">
+											<div class="col-xs-12 col-sm-6">
+												<div class="trip-guide-price">
+													Á partir de
+													<span class="number">{{ $immo->price_min }}$</span>
 												</div>
-												<div class="col-xs-12 col-sm-6 text-right">
-                                                <a href="#" class="btn btn-primary">Reserver</a>
-											
- 												</div>
 											</div>
+											<div class="col-xs-12 col-sm-6 text-right">
+												<a href="{{route('reservationVente.create',['immobilier'=>$immo->id])}}" class="btn btn-primary">Reserver</a>
 
+											</div>
 										</div>
 
 									</div>
 
 								</div>
-                            <!-- end car widget -->
-                            @endforeach
 
 							</div>
-
-						</div>
-
-					</div>
-
-					<div class="pager-wrappper clearfix">
-
-						<div class="pager-innner">
-
-                                @foreach ($immos as $key=>$immo)
-                                @php
-                                    ++$key;
-                                @endphp
-                                @endforeach
-								<div class="clearfix">
-									plus de {{ $key }} type d'immobiliers à choisir
-								</div>
-
-								<div class="clearfix">
-									<nav class="pager-center">
-										<ul class="pagination">
-											<li>
-												<a href="#link-top" aria-label="prev-pg">
-													<span aria-hidden="true">&laquo;</span>
-												</a>
-                                            </li>
-                                            @php
-                                                $counter_nbr =  1;
-                                                $counter = 0 ;
-                                            @endphp
-
-                                            @foreach ($immos as $immo)
-                                            @php
-                                                ++$counter;
-                                                /* real number +1 mx-n */
-                                                $cm = $counter%7 ;
-                                            @endphp
-                                            @if($cm == 1 or $counter == 1)
-                                            @if($counter == 1)
-                                            <li data-id="page-li" id-pg="{{ $counter_nbr }}" class="active"><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
-                                            @else
-                                            <li data-id="page-li" id-pg="{{ $counter_nbr }}" ><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
-                                            @endif
-                                            @php
-                                                $counter_nbr++;
-                                            @endphp
-                                            @endif
-                                            @endforeach
-											<li>
-												<a href="#link-top" aria-label="next-pg">
-													<span aria-hidden="true">&raquo;</span>
-												</a>
-											</li>
-										</ul>
-									</nav>
-								</div>
-
-						</div>
+							<!-- end car widget -->
+							@endforeach
 
 					</div>
 
 				</div>
 
 			</div>
+
+			<div class="pager-wrappper clearfix">
+
+				<div class="pager-innner">
+
+					@foreach ($immos as $key=>$immo)
+					@php
+					++$key;
+					@endphp
+					@endforeach
+					<div class="clearfix">
+						plus de {{ $key }} type d'immobiliers à choisir
+					</div>
+
+					<div class="clearfix">
+						<nav class="pager-center">
+							<ul class="pagination">
+								<li>
+									<a href="#link-top" aria-label="prev-pg">
+										<span aria-hidden="true">&laquo;</span>
+									</a>
+								</li>
+								@php
+								$counter_nbr = 1;
+								$counter = 0 ;
+								@endphp
+
+								@foreach ($immos as $immo)
+								@php
+								++$counter;
+								/* real number +1 mx-n */
+								$cm = $counter%7 ;
+								@endphp
+								@if($cm == 1 or $counter == 1)
+								@if($counter == 1)
+								<li data-id="page-li" id-pg="{{ $counter_nbr }}" class="active"><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
+								@else
+								<li data-id="page-li" id-pg="{{ $counter_nbr }}"><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
+								@endif
+								@php
+								$counter_nbr++;
+								@endphp
+								@endif
+								@endforeach
+								<li>
+									<a href="#link-top" aria-label="next-pg">
+										<span aria-hidden="true">&raquo;</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
 </div>
 @endsection

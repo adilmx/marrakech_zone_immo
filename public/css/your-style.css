@@ -26,6 +26,11 @@
     padding-top: 3%;
     width: 95%;
 }
+.mx-container-7{
+    padding-top: 3%;
+    width: 95%;
+    height: 100vh;
+}
 
 .hero h1{
     color: rgb(245, 93, 22);
@@ -978,6 +983,7 @@ margin: 0;
  }
  .grid-container > div > img{
   
+    height: 100%;
     width: 100%;
     border-radius: 0 .90rem 0 .90rem;
  }
@@ -1255,3 +1261,31 @@ margin: 0;
         
 
          
+.meri-widget img{
+  height: 40vh;
+} 
+@media screen and (max-width: 1700px){
+   .meri-widget img {
+      height: 40vh !important;
+   }
+   }
+   @media screen and (max-width: 1200px){
+      .meri-widget img{
+         height: 42vh !important;
+   }
+   }
+       @media screen and (max-width: 992px){
+         .meri-widget img{
+            height: 43vh !important;
+       }
+       }
+           @media screen and (max-width: 768px){
+            .meri-widget img{
+               height: 52vh !important;
+           }
+           }
+               @media screen and (max-width: 576px){
+                  .meri-widget img{
+                     height: 52vh !important;
+               }
+               }
