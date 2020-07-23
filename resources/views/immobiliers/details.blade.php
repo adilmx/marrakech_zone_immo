@@ -12,8 +12,8 @@
 
                     <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                         <div data-aos="zoom-out-left">
-                        <h2>Bienvenu</h2>
-                        <p>Les meilleurs immobiliers à choisir</p>
+                        <h2></h2>
+                        <p>Les meilleurs voitures à choisir</p>
                     </div>
                     </div>
                 </div>
@@ -23,15 +23,130 @@
         </div>
 
     </div>
-    <div class="card" style="width: 18rem;margin-top:-100%">
-  <img class="card-img-top" src="/images/bg/bg1/jpg" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
+
     <div class="pt-50 pb-50">
 
-     
+        <div id="detail-content-sticky-nav-01" >
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-md-9-mx">
+
+
+                        <div class="content-wrapper pr mx-pr">
+
+                            <h3 class="section-title section-title-mx">{{ $immobilier->designation }}</h3>
+
+                            <div class="bt mt-30 mb-30"></div>
+
+                            <!-- start box info -->
+                            <div class="featured-icon-simple-wrapper">
+
+                                <div class="GridLex-gap-30-mx">
+
+                                    <div class="GridLex-grid-mx-noGutter-equalHeight GridLex-grid-noGutter-equalHeight">
+
+                                        <div class="GridLex-col-mx-4_sm-4-mx_xs-12_xss-12 GridLex-col-mx-4_sm-4_xs-12_xss-12">
+
+                                            <div class="featured-icon-simple-item">
+                                                <div class="icon text-primary mx-icone">
+                                                    <i class="fas fa-dollar-sign"></i>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="txt-box-infos">
+                                            <div class="mx-txt-detail">PRIX POUR moins DE 7 JOUR : <span>{{ $immobilier->price_min }}$/jour</span></div>
+                                            <div class="mx-txt-detail">PRIX POUR plus DE 7 JOUR : <span>{{ $immobilier->price_max }}$/jour</span></div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- end box info -->
+
+                            <div class="bt mt-30 mb-40"></div>
+
+                             <!-- start box info -->
+                             <div class="featured-icon-simple-wrapper">
+
+                                <div class="GridLex-gap-30-mx">
+
+                                    <div class="GridLex-grid-mx-noGutter-equalHeight GridLex-grid-noGutter-equalHeight">
+
+                                        <div class="GridLex-col-mx-4_sm-4-mx_xs-12_xss-12 GridLex-col-mx-4_sm-4_xs-12_xss-12">
+
+                                            <div class="featured-icon-simple-item">
+                                                <div class="icon text-primary mx-icone">
+                                                    <i class="fas fa-car-side"></i>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="txt-box-infos">
+                                            <div class="mx-txt-detail">nombre d'étages : <span>{{ $immobilier->nbr_etage }}</span></div>
+                                            <div class="mx-txt-detail">nombre de chambres : <span>{{ $immobilier->nbr_chambres }}</span></div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- end box info -->
+
+                            <div class="bt mt-30 mb-40"></div>
+
+                             <!-- start box info -->
+                             
+                            <!-- end box info -->
+
+                            <div class="bt mt-30 mb-40"></div>
+
+                             <!-- start box info -->
+                              
+                            <!-- end box info -->
+
+                            <div class="bt mt-30 mb-40"></div>
+
+                             <!-- start box info -->
+                              
+                            <!-- end box info -->
+
+                            <div class="bt mt-30 mb-40"></div>
+
+                             <!-- start box info -->
+                              
+                            <!-- end box info -->
+
+                            <div class="bt mt-30 mb-40"></div>
+
+
+        <div class="bb mb-40 mt-40-xs"></div>
+
+        <div id="detail-content-sticky-nav-02" >
+
+            <div class="mx-container-1 container">
+
+                <h3 class="section-title">Plus d'images</h3>
+
+                <div class="gallery-grid-equal-width-wrapper mb-50">
+                    <div id="gallery1">
+
+                    </div>
+
+            </div>
+
+        </div>
 
         <div class="bb mb-40 mt-40-xs"></div>
 

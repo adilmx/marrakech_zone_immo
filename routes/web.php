@@ -25,7 +25,7 @@ Route::get('/cars', 'CarController@index')->name('car.index');
 Route::get('/cars/{categorie}', 'CarController@index')->name('car.index');
 Route::get('/details/{car}', 'CarController@show')->name('car.show');
 Route::get('/reservation/{car}', 'ReservationCarController@create')->name('reservationCar.create');
-Route::get('/admin', 'CarController@create')->name('car.create');
+
 Route::post('/R', 'CarController@store')->name('car.store');
 Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store');
 
@@ -58,3 +58,4 @@ Route::get('/immo_location', 'ImmobilierController@show_location')->name('immobi
 
 Route::get('/details_immo/{immobilier}', 'ImmobilierController@show')->name('immo.show');
  
+//voyager routes
