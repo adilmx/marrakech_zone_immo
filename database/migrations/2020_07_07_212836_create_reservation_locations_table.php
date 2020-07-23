@@ -21,13 +21,14 @@ class CreateReservationLocationsTable extends Migration
             $table->date('date_debut_reservation');
             $table->date('date_fin_reservation');
 
+
             $table->foreign('id_customer')->references('id')->on('customers');
             $table->foreign('id_immo_loc')->references('id')->on('immobiliers');
 
             $table->timestamps();
         });
 
-        
+
     }
 
     /**

@@ -18,9 +18,9 @@
                             </div>
                         </div>
 
-                        <h1 class="text-lowercase">Congratulation!</h1>
-                        <p class="lead">Votre reservation a bien ete cree</p>
-                        <h3>merci pour votre confiance</h3>
+                        <h1 class="text-lowercase">Félicitations!</h1>
+                        <p class="lead">Votre reservation a bien été crée</p>
+                        <h3>Merci pour votre confiance</h3>
                         <a href="{{ route('car.index',['categorie' => $data['c_id'] ]) }}" class="btn btn-primary btn-wide">choisir une autre voiture</a>
                     </div>
 

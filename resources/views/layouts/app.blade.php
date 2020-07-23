@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- Fav and Touch Icons -->
-
+    
 	<link rel="shortcut icon" href="{{ asset('/') }}images/ico/logo-zh-tours.png">
 
 	<!-- CSS Plugins -->
@@ -63,7 +63,7 @@
 
 					<div class="logo-wrapper ">
 						<div class="logo">
-							<a href="#"><img src="{{ asset('/') }}images/ico/logo-zh-tours-mx.png" alt="Logo" /></a>
+							<a href="{{ asset('/') }}"><img src="{{ asset('/') }}images/ico/logo-zh-tours-mx.png" alt="Logo" /></a>
 						</div>
 					</div>
 
@@ -78,16 +78,11 @@
 							<li>
 								<a href="#">Immobilier</a>
 								<ul>
-									<li><a href="#">Immobilier Vente</a>
+									<li><a href="{{ route('immobilier_vente.index') }}">Immobilier Vente</a>
 									</li>
-									<li><a href="#">Immobilier Location</a>
+									<li><a href="{{ route('immobilier_loc.index') }}">Immobilier Location</a>
 
-										<ul>
-											<li><a href="#">Langue durée</a></li>
-											<li><a href="#">Courte durée</a></li>
-											<li><a href="#">Saisonniéres</a></li>
 
-										</ul>
 									</li>
 							</li>
 						</ul>
@@ -103,28 +98,27 @@
 
 						</li>
 						<li>
-							<a href="#" class="earth"> <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
-    height: 37;
-"></i> Fr
+							<a href="#" > <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
+             height: 37;"></i> Fr</a>
 								<ul>
 									<li><a href="#">Arabe</a></li>
 									<li class="active"><a href="#" class="active"> Français</a></li>
 									<li><a href="#">Anglais</a></li>
 
 								</ul>
-							</a>
+
 
 						</li>
 
 						<li>
 							<a href="#"><em> <i class="fas fa-phone-alt" aria-hidden="true" style="width: 40;
     height: 40;
-"></i>  </em>
+"></i>  </em></a>
 								<ul>
 									<li><a>Tel : +212524808080</a></li>
-									<li class="active">  <aclass="active"> <i class="fab fa-whatsapp" style="display:inline-block"></i> +212625109819</aclass=></li>
+									<li >    <i class="fab fa-whatsapp" style="display:inline-block;    PADDING-LEFT: 20px;"></i> +212625109819 </li>
 								</ul>
-							</a>
+
 
 						</li>
 

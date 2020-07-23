@@ -1,47 +1,124 @@
 @extends('layouts.app')
 
+@section('carousel-section')
+@php
+	$str ="";
+@endphp
+@if($home_carasoul[0]->id == 2)
+	@php
+		$str ="/storage/";
+	@endphp
+@endif
+<style>
+	/* .carousel { z-index: -99; } keeps this behind all content */
+
+	.carousel .one {
+		background: url({{ $str }}{{ $home_carasoul[0]->first_img }});
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		-moz-background-size: cover;
+	}
+
+	.carousel .two {
+		background: url({{ $str }}{{ $home_carasoul[0]->sec_img }});
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		background-position: center;
+
+		-moz-background-size: cover;
+	}
+    
+	.carousel .three {
+		background: url({{ $str }}{{ $home_carasoul[0]->third_img }});
+		background-position: center;
+		background-repeat: no-repeat;
+
+		background-size: cover;
+		-moz-background-size: cover;
+	}
+
+	.carousel .four {
+		background: url({{ $str }}{{ $home_carasoul[0]->fourth_img }});
+		background-position: center;
+		background-repeat: no-repeat;
+
+		background-size: cover;
+		-moz-background-size: cover;
+	}	
+	.fas .fa-star{
+		background-color:#C89005;
+	}
+	.icon:hover{
+		color: orangered !important;
+	}
+
+</style>
+<!-- Carousel
+                ================================================== -->
+<div id="myCarousel" class="carousel slide hero" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+		<li data-target="#myCarousel" data-slide-to="3"></li>
+
+	</ol>
+	<div class="carousel-inner" role="listbox" style="height:40vh">
+		<div class="item one active d-block w-100">
+			<!-- <img class="first-slide
+					" src="{{ asset('/') }}images/bg/bg1.jpg"  alt="First slide">
+  -->
+			<div class="carousel-caption mx-carousoul-p">
+
+				<p class="meri-titles">Garantir la meilleure qualité des voitures est notre plaisir</p>
+
+			</div>
+
+		</div>
+		<div class="item two d-block w-100">
+			<!-- <img class="second-slide" src="/images/bg/bg2.jpg" style="height:inherit"> -->
+
+			<div class="carousel-caption mx-carousoul-p">
+
+				<p class="meri-titles">Trouvez votre place avec une expérience photo immersive</p>
+			</div>
+		</div>
+		<div class="item three d-block w-100">
+			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
+
+			<div class="carousel-caption mx-carousoul-p">
+
+				<p class="meri-titles">Le confort et la sécurité que vous ne trouverez nulle part ailleurs</p>
+			</div>
+		</div>
+		<div class="item four d-block w-100">
+			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
+
+			<div class="carousel-caption mx-carousoul-p">
+
+				<p class="meri-titles">Nous vous aidons à trouvez l'appartement que vous aimerez</p>
+			</div>
+		</div>
+	</div>
+	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+<!-- /.carousel -->
+@endsection
+
+
 @section('content')
 <div class="container mx-container-1">
-    @foreach ($cars_s as $car)
-                      @php
-                          $car_cat = $car->categorie_id ;
-                      @endphp
-    @endforeach
-    @if($car_cat == 1)
-        @php
-            $url = "/storage/uploads-mx/bg-car.jpg"
-        @endphp
-    @else
-    @php
-            $url = "/storage/uploads-mx/bg-car-travel.jpg"
-        @endphp
-    @endif
-    <div class="breadcrumb-image-bg mx-breadcrumb-image-bg mx-bg" style="background-image: url('{{ $url }}')">
-
-        <div class="container mx-container-4">
-
-            <div class="page-title">
-
-                <div class="mx-row row">
-                    @foreach ($cars_s as $car)
-                      @php
-                          $car_cat = $car->designation ;
-                      @endphp
-                    @endforeach
-
-                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                        <div data-aos="zoom-out-left">
-                        <h2>{{ $car_cat }}</h2>
-                        <p>Les meilleurs voitures à choisir</p>
-                    </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+    
     <div class="hero-mx-srch">
     <div class="container">
 

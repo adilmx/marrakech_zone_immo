@@ -13,24 +13,20 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 /* ces routes sont pour le test seulement  */
 Route::get('/cars', 'CarController@index')->name('car.index');
-Route::get('/details', 'CarController@show')->name('car.show');
+// Route::get('/details', 'CarController@show')->name('car.show');
 
 /*********** */
 Route::get('/cars/{categorie}', 'CarController@index')->name('car.index');
 Route::get('/details/{car}', 'CarController@show')->name('car.show');
 Route::get('/reservation/{car}', 'ReservationCarController@create')->name('reservationCar.create');
-Route::get('/admin', 'CarController@create')->name('car.create');
-Route::post('/R', 'CarController@store')->name('car.store');
+
+
 Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store');
 
 Route::get('/reservationimmol/{immobilier}', 'ReservationLocationController@create')->name('reservationLocation.create');
@@ -48,4 +44,28 @@ Route::get('/reservationDoneimmov/{immobilier}', 'ReservationVenteController@don
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
-*/
+
+//routes just for testing images
+Route::post('/mytest', 'TestController@edit') ;
+Route::get('/test', function(){
+    return view('test');
+}) ;
+//routes for immobiliers ventes
+
+ */
+Route::get('/immo_vente', 'ImmobilierController@index')->name('immobilier_vente.index');
+Route::get('/immo_location', 'ImmobilierController@show_location')->name('immobilier_loc.index');
+
+Route::get('/details_immo/{immobilier}', 'ImmobilierController@show')->name('immo.show');
+
+/************************************************* ADMIN */
+Route::get('/admin', 'AdminController@index')->name('admin.index');
+
+Route::get('/admin/car', 'CarController@create')->name('car.create');
+Route::post('/scar', 'CarController@store')->name('car.store');
+
+Route::get('/admin/home/carasoul', 'HomeController@createCarasoul')->name('homeCarasoul.create');
+Route::post('/shomecarasoul', 'HomeController@storeCarasoul')->name('homeCarasoul.store');
+
+Route::get('/admin/home/sections', 'HomeController@createSections')->name('homeSections.create');
+Route::post('/shomesections', 'HomeController@storeSections')->name('homeSections.store');
