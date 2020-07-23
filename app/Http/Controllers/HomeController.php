@@ -7,12 +7,12 @@ use DB;
 class HomeController extends Controller
 {
 
-    
+
      public function createCarasoul()
      {
          return view('home.carasoul');
      }
-    
+
      public function storeCarasoul()
     {
         $data= request()->validate([
@@ -27,7 +27,7 @@ class HomeController extends Controller
         $imgpath_3 = request('img_3')->store('uploads-mx', 'public');
         $imgpath_4 = request('img_4')->store('uploads-mx', 'public');
 
-        
+
         $id_gall_home_carasoul = DB::table('gallery_home_carasoul')
         ->where('id',2)
         ->update(
@@ -48,7 +48,7 @@ class HomeController extends Controller
      {
          return view('home.sections');
      }
-    
+
 
      public function storeSections()
     {
@@ -60,7 +60,7 @@ class HomeController extends Controller
         $imgpath_1 = request('img_1')->store('uploads-mx', 'public');
         $imgpath_2 = request('img_2')->store('uploads-mx', 'public');
 
-        
+
         $id_gall_home_carasoul = DB::table('gallery_home_sections')
         ->where('id',2)
         ->insert(

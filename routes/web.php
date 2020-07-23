@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Auth;
 */
 
 
-
 Route::get('/', 'HomeController@index')->name('home');
 
 /* ces routes sont pour le test seulement  */
@@ -51,7 +50,6 @@ Route::get('/test', function(){
     return view('test');
 }) ;
 //routes for immobiliers ventes
-
  */
 Route::get('/immo_vente', 'ImmobilierController@index')->name('immobilier_vente.index');
 Route::get('/immo_location', 'ImmobilierController@show_location')->name('immobilier_loc.index');

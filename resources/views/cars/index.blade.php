@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('carousel-section')
 @php
 	$str ="";
@@ -29,7 +30,7 @@
 
 		-moz-background-size: cover;
 	}
-    
+
 	.carousel .three {
 		background: url({{ $str }}{{ $home_carasoul[0]->third_img }});
 		background-position: center;
@@ -46,7 +47,7 @@
 
 		background-size: cover;
 		-moz-background-size: cover;
-	}	
+	}
 	.fas .fa-star{
 		background-color:#C89005;
 	}
@@ -74,6 +75,25 @@
 			<div class="carousel-caption mx-carousoul-p">
 
 				<p class="meri-titles">Garantir la meilleure qualité des voitures est notre plaisir</p>
+=======
+@section('content')
+<div class="container mx-container-1">
+    @foreach ($cars_s as $car)
+                      @php
+                          $car_cat = $car->categorie_id ;
+                      @endphp
+    @endforeach
+    @if($car_cat == 1)
+        @php
+            $url = "/storage/uploads-mx/bg-car.jpg"
+        @endphp
+    @else
+    @php
+            $url = "/storage/uploads-mx/bg-car-travel.jpg"
+        @endphp
+    @endif
+    <div class="breadcrumb-image-bg mx-breadcrumb-image-bg mx-bg" style="background-image: url('{{ $url }}')">
+>>>>>>> c38129287e8e6c832264581aa7d0c3258b2318d9
 
 			</div>
 
@@ -118,7 +138,7 @@
 
 @section('content')
 <div class="container mx-container-1">
-    
+
     <div class="hero-mx-srch">
     <div class="container">
 

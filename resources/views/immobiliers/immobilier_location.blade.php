@@ -29,7 +29,7 @@
 
 		-moz-background-size: cover;
 	}
-    
+
 	.carousel .three {
 		background: url({{ $str }}{{ $home_carasoul[0]->third_img }});
 		background-position: center;
@@ -46,7 +46,7 @@
 
 		background-size: cover;
 		-moz-background-size: cover;
-	}	
+	}
 	.fas .fa-star{
 		background-color:#C89005;
 	}

@@ -27,6 +27,7 @@
 .mx-container-5{
     padding-top: 3%;
     width: 95%;
+    height: 100vh;
 }
 .mx-container-6{
     padding-top: 13%;
@@ -253,7 +254,6 @@ padding: 30px 15px 300px !important;;
    color: rgb(255, 255, 255);
    font-weight: bold;
 }
-
 
 .mx-pt-30{
    padding-top: 1px !important;
@@ -996,7 +996,6 @@ margin: 0;
     border-radius: .90rem 0 .90rem 0;
  }
  .grid-container > div > img{
-
     height: 100%;
     width: 100%;
     border-radius: 0 .90rem 0 .90rem;
@@ -1153,7 +1152,6 @@ margin: 0;
                 background-color: #1e1f20;
                 border: 2px solid rgb(255, 102, 0);
                 border-radius: 0 .90rem 0 .90rem;
-
          }
          .meri-bg-v2 a:hover {
             line-height: 36px;
@@ -1244,7 +1242,6 @@ margin: 0;
                 background-color: #1e1f20;
                 border: 2px solid rgb(255, 102, 0);
                 /* border-radius: 0 .90rem 0 .90rem; */
-
          }
          .meri2-bg-v2 a:hover {
             line-height: 36px;

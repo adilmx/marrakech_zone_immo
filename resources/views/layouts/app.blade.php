@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- Fav and Touch Icons -->
-    
+
 	<link rel="shortcut icon" href="{{ asset('/') }}images/ico/logo-zh-tours.png">
 
 	<!-- CSS Plugins -->
@@ -82,7 +82,6 @@
 									</li>
 									<li><a href="{{ route('immobilier_loc.index') }}">Immobilier Location</a>
 
-
 									</li>
 							</li>
 						</ul>
@@ -107,7 +106,6 @@
 
 								</ul>
 
-
 						</li>
 
 						<li>
@@ -118,7 +116,6 @@
 									<li><a>Tel : +212524808080</a></li>
 									<li >    <i class="fab fa-whatsapp" style="display:inline-block;    PADDING-LEFT: 20px;"></i> +212625109819 </li>
 								</ul>
-
 
 						</li>
 
