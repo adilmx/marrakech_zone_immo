@@ -123,10 +123,10 @@
 												<div class="row gap-10 mt-10">
 													<div class="col-xs-7 col-sm-7">
 														<span class="font600">PRIX</span>
-                                                        <div class="font-smaller " style="color: rgb(241, 64, 10)">* depend de duree que vous avez choisie</div>
+                                                        <div class="font-smaller " style="color: rgb(241, 64, 10)">* prix maximale </div>
                                                     </div>
 													<div class="col-xs-5 col-sm-5 text-right">
-														<span class="font600 font26 block text-primary mt-5 mx-price" pmin="{{ $immobilier->price_min }}" pmax="{{ $immobilier->price_max }}">{{ $immobilier->price_min }}$</span>
+														<span class="font600 font26 block text-primary mt-5 mx-price" pmin="{{ $immobilier->price_min }}" pmax="{{ $immobilier->price_max }}">{{ $immobilier->price_max }}$</span>
 													</div>
 												</div>
 											</li>
@@ -134,12 +134,12 @@
 											<li class="divider"></li>
 
 											<li>
-												<a href="#" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE</a>
+												<a href="{{ route('immobilier_vente.index') }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE</a>
                                             </li>
                                             <li class="divider"></li>
 
 											<li>
-												<a href="#" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
+												<a href="{{route('immo.show',['immobilier'=>$immobilier->id])}}" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
 											</li>
 
 										</ul>

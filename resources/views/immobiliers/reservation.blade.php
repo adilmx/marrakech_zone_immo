@@ -173,12 +173,12 @@
 											<li class="divider"></li>
 
 											<li>
-												<a href="#" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE</a>
+												<a href="{{ route('immobilier_loc.index') }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE</a>
                                             </li>
                                             <li class="divider"></li>
 
 											<li>
-												<a href="#" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
+												<a href="{{route('immo.show',['immobilier'=>$immobilier->id])}}" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
 											</li>
 
 										</ul>

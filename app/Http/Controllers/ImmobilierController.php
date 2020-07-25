@@ -17,8 +17,13 @@ class ImmobilierController extends Controller
      */
     public function index()
     {
+        $home_carasoul = DB::table('gallery_home_carasoul')->where('id',1)->get();
+
         $query=DB::table('immobiliers')->where('categorie',3)->get();
-        return view('immobiliers.immobilier_ventes',['immos'=>$query]);
+        return view('immobiliers.immobilier_ventes',[
+            'immos'=>$query ,
+            'home_carasoul'=>$home_carasoul ,
+            ]);
     }
 
     /**
@@ -50,9 +55,9 @@ class ImmobilierController extends Controller
      */
     public function show(Immobilier $immobilier)
     {
-       
+
         $gallery=DB::table('gallery_immos')->where('immobilier_id',$immobilier->id)->get();
-     
+
       return view('immobiliers.details',['immobilier'=>$immobilier,'gallery'=>$gallery]);
     }
 
@@ -65,8 +70,12 @@ class ImmobilierController extends Controller
     public function show_location()
     {
         $query=DB::table('immobiliers')->where('categorie',1)->get();
-        return view('immobiliers.immobilier_location',['immos'=>$query]);
-   
+        $home_carasoul = DB::table('gallery_home_carasoul')->where('id',2)->get();
+        return view('immobiliers.immobilier_location',[
+            'immos'=>$query ,
+            'home_carasoul'=>$home_carasoul ,
+            ]);
+
     }
 
     /**

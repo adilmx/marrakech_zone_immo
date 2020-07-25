@@ -63,7 +63,7 @@
 
 					<div class="logo-wrapper ">
 						<div class="logo">
-							<a href="#"><img src="{{ asset('/') }}images/ico/logo-zh-tours-mx.png" alt="Logo" /></a>
+							<a href="{{ asset('/') }}"><img src="{{ asset('/') }}images/ico/logo-zh-tours-mx.png" alt="Logo" /></a>
 						</div>
 					</div>
 
@@ -82,7 +82,6 @@
 									</li>
 									<li><a href="{{ route('immobilier_loc.index') }}">Immobilier Location</a>
 
-									 
 									</li>
 							</li>
 						</ul>
@@ -106,7 +105,6 @@
 									<li><a href="#">Anglais</a></li>
 
 								</ul>
-							 
 
 						</li>
 
@@ -118,7 +116,6 @@
 									<li><a>Tel : +212524808080</a></li>
 									<li >    <i class="fab fa-whatsapp" style="display:inline-block;    PADDING-LEFT: 20px;"></i> +212625109819 </li>
 								</ul>
-							 
 
 						</li>
 

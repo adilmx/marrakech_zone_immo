@@ -5,13 +5,13 @@
 
         <div class="pt-30 pb-50">
 
-				<div class="container">
+				<div class="container mx-container-4">
 
 					<div class="row">
 
 						<div class="col-xs-12 col-sm-8 col-md-8 mt-20">
 
-                            <form action="/R" enctype="multipart/form-data" method="POST">
+                            <form action="/scar" enctype="multipart/form-data" method="POST">
                                 @csrf
 
                                     <div class="row">

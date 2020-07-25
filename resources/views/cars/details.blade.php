@@ -12,8 +12,8 @@
 
                     <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                         <div data-aos="zoom-out-left">
-                        <h2>hoo</h2>
-                        <p>Les meilleurs voitures à choisir</p>
+                        <h2>Les meilleurs voitures à choisir</h2>
+                        <p></p>
                     </div>
                     </div>
                 </div>

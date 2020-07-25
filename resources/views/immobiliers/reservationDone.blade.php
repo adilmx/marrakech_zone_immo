@@ -21,7 +21,16 @@
                         <h1 class="text-lowercase">Félicitations!</h1>
                         <p class="lead">Votre reservation a bien été crée</p>
                         <h3>Merci pour votre confiance</h3>
-                        <a href="{{route('immobilier_vente.index')}}" class="btn btn-primary btn-wide">retour au choix des immobiliers</a>
+                        @if($type_pro == "immobilier_v")
+                        @php
+                            $url = "immobilier_vente.index";
+                        @endphp
+                        @elseif($type_pro == "immobilier_loc")
+                        @php
+                            $url = "immobilier_loc.index";
+                        @endphp
+                        @endif
+                        <a href="{{route($url)}}" class="btn btn-primary btn-wide">retour au choix des immobiliers</a>
                     </div>
 
                 </div>

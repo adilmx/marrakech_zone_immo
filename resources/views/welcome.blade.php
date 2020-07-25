@@ -1,11 +1,19 @@
 @extends('layouts.app')
 
 @section('carousel-section')
+@php
+	$str ="";
+@endphp
+@if($home_carasoul[0]->id == 2)
+	@php
+		$str ="/storage/";
+	@endphp
+@endif
 <style>
 	/* .carousel { z-index: -99; } keeps this behind all content */
 
 	.carousel .one {
-		background: url(/images/bg/bg3.jpg);
+		background: url({{ $str }}{{ $home_carasoul[0]->first_img }});
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -13,7 +21,7 @@
 	}
 
 	.carousel .two {
-		background: url(/images/bg/bg4.jpg);
+		background: url({{ $str }}{{ $home_carasoul[0]->sec_img }});
 		background-size: cover;
 		background-repeat: no-repeat;
 
@@ -23,7 +31,7 @@
 	}
 
 	.carousel .three {
-		background: url(/images/bg/annie-spratt-IDdpNyXPEjg-unsplash.jpg);
+		background: url({{ $str }}{{ $home_carasoul[0]->third_img }});
 		background-position: center;
 		background-repeat: no-repeat;
 
@@ -32,14 +40,12 @@
 	}
 
 	.carousel .four {
-		background: url(/images/bg/bg7.jpg);
+		background: url({{ $str }}{{ $home_carasoul[0]->fourth_img }});
 		background-position: center;
 		background-repeat: no-repeat;
 
 		background-size: cover;
 		-moz-background-size: cover;
-	}	.carousel-caption {
-		padding: 70px 15px 70px !important;
 	}
 	.fas .fa-star{
 		background-color:#C89005;
@@ -66,7 +72,6 @@
 					" src="{{ asset('/') }}images/bg/bg1.jpg"  alt="First slide">
   -->
 			<div class="carousel-caption">
-			 
 			<h1><span><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star "
 			 style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i></span> <br>Voitures </h1>
 				<p>Garantir la meilleure qualité des voitures est notre plaisir </p>
@@ -91,11 +96,11 @@
 			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
-			<h1><span><i class="fas fa-star " style="font-size:4vw" 
-			></i><i class="fas fa-star " style="font-size:4vw" 
-			></i><i class="fas fa-star " style="font-size:4vw" 
-			></i><i class="fas fa-star " style="font-size:4vw" 
-			></i><i class="fas fa-star " style="font-size:4vw" 
+			<h1><span><i class="fas fa-star " style="font-size:4vw"
+			></i><i class="fas fa-star " style="font-size:4vw"
+			></i><i class="fas fa-star " style="font-size:4vw"
+			></i><i class="fas fa-star " style="font-size:4vw"
+			></i><i class="fas fa-star " style="font-size:4vw"
 			></i> </span> <br>Transport Touristique</h1>
 				<p>Le confort et la sécurité que vous ne trouverez nulle part ailleurs </p>
 
@@ -105,11 +110,11 @@
 			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
 
 			<div class="carousel-caption">
-			<h1><span><i class="fas fa-star " style="font-size:4vw" 
+			<h1><span><i class="fas fa-star " style="font-size:4vw"
 			></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw" ></i> </span> <br>Appartements </h1>
-			 
+
 				<p>Nous vous aidons à trouvez l'appartement que vous aimerez</p>
-		
+
 			</div>
 		</div>
 	</div>
@@ -184,13 +189,20 @@
 
     <!---->
 	<div data-showcovidmsg="false" class="sc-10ww3i-0 kYRSMk" id="bt"></div>
-
-    <div class="breadcrumb-image-bg  meri-bg-v2" style="background-image: url('/images/bg/bg3.jpg')">
+@php
+	$str ="";
+@endphp
+@if($home_sections[0]->id == 2)
+	@php
+		$str ="/storage/";
+	@endphp
+@endif
+    <div class="breadcrumb-image-bg  meri-bg-v2" style="background-image: url('{{ $str }}{{ $home_sections[0]->first_img }}')">
 
         <div class="container mx-container-3">
-	 
+
             <div class="page-title">
-	 
+
                 <div class="mx-row row">
 
                     <div class="col-sm-8  col-md-6 ">
@@ -213,7 +225,7 @@
 
     </div>
 
-    <div class="breadcrumb-image-bg  meri2-bg-v2" style="background-image: url('/images/bg/bg1.jpg')">
+    <div class="breadcrumb-image-bg  meri-bg-v2" style="background-image: url('{{ $str }}{{ $home_sections[0]->sec_img }}')">
 
         <div class="container mx-container-3">
 
@@ -249,11 +261,11 @@
             <div class="col-xs-12 col-sm-8 col-md-9 col-md-9-mx">
 
 
-            
+
                     <h2 class="text-center" ><span><i class="fas fa-star " style="font-size:4vw;color:orangered" ></i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw;color:orangered" >
 		</i><i class="fas fa-star " style="font-size:4vw" ></i><i class="fas fa-star " style="font-size:4vw;color:orangered" ></i>
 	</span> <br>Les Meilleurs immobiliers pour  votre confort</h2>
-                 
+
             </div>
         </div>
     </div>

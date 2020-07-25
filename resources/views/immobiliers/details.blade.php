@@ -12,8 +12,13 @@
 
                     <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                         <div data-aos="zoom-out-left">
+<<<<<<< HEAD
                         <h2></h2>
                         <p>Les meilleurs voitures à choisir</p>
+=======
+                        <h2>Les meilleurs immobiliers à choisir</h2>
+                        <p></p>
+>>>>>>> 3a7b07d54b178ff7521e463666dfa0845cf655c8
                     </div>
                     </div>
                 </div>
@@ -23,7 +28,200 @@
         </div>
 
     </div>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+    <div class="pt-50 pb-50">
+
+        <div id="detail-content-sticky-nav-01" >
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-8 col-md-9 col-md-9-mx">
+
+
+                        <div class="content-wrapper pr mx-pr">
+
+                            <h3 class="section-title section-title-mx">{{ $immobilier->designation }}</h3>
+
+                            <div class="bt mt-30 mb-30"></div>
+
+                            <!-- start box info -->
+                            <div class="featured-icon-simple-wrapper">
+
+                                <div class="GridLex-gap-30-mx">
+
+                                    <div class="GridLex-grid-mx-noGutter-equalHeight GridLex-grid-noGutter-equalHeight">
+
+                                        <div class="GridLex-col-mx-4_sm-4-mx_xs-12_xss-12 GridLex-col-mx-4_sm-4_xs-12_xss-12">
+
+                                            <div class="featured-icon-simple-item">
+                                                <div class="icon text-primary mx-icone">
+                                                    <i class="fas fa-dollar-sign"></i>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="txt-box-infos">
+                                            <div class="mx-txt-detail">PRIX minimale : <span>{{ $immobilier->price_min }}$</span></div>
+                                            <div class="mx-txt-detail">PRIX maximale : <span>{{ $immobilier->price_max }}$</span></div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- end box info -->
+
+                            <div class="bt mt-30 mb-40"></div>
+
+                             <!-- start box info -->
+                             <div class="featured-icon-simple-wrapper">
+
+                                <div class="GridLex-gap-30-mx">
+
+                                    <div class="GridLex-grid-mx-noGutter-equalHeight GridLex-grid-noGutter-equalHeight">
+
+                                        <div class="GridLex-col-mx-4_sm-4-mx_xs-12_xss-12 GridLex-col-mx-4_sm-4_xs-12_xss-12">
+
+                                            <div class="featured-icon-simple-item">
+                                                <div class="icon text-primary mx-icone">
+                                                    <i class="fas fa-car-side"></i>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="txt-box-infos">
+                                            <div class="mx-txt-detail">nombre d'étages : <span>{{ $immobilier->nbr_etage }} étages</span></div>
+                                            <div class="mx-txt-detail">nombre de chambres : <span>{{ $immobilier->nbr_chambre }} Chambres</span></div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- end box info -->
+
+                            <div class="bt mt-30 mb-40"></div>
+
+                             <!-- start box info -->
+                            <div class="featured-icon-simple-wrapper">
+
+                                <div class="GridLex-gap-30-mx">
+
+                                    <div class="GridLex-grid-mx-noGutter-equalHeight GridLex-grid-noGutter-equalHeight">
+
+                                        <div class="GridLex-col-mx-4_sm-4-mx_xs-12_xss-12 GridLex-col-mx-4_sm-4_xs-12_xss-12">
+
+                                            <div class="featured-icon-simple-item">
+                                                <div class="icon text-primary mx-icone">
+                                                    <i class="fas fa-dollar-sign"></i>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="txt-box-infos">
+                                            <div class="mx-txt-detail">PATENTE : <span>{{ $immobilier->patente }}</span></div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- end box info -->
+
+                            <div class="bt mt-30 mb-40"></div>
+
+                            <!-- start box info -->
+                            <div class="featured-icon-simple-wrapper">
+
+                                <div class="GridLex-gap-30-mx">
+
+                                    <div class="GridLex-grid-mx-noGutter-equalHeight GridLex-grid-noGutter-equalHeight">
+
+                                        <div class="GridLex-col-mx-4_sm-4-mx_xs-12_xss-12 GridLex-col-mx-4_sm-4_xs-12_xss-12">
+
+                                            <div class="featured-icon-simple-item">
+                                                <div class="icon text-primary mx-icone">
+                                                    <i class="fas fa-dollar-sign"></i>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="txt-box-infos">
+                                            <div class="mx-txt-detail">SUPERFECIE : <span>{{ $immobilier->superfecie }}m<sup>2</sup></span></div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- end box info -->
+
+                            <div class="bt mt-30 mb-40"></div>
+
+
+
+        <div class="bb mb-40 mt-40-xs"></div>
+
+        <div id="detail-content-sticky-nav-02" >
+
+            <div class="mx-container-1 container">
+
+                <h3 class="section-title">Plus d'images</h3>
+
+                <div class="gallery-grid-equal-width-wrapper mb-50">
+                    <div id="gallery1">
+
+                    </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-6 text-right mx-btn-reserver">
+            @if($immobilier->categorie == 3)
+            @php
+                $url = "reservationVente.create";
+            @endphp
+            @elseif($immobilier->categorie == 1)
+                @php
+                    $url = "reservationLocation.create";
+                @endphp
+            @endif
+            <a href="{{ route($url,['immobilier' => $immobilier->id]) }}" class="btn btn-primary ">
+                Reserver maintenant</a>
+        </div>
+
+        </div>
+
+        <div class="bb mb-40 mt-40-xs"></div>
+
+        
+=======
+    <div class="card" style="width: 18rem;margin-top:-100%">
+  <img class="card-img-top" src="/images/bg/bg1/jpg" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+>>>>>>> 3a7b07d54b178ff7521e463666dfa0845cf655c8
     <div class="pt-50 pb-50">
 
         <div id="detail-content-sticky-nav-01" >
@@ -155,6 +353,7 @@
                 Reserver maintenant</a>
         </div>
 
+>>>>>>> c38129287e8e6c832264581aa7d0c3258b2318d9
         <div class="bb mb-40 mt-40-xs"></div>
 
 

@@ -64,7 +64,10 @@ class ReservationVenteController extends Controller
 
 
 
-        return view('immobiliers.reservationDone');
+        $type_pro = "immobilier_v" ;
+
+
+        return view('immobiliers.reservationDone',compact('type_pro'));
     }
 
     /**

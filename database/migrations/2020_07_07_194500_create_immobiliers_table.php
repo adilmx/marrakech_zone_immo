@@ -16,6 +16,8 @@ class CreateImmobiliersTable extends Migration
         Schema::create('immobiliers', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_commune');
+            $table->foreignId('id_type');
+
             $table->string('designation');
             $table->string('categorie');
 
@@ -28,6 +30,7 @@ class CreateImmobiliersTable extends Migration
             $table->string('pic_src');
 
             $table->foreign('id_commune')->references('id')->on('communes');
+            $table->foreign('id_type')->references('id')->on('type_immobiliers');
 
             $table->timestamps();
         });

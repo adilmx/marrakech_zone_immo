@@ -56,7 +56,7 @@ class ReservationLocationController extends Controller
             ],
         );
 
-        $id_car = DB::table('reservation_locations')->insertGetId(
+        $id_location = DB::table('reservation_locations')->insertGetId(
             [
                 'id_customer' => $id_customer ,
                 'id_immo_loc' => $data['id'] ,
@@ -65,10 +65,10 @@ class ReservationLocationController extends Controller
                 'nbr_personnes' => $data['nbr_personnes'],
             ],
         );
+       $type_pro = "immobilier_loc" ;
 
 
-
-        return view('immobiliers.reservationDone');
+        return view('immobiliers.reservationDone',compact('type_pro'));
     }
 
     /**

@@ -19,12 +19,19 @@
     padding-right: 0 !important ;
     margin: 0 auto !important;
 }
+
 .mx-container-4{
-    padding-top: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .mx-container-5{
     padding-top: 3%;
     width: 95%;
+    height: 100vh;
+}
+.mx-container-6{
+    padding-top: 13%;
+    padding-bottom: 13%;
 }
 .mx-container-7{
     padding-top: 3%;
@@ -45,11 +52,14 @@
 
   content: "";
   }
+  .carousel-caption  {
+     color:white !important;
+		padding: 70px 15px 70px !important;
+	}
+.mx-carousoul-p{
+padding: 30px 15px 300px !important;;
+}
 
-  .carousel-caption{
-    color:white !important;
-     padding: 30px 15px 200px !important;
- }
 
  .carousel-inner > .item  {
      width: 100% !important;
@@ -234,17 +244,16 @@
    color: rgb(255, 102, 0);
    line-height: 1.2;
    margin: 0 auto;
-   font-size: 42px;
+   font-size: 4vw;
    font-weight: 600;
 }
 .mx-breadcrumb-image-bg p{
    margin-top: 10px;
-   font-size: 18px;
+   font-size: 3vw;
    letter-spacing: 0.5px;
    color: rgb(255, 255, 255);
    font-weight: bold;
 }
- 
 
 .mx-pt-30{
    padding-top: 1px !important;
@@ -348,7 +357,7 @@
 }
 
 [class*=GridLex-grid-mx] .txt-box-infos .mx-txt-detail {
-   color: rgb(32, 32, 32);
+   color: rgb(255, 255, 255);
    font-size: 1.2em;
    font-weight: bold;
 }
@@ -363,7 +372,7 @@
 
 [class*=GridLex-grid-mx] i{
    font-size: 1em;
-   color: #ffbb00;
+   color: #e4e4e4;
 }
 .featured-icon-simple-item .mx-icone{
 
@@ -374,7 +383,7 @@
 
 h3.section-title-mx{
    text-align: center;
-   color: #f06712;
+   color: #ffffff;
 }
 
 [class*=GridLex-grid-mx][class*=-equalHeight]>[class*=GridLex-col-mx]{
@@ -606,6 +615,7 @@ margin: 0;
    -moz-box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
    box-shadow: 1px 1px 6px 0px rgba(0,0,0,1);
    border-radius: .90rem;
+   background: #4e4e4e ;
 }
 
 @media only screen and (max-width: 1199px){
@@ -874,6 +884,8 @@ margin: 0;
     content: "";
 }
 
+
+
 /**/
 .display-wd{
     display: none !important;
@@ -886,7 +898,9 @@ margin: 0;
 .pmx-p{
     padding-top: 100px !important;
 }
-
+.btn-all-mx{
+    background-color: transparent;
+}
 .btn-all-mx:hover{
     color: #f06712;
     transform: scale(1.2);
@@ -982,7 +996,6 @@ margin: 0;
     border-radius: .90rem 0 .90rem 0;
  }
  .grid-container > div > img{
-  
     height: 100%;
     width: 100%;
     border-radius: 0 .90rem 0 .90rem;
@@ -1139,7 +1152,6 @@ margin: 0;
                 background-color: #1e1f20;
                 border: 2px solid rgb(255, 102, 0);
                 border-radius: 0 .90rem 0 .90rem;
-        
          }
          .meri-bg-v2 a:hover {
             line-height: 36px;
@@ -1159,17 +1171,17 @@ margin: 0;
             background:  linear-gradient(to right, rgb(235, 97, 5) , rgba(77, 77, 77, 0.4) 100%);
             border: 3px solid rgb(206, 206, 206);
             border-radius: 0 .90rem 0 .90rem;
-        
+
         }
-        
+
          .meri-bg-v2 .mx-row{
             margin-right: -15px ;
             margin-left: -15px;
             margin-bottom: 100px;
          }
-        
 
-         
+
+
                 /**/
                 .meri2-bg-v2{
                   text-align: center;
@@ -1230,7 +1242,6 @@ margin: 0;
                 background-color: #1e1f20;
                 border: 2px solid rgb(255, 102, 0);
                 /* border-radius: 0 .90rem 0 .90rem; */
-        
          }
          .meri2-bg-v2 a:hover {
             line-height: 36px;
@@ -1250,20 +1261,20 @@ margin: 0;
             background:  linear-gradient(to right, rgb(235, 97, 5) , rgba(77, 77, 77, 0.4) 100%);
             border: 3px solid rgb(206, 206, 206);
             border-radius: 0 .90rem 0 .90rem;
-        
+
         }
-        
+
          .meri2-bg-v2 .mx-row{
             margin-right: -15px ;
             margin-left: -15px;
             margin-bottom: 100px;
          }
-        
 
-         
+
+
 .meri-widget img{
   height: 40vh;
-} 
+}
 @media screen and (max-width: 1700px){
    .meri-widget img {
       height: 40vh !important;
@@ -1276,16 +1287,17 @@ margin: 0;
    }
        @media screen and (max-width: 992px){
          .meri-widget img{
-            height: 43vh !important;
+            height: 42vh !important;
        }
        }
            @media screen and (max-width: 768px){
             .meri-widget img{
-               height: 52vh !important;
+               height: 39.9vh !important;
            }
            }
                @media screen and (max-width: 576px){
                   .meri-widget img{
-                     height: 52vh !important;
+                     height: 40vh !important;
                }
                }
+

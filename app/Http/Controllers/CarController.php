@@ -16,6 +16,8 @@ class CarController extends Controller
      */
     public function index(\App\CategorieCar $categorie)
     {
+        $home_carasoul = DB::table('gallery_home_carasoul')->where('id',1)->get();
+        
         $marques = DB::table('marques')->where('categorie_id',$categorie->id)
         ->join('cars','cars.marque_id','=','marques.id')
         ->join('categorie_cars','marques.categorie_id','=','categorie_cars.id')
@@ -24,7 +26,8 @@ class CarController extends Controller
         ->get();
 
             return view('cars.index',[
-                'cars_s' => $marques
+                'cars_s' => $marques ,
+                'home_carasoul'=>$home_carasoul ,
             ]);
 
     }
