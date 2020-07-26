@@ -174,20 +174,21 @@
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <div class="d-sm-none d-lg-inline-block">{{ __('Bonjour')}} Admin</div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Logged in 5 min ago</div>
-              <a href="features-profile.html" class="dropdown-item has-icon">
+              <!-- <div class="dropdown-title">Logged in 5 min ago</div> -->
+              <a href="{{route('admin.edit.profile')}}" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
-              <a href="features-activities.html" class="dropdown-item has-icon">
-                <i class="fas fa-bolt"></i> Activities
-              </a>
-              <a href="features-settings.html" class="dropdown-item has-icon">
-                <i class="fas fa-cog"></i> Settings
+              
+              <a href="{{route('admin.settings')}}" class="dropdown-item has-icon">
+                <i class="fas fa-cog"></i> Paramétres
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item has-icon text-danger">
+              <form method="post" action="{{route('logout')}}">
+              @csrf
+              <button type="submit" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
-              </a>
+</button>
+              </form>
             </div>
           </li>
         </ul>
@@ -204,7 +205,7 @@
           <ul class="sidebar-menu">
               <li class="menu-header">{{ __('Tableau de bord') }}</li>
               <li class="nav-item dropdown active">
-                <a href="#" class="nav-link "><i class="fas fa-fire"></i><span>{{ __('Tableau de bord') }}</span></a>
+                <a href="{{ route('register') }}" class="nav-link "><i class="fas fa-fire"></i><span>{{ __('Tableau de bord') }}</span></a>
               </li>
 
               <li class="menu-header">{{ __('Accueil') }}</li>
@@ -233,10 +234,7 @@
                   <li><a class="nav-link" href="layout-default.html">{{ __($type->lib) }}</a></li>
                 @endforeach
 
-                @else
-                <li><a class="nav-link" href="layout-default.html">{{ __('Villas') }}</a></li>
-                <li><a class="nav-link" href="layout-default.html">{{ __('Appartements') }}</a></li>
-                <li><a class="nav-link" href="layout-default.html">{{ __('Terrain') }}</a></li>
+               
                 @endif
                 </ul>
               </li>

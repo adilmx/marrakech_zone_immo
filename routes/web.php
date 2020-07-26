@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Notifications\RoutesNotifications;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -16,16 +17,14 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-/* ces routes sont pour le test seulement  *//* 
-Route::get('/cars', 'CarController@index')->name('car.index'); */
+/* ces routes sont pour le test seulement  */
+Route::get('/cars', 'CarController@index')->name('car.index');
 // Route::get('/details', 'CarController@show')->name('car.show');
 
 /*********** */
 Route::get('/cars/{categorie}', 'CarController@index')->name('car.index');
 Route::get('/details/{car}', 'CarController@show')->name('car.show');
 Route::get('/reservation/{car}', 'ReservationCarController@create')->name('reservationCar.create');
-
-Route::get('/car/create', 'CarController@createByUser')->name('car.createByUser');
 
 Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store');
 
@@ -41,9 +40,6 @@ Route::get('/reservationDoneimmov/{immobilier}', 'ReservationVenteController@don
 
 /*
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
 
 //routes just for testing images
 Route::post('/mytest', 'TestController@edit') ;
@@ -51,14 +47,30 @@ Route::get('/test', function(){
     return view('test');
 }) ;
 //routes for immobiliers ventes
- */
+ */Auth::routes();
 Route::get('/immo_vente', 'ImmobilierController@index')->name('immobilier_vente.index');
 Route::get('/immo_location', 'ImmobilierController@show_location')->name('immobilier_loc.index');
 
 Route::get('/details_immo/{immobilier}', 'ImmobilierController@show')->name('immo.show');
 
 /************************************************* ADMIN */
-Route::get('/admin', 'AdminController@index')->name('admin.index');
+Route::get('/admin', 'AdminController@login')->name('admin.login');
+// Route::get('/home', 'AdminController@index')->name('admin.index');
+Route::get('/index', 'AdminController@index')->name('admin.index');
+Route::get('/edit_profile', 'AdminController@edit')->name('admin.edit.profile');
+Route::get('/settings', 'AdminController@settings')->name('admin.settings');
+Route::get('/settings_done', 'AdminController@done')->name('admin.settings.done');
+Route::post('/resets', 'AdminController@reset')->name('admin.password_reset');
+
+Route::post('/edit_profile', 'AdminController@save')->name('admin.save.profile');
+
+
+
+
+
+
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 
