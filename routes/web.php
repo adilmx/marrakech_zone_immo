@@ -40,7 +40,6 @@ Route::get('/reservationDoneimmov/{immobilier}', 'ReservationVenteController@don
 
 /*
 
-
 //routes just for testing images
 Route::post('/mytest', 'TestController@edit') ;
 Route::get('/test', function(){
