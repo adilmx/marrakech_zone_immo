@@ -6,7 +6,7 @@
         <h1>Profile</h1>
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="{{route('admin.index')}}">{{__('Tableau de bord')}}</a></div>
-            <div class="breadcrumb-item">{{__('Compte')}}</div>
+            <div class="breadcrumb-item">Profile</div>
         </div>
     </div>
     
@@ -31,28 +31,12 @@
                             
                         </div>
                         <div class="card-body">
-                        @if(isset($message1))
-                                    <span class="alert alert-danger col-md-12 col-12 col-sm-12" role="alert">
-                                        <strong>{{ $message1 }}</strong>
-                                    </span>
-                                @endif
-                                @if(isset($message2))
-                                    <span class="alert alert-danger  col-md-12 col-12 col-sm-12" role="alert">
-                                        <strong>{{ $message2 }}</strong>
-                                    </span>
-                                @endif 
-                                 @if(isset($message3))
-                                    <span class="alert alert-danger  col-md-12 col-12 col-sm-12" role="alert">
-                                        <strong>{{ $message3 }}</strong>
-                                    </span>
-                                @endif
-                                   
                             <div class="row">
                             
                             
                                 <div class="form-group col-md-6 col-12">
-                              <br>
-                                
+                                @csrf
+                                  
                             <label>{{__('Votre email')}}</label>
                                     <input type="email" class="form-control" name="email" value="{{ $user->email }}" required="" disabled> 
                                      
@@ -60,25 +44,29 @@
                                  
                             </div>
                             <div class="form-group col-md-6 col-12">
-                            <form method="POST" action="{{ route('admin.password_reset') }}">
+                            <form method="POST" action="{{ route('password.reset') }}">
                         @csrf
 
                             <label>{{__('Mot de passe ancien')}}</label>
-                                    <input  type="password" class="form-control" value="" name="old_passwd" required>
+                                    <input  type="password" class="form-control" value="" name="oldpassword" required>
                                    
                                  
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6 col-12">
                                 <label>{{__('Nouveau mot de passe')}}</label>
-                                    <input id="password" type="password" class="form-control  @error('password') is-invalid @enderror" value="" name="new_passwd"   required>
-                                     
+                                    <input id="password" type="password" class="form-control  @error('password') is-invalid @enderror" value="" name="password"   required>
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                
                                      
                                 </div>
                                 <div class="form-group col-md-6 col-12">
                                     <label>{{__('Confirmer le nouveau mot de passe')}}</label>
-                                    <input id="password-confirm" class="form-control" value="" name="confirmd_passwd" type="password"  required>
+                                    <input id="password-confirm" class="form-control" value="" name="password_confirmation" type="password"  required>
                                     <div class="invalid-feedback">
                                     {{__('   confirmer votre nouveau mot de passe')}}
                                     </div>

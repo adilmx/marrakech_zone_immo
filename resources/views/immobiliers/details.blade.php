@@ -12,13 +12,8 @@
 
                     <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                         <div data-aos="zoom-out-left">
-<<<<<<< HEAD
-                        <h2></h2>
-                        <p>Les meilleurs voitures à choisir</p>
-=======
                         <h2>Les meilleurs immobiliers à choisir</h2>
                         <p></p>
->>>>>>> 3a7b07d54b178ff7521e463666dfa0845cf655c8
                     </div>
                     </div>
                 </div>

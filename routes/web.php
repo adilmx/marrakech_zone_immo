@@ -59,8 +59,13 @@ Route::get('/admin', 'AdminController@login')->name('admin.login');
 Route::get('/index', 'AdminController@index')->name('admin.index');
 Route::get('/edit_profile', 'AdminController@edit')->name('admin.edit.profile');
 Route::get('/settings', 'AdminController@settings')->name('admin.settings');
+Route::get('/settings_done', 'AdminController@done')->name('admin.settings.done');
+Route::post('/resets', 'AdminController@reset')->name('admin.password_reset');
 
 Route::post('/edit_profile', 'AdminController@save')->name('admin.save.profile');
+ 
+
+
 
 Route::get('/admin/car', 'CarController@create')->name('car.create');
 Route::post('/scar', 'CarController@store')->name('car.store');
