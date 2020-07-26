@@ -21,6 +21,7 @@ class CreateCarsTable extends Migration
             $table->date('date_mise_service');
             $table->double('kilometrage');
             $table->integer('nbr_place');
+            $table->integer('days_separator');
             $table->double('prix_min_per_day');
             $table->double('prix_max_per_day');
             $table->string('couleur');

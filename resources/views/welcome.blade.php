@@ -225,7 +225,7 @@
 
     </div>
 
-    <div class="breadcrumb-image-bg  meri-bg-v2" style="background-image: url('{{ $str }}{{ $home_sections[0]->sec_img }}')">
+    <div class="breadcrumb-image-bg  meri-bg-v2 meri-bg-v1" style="background-image: url('{{ $str }}{{ $home_sections[0]->sec_img }}')">
 
         <div class="container mx-container-3">
 

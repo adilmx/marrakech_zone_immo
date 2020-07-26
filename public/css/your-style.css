@@ -26,8 +26,8 @@
 }
 .mx-container-5{
     padding-top: 3%;
-    width: 95%;
-    height: 100vh;
+    width: 95%;/* 
+    height: 100vh; */
 }
 .mx-container-6{
     padding-top: 13%;
@@ -909,22 +909,22 @@ margin: 0;
 /**/
 @media screen and (max-width: 1700px){
 .form-control {
-    width: 50% !important;
+    width: 100% !important;
 }
 }
 @media screen and (max-width: 1200px){
     .form-control {
-    width: 60% !important;
+    width: 100% !important;
 }
 }
     @media screen and (max-width: 992px){
         .form-control {
-        width: 80% !important;
+        width: 100% !important;
     }
     }
         @media screen and (max-width: 768px){
             .form-control {
-            width: 90% !important;
+            width: 100% !important;
         }
         }
             @media screen and (max-width: 576px){
@@ -1093,6 +1093,9 @@ margin: 0;
                 }
 
                 /**/
+                .meri-bg-v1{
+               clip-path: polygon(0 10%, 100% 0% , 100% 100%, 0% 100%) !important;
+              }
                 .meri-bg-v2{
                   text-align: center;
                   color: #FFF;
@@ -1273,16 +1276,16 @@ margin: 0;
 
 
 .meri-widget img{
-  height: 40vh;
+  height: 30vh;
 }
 @media screen and (max-width: 1700px){
    .meri-widget img {
-      height: 40vh !important;
+      height: 35vh !important;
    }
    }
    @media screen and (max-width: 1200px){
       .meri-widget img{
-         height: 42vh !important;
+         height: 40vh !important;
    }
    }
        @media screen and (max-width: 992px){
@@ -1292,7 +1295,7 @@ margin: 0;
        }
            @media screen and (max-width: 768px){
             .meri-widget img{
-               height: 39.9vh !important;
+               height: 38.9vh !important;
            }
            }
                @media screen and (max-width: 576px){
@@ -1301,3 +1304,6 @@ margin: 0;
                }
                }
 
+
+
+             

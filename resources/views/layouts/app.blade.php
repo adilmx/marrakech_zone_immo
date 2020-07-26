@@ -32,10 +32,10 @@
 	<link href="{{ asset('/') }}dist/aos.css" rel="stylesheet">
 
 	<!-- FontAwesome Style File -->
-	<link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">
+	<link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">{{-- 
 	<link href="{{ asset('/') }}myIcons/css/fontawesome.css" rel="stylesheet">
   <link href="{{ asset('/') }}myIcons/css/brands.css" rel="stylesheet">
-  <link href="{{ asset('/') }}myIcons/css/solid.css" rel="stylesheet">
+  <link href="{{ asset('/') }}myIcons/css/solid.css" rel="stylesheet"> --}}
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

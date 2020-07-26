@@ -23,7 +23,6 @@
         </div>
 
     </div>
-<<<<<<< HEAD
 
     <div class="pt-50 pb-50">
 
@@ -206,25 +205,6 @@
         <div class="bb mb-40 mt-40-xs"></div>
 
         
-=======
-    <div class="card" style="width: 18rem;margin-top:-100%">
-  <img class="card-img-top" src="/images/bg/bg1/jpg" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-    <div class="pt-50 pb-50">
-
-     
-
-        <div class="bb mb-40 mt-40-xs"></div>
-
-        <div class="col-xs-12 col-sm-6 text-right mx-btn-reserver">
-            <a href="{{ route('reservationVente.create',['immobilier' => $immobilier->id]) }}" class="btn btn-primary ">
-                Reserver maintenant</a>
-        </div>
-
->>>>>>> c38129287e8e6c832264581aa7d0c3258b2318d9
         <div class="bb mb-40 mt-40-xs"></div>
 
 

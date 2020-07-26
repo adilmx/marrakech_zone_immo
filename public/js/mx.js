@@ -211,13 +211,17 @@ $(document).ready(function(){
 
         var pmin = $(".mx-price").attr('pmin') ;
         var pmax = $(".mx-price").attr('pmax') ;
-
+        var pdays = $(".mx-price").attr('pdays') ;
+        
+        if(pdays == ""){
+            pdays = 7;
+        }
         days = parseFloat(diffDays(end,start)) + 1;
 
-        if(days < 7){
-            price = parseFloat(pmin) * parseFloat(days) ;
+        if(days < parseInt(pdays)){
+            price = (parseFloat(pmin) * parseFloat(days)).toFixed(2) ;
         }else{
-            price = parseFloat(pmin) * parseFloat(days) ;
+            price = (parseFloat(pmax) * parseFloat(days)).toFixed(2) ;
         }
         $(".mx-price").text(price+"$ / "+days+"jours");/*
         alert("days :"+days+"pmin :"+pmin+"pmax :"+pmax+"price :"+price); */
@@ -233,3 +237,4 @@ function diffDays(d1,d2){
 
    return Math.round(Math.abs(days));
 }
+

@@ -24,6 +24,7 @@ class CreateImmobiliersTable extends Migration
             $table->string('patente');
              $table->double('price_max');
             $table->double('price_min');
+            $table->double('superfecie');
             $table->string('deleted');
             $table->string('pic_src');
 

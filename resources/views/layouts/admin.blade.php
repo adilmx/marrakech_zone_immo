@@ -9,14 +9,23 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-  
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="{{ asset('/') }}node_modules/summernote/dist/summernote-bs4.css">
+  <link rel="stylesheet" href="{{ asset('/') }}node_modules/selectric/public/selectric.css">
+  <link rel="stylesheet" href="{{ asset('/') }}node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+
 	<!-- Fav and Touch Icons -->
     <title>Marrakech Zone Immo</title>
 	<link rel="shortcut icon" href="{{ asset('/') }}images/ico/logo-zh-tours.png">
 
   <!-- Template CSS -->
-  <link rel="stylesheet" href="../assetsAdmin/css/style.css">
-  <link rel="stylesheet" href="../assetsAdmin/css/components.css">
+  <link rel="stylesheet" href="{{ asset('/') }}assetsAdmin/css/style.css">
+  <link rel="stylesheet" href="{{ asset('/') }}assetsAdmin/css/components.css">
+
+
+	<!-- Add your style -->
+  <link rel="stylesheet" href="{{ asset('/') }}assetsAdmin/css/custom.css">
 </head>
 
 <body>
@@ -33,7 +42,7 @@
             <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
             <button class="btn" type="submit"><i class="fas fa-search"></i></button>
             <div class="search-backdrop"></div>
-            
+
           </div>
         </form>
         <ul class="navbar-nav navbar-right">
@@ -47,7 +56,7 @@
               <div class="dropdown-list-content dropdown-list-message">
                 <a href="#" class="dropdown-item dropdown-item-unread">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assetsAdmin/img/avatar/avatar-1.png" class="rounded-circle">
+                    <img alt="image" src="{{ asset('/') }}assetsAdmin/img/avatar/avatar-1.png" class="rounded-circle">
                     <div class="is-online"></div>
                   </div>
                   <div class="dropdown-item-desc">
@@ -58,7 +67,7 @@
                 </a>
                 <a href="#" class="dropdown-item dropdown-item-unread">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assetsAdmin/img/avatar/avatar-2.png" class="rounded-circle">
+                    <img alt="image" src="{{ asset('/') }}assetsAdmin/img/avatar/avatar-2.png" class="rounded-circle">
                   </div>
                   <div class="dropdown-item-desc">
                     <b>Dedik Sugiharto</b>
@@ -68,7 +77,7 @@
                 </a>
                 <a href="#" class="dropdown-item dropdown-item-unread">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assetsAdmin/img/avatar/avatar-3.png" class="rounded-circle">
+                    <img alt="image" src="{{ asset('/') }}assetsAdmin/img/avatar/avatar-3.png" class="rounded-circle">
                     <div class="is-online"></div>
                   </div>
                   <div class="dropdown-item-desc">
@@ -79,7 +88,7 @@
                 </a>
                 <a href="#" class="dropdown-item">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assetsAdmin/img/avatar/avatar-4.png" class="rounded-circle">
+                    <img alt="image" src="{{ asset('/') }}assetsAdmin/img/avatar/avatar-4.png" class="rounded-circle">
                   </div>
                   <div class="dropdown-item-desc">
                     <b>Ardian Rahardiansyah</b>
@@ -89,7 +98,7 @@
                 </a>
                 <a href="#" class="dropdown-item">
                   <div class="dropdown-item-avatar">
-                    <img alt="image" src="../assetsAdmin/img/avatar/avatar-5.png" class="rounded-circle">
+                    <img alt="image" src="{{ asset('/') }}assetsAdmin/img/avatar/avatar-5.png" class="rounded-circle">
                   </div>
                   <div class="dropdown-item-desc">
                     <b>Alfa Zulkarnain</b>
@@ -202,8 +211,8 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-th-large"></i><span>{{ __('Accueil') }}</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="layout-default.html">{{ __('Diaporama') }}</a></li>
-                  <li><a class="nav-link" href="layout-transparent.html">{{ __('Sections') }}</a></li>
+                  <li><a class="nav-link" href="{{route('homeCarasoul.create')}}">{{ __('Diaporama') }}</a></li>
+                  <li><a class="nav-link" href="{{route('homeSections.create')}}">{{ __('Sections') }}</a></li>
                 </ul>
               </li>
 
@@ -211,15 +220,15 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-car"></i><span>{{ __('Véhicules') }}</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="layout-default.html">{{ __('Voitures de Luxe ') }}</a></li>
-                  <li><a class="nav-link" href="layout-transparent.html">{{ __('Transport touristique') }}</a></li>
+                  <li><a class="nav-link" href="{{route('adminCar.index',['categorie'=>'1'])}}">{{ __('Voitures de Luxe ') }}</a></li>
+                  <li><a class="nav-link" href="{{route('adminCar.index',['categorie'=>'2'])}}">{{ __('Transport touristique') }}</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-car"></i><span>{{ __('Immobiliers') }}</span></a>
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-home"></i><span>{{ __('Immobiliers') }}</span></a>
                 <ul class="dropdown-menu">
                 @if(isset($types_immo))
-                
+
                 @foreach($types_immo as $type)
                   <li><a class="nav-link" href="layout-default.html">{{ __($type->lib) }}</a></li>
                 @endforeach
@@ -235,12 +244,12 @@
               <li class="menu-header">{{ __('Paramétre') }}</li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link " data-toggle="dropdown"><i class="fas fa-cog"></i><span>{{ __('Paramétre') }}</span></a>
-                
+
               </li>
 
             </ul>
 
-            
+
         </aside>
       </div>
 
@@ -250,10 +259,10 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+          Copyright &copy; 2020 <div class="bullet"></div> Marrakech Zone Immo
         </div>
         <div class="footer-right">
-          2.3.0
+          ---
         </div>
       </footer>
     </div>
@@ -265,21 +274,28 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="../assetsAdmin/js/stisla.js"></script>
+  <script src="{{ asset('/') }}assetsAdmin/js/stisla.js"></script>
 
   <!-- JS Libraies -->
-  <script src="../node_modules/simpleweather/jquery.simpleWeather.min.js"></script>
-  <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-  <script src="../node_modules/jqvmap/dist/jquery.vmap.min.js"></script>
-  <script src="../node_modules/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-  <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
-  <script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+  <script src="{{ asset('/') }}node_modules/simpleweather/jquery.simpleWeather.min.js"></script>
+  <script src="{{ asset('/') }}node_modules/chart.js/dist/Chart.min.js"></script>
+  <script src="{{ asset('/') }}node_modules/jqvmap/dist/jquery.vmap.min.js"></script>
+  <script src="{{ asset('/') }}node_modules/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+  <script src="{{ asset('/') }}node_modules/summernote/dist/summernote-bs4.js"></script>
+  <script src="{{ asset('/') }}node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+
+  <script src="{{ asset('/') }}node_modules/selectric/public/jquery.selectric.min.js"></script>
+  <script src="{{ asset('/') }}node_modules/jquery_upload_preview/assets/js/jquery.uploadPreview.js"></script>
+  <script src="{{ asset('/') }}node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 
   <!-- Template JS File -->
-  <script src="../assetsAdmin/js/scripts.js"></script>
-  <script src="../assetsAdmin/js/custom.js"></script>
+  <script src="{{ asset('/') }}assetsAdmin/js/scripts.js"></script>
+  <script src="{{ asset('/') }}assetsAdmin/js/custom.js"></script>
 
-  <!-- Page Specific JS File -->
-  <script src="../assetsAdmin/js/page/index-0.js"></script>
+  <!-- Page Specific JS File -->{{--
+  <script src="{{ asset('/') }}assetsAdmin/js/page/index-0.js"></script> --}}
+  <script src="{{ asset('/') }}assetsAdmin/js/page/features-post-create.js"></script>
+
+  @yield('script-details-car')
 </body>
 </html>

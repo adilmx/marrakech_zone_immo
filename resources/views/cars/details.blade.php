@@ -58,8 +58,8 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">PRIX POUR moins DE 7 JOUR : <span>{{ $car[0]->prix_min_per_day }}$/jour</span></div>
-                                            <div class="mx-txt-detail">PRIX POUR plus DE 7 JOUR : <span>{{ $car[0]->prix_max_per_day }}$/jour</span></div>
+                                            <div class="mx-txt-detail">PRIX POUR moins DE {{$car[0]->days_separator}} JOURS : <span>{{ $car[0]->prix_min_per_day }}$/jour</span></div>
+                                            <div class="mx-txt-detail">PRIX POUR plus DE {{$car[0]->days_separator}} JOURS : <span>{{ $car[0]->prix_max_per_day }}$/jour</span></div>
                                             </div>
                                         </div>
 
@@ -241,15 +241,15 @@
                     </div>
 
             </div>
-
+    <div class="col-xs-12 col-sm-6 text-right mx-btn-reserver">
+            <a href="{{ route('reservationCar.create',['car' => $car[0]->id]) }}" class="btn btn-primary ">
+                Reserver maintenant</a>
+        </div>
         </div>
 
         <div class="bb mb-40 mt-40-xs"></div>
 
-        <div class="col-xs-12 col-sm-6 text-right mx-btn-reserver">
-            <a href="{{ route('reservationCar.create',['car' => $car[0]->id]) }}" class="btn btn-primary ">
-                Reserver maintenant</a>
-        </div>
+        
 
         <div class="bb mb-40 mt-40-xs"></div>
 
@@ -272,10 +272,10 @@
 <script>
     $('#gallery1').imagesGrid({
 	images: [
-			{ src: "{{ asset('/') }}storage/{{ $car[0]->first_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption One' },
-			{ src: "{{ asset('/') }}storage/{{ $car[0]->sec_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Two' },
-			{ src: "{{ asset('/') }}storage/{{ $car[0]->third_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Three' },
-			{ src: "{{ asset('/') }}storage/{{ $car[0]->fourth_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Fpur' },
+			{ src: "{{ asset('/') }}storage/{{ $car[0]->first_img }}", alt: 'Second image', title: "{{__('cliquer pour afficher l image en plein ecran')}}", caption: '{{ __('IMAGE 1')}}' },
+			{ src: "{{ asset('/') }}storage/{{ $car[0]->sec_img }}", alt: 'Second image', title: "{{__('cliquer pour afficher l image en plein ecran')}}", caption: '{{ __('IMAGE 2')}}' },
+			{ src: "{{ asset('/') }}storage/{{ $car[0]->third_img }}", alt: 'Second image', title: "{{__('cliquer pour afficher l image en plein ecran')}}", caption: '{{ __('IMAGE 3')}}' },
+			{ src: "{{ asset('/') }}storage/{{ $car[0]->fourth_img }}", alt: 'Second image', title: "{{__('cliquer pour afficher l image en plein ecran')}}", caption: '{{ __('IMAGE 4')}}' },
 			],
 		cells: 5,
 		align: true
@@ -284,10 +284,10 @@
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		$('#gallery-in-tab').imagesGrid({
 			images: [
-				{ src: "{{ asset('/') }}storage/{{ $car[0]->first_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption One' },
-				{ src: "{{ asset('/') }}storage/{{ $car[0]->sec_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Two' },
-				{ src: "{{ asset('/') }}storage/{{ $car[0]->third_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Three' },
-				{ src: "{{ asset('/') }}storage/{{ $car[0]->fourth_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Fpur' },
+				{ src: "{{ asset('/') }}storage/{{ $car[0]->first_img }}", alt: 'Second image', title: "{{__('cliquer pour afficher l image en plein ecran')}}", caption: '{{ __('IMAGE 1')}}' },
+				{ src: "{{ asset('/') }}storage/{{ $car[0]->sec_img }}", alt: 'Second image', title: "{{__('cliquer pour afficher l image en plein ecran')}}", caption: '{{ __('IMAGE 2')}}' },
+				{ src: "{{ asset('/') }}storage/{{ $car[0]->third_img }}", alt: 'Second image', title: "{{__('cliquer pour afficher l image en plein ecran')}}", caption: '{{ __('IMAGE 3')}}' },
+				{ src: "{{ asset('/') }}storage/{{ $car[0]->fourth_img }}", alt: 'Second image', title: "{{__('cliquer pour afficher l image en plein ecran')}}", caption: '{{ __('IMAGE 4')}}' },
 				],
 			cells: 5,
 			align: true

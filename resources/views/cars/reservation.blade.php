@@ -176,7 +176,7 @@
                                                         <div class="font-smaller " style="color: rgb(241, 64, 10)">* depend de duree que vous avez choisie</div>
                                                     </div>
 													<div class="col-xs-5 col-sm-5 text-right">
-														<span class="font600 font26 block text-primary mt-5 mx-price" pmin="{{ $car[0]->prix_min_per_day }}" pmax="{{ $car[0]->prix_max_per_day }}">{{ $car[0]->prix_min_per_day }}$</span>
+														<span class="font600 font26 block text-primary mt-5 mx-price" pdays="{{ $car[0]->days_separator }}" pmin="{{ $car[0]->prix_min_per_day }}" pmax="{{ $car[0]->prix_max_per_day }}">{{ $car[0]->prix_min_per_day }}$</span>
 													</div>
 												</div>
 											</li>

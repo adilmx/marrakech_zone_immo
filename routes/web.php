@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index')->name('home');
 
-/* ces routes sont pour le test seulement  */
-Route::get('/cars', 'CarController@index')->name('car.index');
+/* ces routes sont pour le test seulement  *//* 
+Route::get('/cars', 'CarController@index')->name('car.index'); */
 // Route::get('/details', 'CarController@show')->name('car.show');
 
 /*********** */
@@ -25,6 +25,7 @@ Route::get('/cars/{categorie}', 'CarController@index')->name('car.index');
 Route::get('/details/{car}', 'CarController@show')->name('car.show');
 Route::get('/reservation/{car}', 'ReservationCarController@create')->name('reservationCar.create');
 
+Route::get('/car/create', 'CarController@createByUser')->name('car.createByUser');
 
 Route::post('/rs', 'ReservationCarController@store')->name('reservationCar.store');
 
@@ -59,11 +60,21 @@ Route::get('/details_immo/{immobilier}', 'ImmobilierController@show')->name('imm
 /************************************************* ADMIN */
 Route::get('/admin', 'AdminController@index')->name('admin.index');
 
-Route::get('/admin/car', 'CarController@create')->name('car.create');
+
+
+
+Route::get('/admin/car/create', 'CarController@create')->name('car.create');
 Route::post('/scar', 'CarController@store')->name('car.store');
 
+Route::get('/admin/car/edit/{car}', 'CarController@edit')->name('car.edit');
+Route::post('/scaredit/{car}', 'CarController@storeEdit')->name('car.storeEdit');
+
+Route::get('/admin/car/{categorie}', 'AdminController@indexCar')->name('adminCar.index');
+
+Route::get('/admin/car/delete/{car}', 'CarController@delete')->name('car.delete');
+
 Route::get('/admin/home/carasoul', 'HomeController@createCarasoul')->name('homeCarasoul.create');
-Route::post('/shomecarasoul', 'HomeController@storeCarasoul')->name('homeCarasoul.store');
+Route::post('/shomecarasoul/{carasoul}', 'HomeController@storeCarasoul')->name('homeCarasoul.store');
 
 Route::get('/admin/home/sections', 'HomeController@createSections')->name('homeSections.create');
-Route::post('/shomesections', 'HomeController@storeSections')->name('homeSections.store');
+Route::post('/shomesections/{section}', 'HomeController@storeSections')->name('homeSections.store');

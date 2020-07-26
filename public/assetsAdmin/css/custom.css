@@ -2,7 +2,114 @@
  *
  * You can write your CSS code here, DO NOT touch the default JavaScript file
  * because it will make it harder for you to update.
- * 
+ *
  */
 
 /*# sourceMappingURL=custom.css.map */
+  /*** admiiiin **/
+
+  .mx-image-preview{
+    border: 2px dashed #ff7800 !important ;
+   }
+   .mx-cap{
+       font-size: 20px !important;
+   }
+   .invalid-feedback-mx{
+    color: rgb(231, 4, 4) !important;
+    font-size: .9em !important;
+  }
+
+.create-done-wrapper {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.create-done-wrapper .icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    color: #FE8800;
+    font-size: 6vw;
+    line-height: 90px;
+    margin: 0 auto;
+    padding: 2px;
+}
+
+.create-done-wrapper .icon .icon-inner {
+    border: 2px solid #FE8800;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.create-done-wrapper .icon .icon-inner i {
+    font-size: 50px;
+}
+.create-done-wrapper h1 {
+    line-height: 1;
+    margin: 30px 0 5px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 5vw;
+}
+
+.create-done-wrapper p.lead {
+    margin: 0 0 10px;
+}
+
+.create-done-wrapper h3 {
+    margin: 25px 0 25px;
+}
+
+/* .article .article-details{
+  padding: 0;
+} */
+.btn{
+  margin: .1rem;
+}
+
+.article{
+ height:100% !important;
+}
+.article-details{
+ font-size: 1vw;
+}
+
+.article .article-header .article-image {
+    background-color: #fbfbfb;
+    border-radius: .90rem;
+}
+
+@media screen and (max-width: 1700px){
+  .article-details{
+    font-size: 1vw;
+   }
+  }
+  @media screen and (max-width: 1200px){
+    .article-details{
+      font-size: 1.4vw;
+     }
+  }
+      @media screen and (max-width: 992px){
+        .article-details{
+          font-size: 2vw;
+         }
+      }
+          @media screen and (max-width: 768px){
+            .article-details{
+              font-size: 3vw;
+             }
+          }
+              @media screen and (max-width: 576px){
+                .article-details{
+                  font-size: 4.8vw;
+                 }
+              }
+
+.mx-image-preview img{
+  width: 100%;
+  height: 100%;
+}
