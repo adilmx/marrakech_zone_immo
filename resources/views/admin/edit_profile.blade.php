@@ -9,11 +9,11 @@
             <div class="breadcrumb-item">Profile</div>
         </div>
     </div>
-    
+
     <div class="section-body">
         <h2 class="section-title">{{__('Bonjour, Admin!')}} </h2>
         <p class="section-lead">
-        {{__(' Vous pouvez changer vos informations sur cette page.')}}  
+        {{__(' Vous pouvez changer vos informations sur cette page.')}}
         </p>
 
         <div class="row mt-sm-4">
@@ -24,17 +24,17 @@
 
                     </div>
                     <div class="profile-widget-description">
-                          
+
                     <form method="post" class="needs-validation" novalidate="" action="{{route('admin.save.profile')}}">
-                    @csrf  
+                    @csrf
                     <div class="card-header">
                             <h4>{{__('Editer votre profil')}}</h4>
-                            
+
                         </div>
                         <div class="card-body">
                             <div class="row">
-                            
-                            
+
+
                                 <div class="form-group col-md-6 col-12">
                                 @if(isset($message1))
                             <p class="alert alert-success">{{$message1}}</p>
@@ -48,7 +48,7 @@
                                    {{__('   Entrer votre nom')}}
                                     </div>
                                 </div>
-                                 
+
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-7 col-12">
@@ -63,8 +63,8 @@
                                     <input type="tel" class="form-control" value="" name="phone">
                                 </div>
                             </div>
-                            
-                            
+
+
                         </div>
                         <div class="card-footer text-right">
                             <button class="btn btn-primary">{{__('Enregistrer les modifications')}}</button>
@@ -80,7 +80,7 @@
             </div>
             <div class="col-12 col-md-12 col-lg-7">
                 <div class="card">
-                   
+
                 </div>
             </div>
         </div>

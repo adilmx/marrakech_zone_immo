@@ -32,19 +32,10 @@
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
-      <nav class="navbar navbar-expand-lg main-navbar">
-        <form class="form-inline mr-auto">
-          <ul class="navbar-nav mr-3">
-            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
-          </ul>
-          <div class="search-element">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="250">
-            <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-            <div class="search-backdrop"></div>
-
-          </div>
-        </form>
+      <nav class="navbar navbar-expand-lg main-navbar mx-flex-right">
+      {{-- only on products --}}
+      @yield('section-search')
+        {{-- end only on products --}}
         <ul class="navbar-nav navbar-right">
           <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
@@ -178,7 +169,7 @@
               <a href="{{route('admin.edit.profile')}}" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
-              
+
               <a href="{{route('admin.settings')}}" class="dropdown-item has-icon">
                 <i class="fas fa-cog"></i> Paramétres
               </a>
@@ -192,20 +183,20 @@
             </div>
           </li>
         </ul>
-      </nav>
+    </nav>
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="{{ asset('/') }}"><img src="{{ asset('/') }}images/ico/logo-zh-tours-mx.png" alt="Logo" style="width: 70%;
+            <a href="{{route('admin.index')}}"><img src="{{ asset('/') }}images/ico/logo-zh-tours-mx.png" alt="Logo" style="width: 70%;
     height: auto;" />
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="{{route('admin.index')}}">MZI</a>
           </div>
           <ul class="sidebar-menu">
               <li class="menu-header">{{ __('Tableau de bord') }}</li>
               <li class="nav-item dropdown active">
-                <a href="{{ route('register') }}" class="nav-link "><i class="fas fa-fire"></i><span>{{ __('Tableau de bord') }}</span></a>
+                <a href="{{ route('admin.index') }}" class="nav-link "><i class="fas fa-fire"></i><span>{{ __('Tableau de bord') }}</span></a>
               </li>
 
               <li class="menu-header">{{ __('Accueil') }}</li>
@@ -234,7 +225,7 @@
                   <li><a class="nav-link" href="layout-default.html">{{ __($type->lib) }}</a></li>
                 @endforeach
 
-               
+
                 @endif
                 </ul>
               </li>
@@ -286,9 +277,14 @@
   <script src="{{ asset('/') }}node_modules/jquery_upload_preview/assets/js/jquery.uploadPreview.js"></script>
   <script src="{{ asset('/') }}node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 
+
+<!-- JS Libraies -->
+  <script src="{{ asset('/') }}node_modules/sweetalert/dist/sweetalert.min.js"></script>
+
   <!-- Template JS File -->
   <script src="{{ asset('/') }}assetsAdmin/js/scripts.js"></script>
   <script src="{{ asset('/') }}assetsAdmin/js/custom.js"></script>
+
 
   <!-- Page Specific JS File -->{{--
   <script src="{{ asset('/') }}assetsAdmin/js/page/index-0.js"></script> --}}

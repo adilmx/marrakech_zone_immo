@@ -3,7 +3,7 @@
 @section('content')
 <div class="section">
 <div class="section-header">
-<h1>Creation de votre fiche de voiture</h1>
+<h1>{{__('Creation de votre fiche de voiture')}}</h1>
 </div>
 <div class="container">
 
@@ -26,9 +26,9 @@
                                                 <label for="categorie" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('categorie de voiture') }}</label>
 
 
-                                                    <select name="categorie" class="form-control @error('categorie') is-invalid @enderror" value="{{ old('categorie') }}" name="categorie" id="categorie">
-                                                        <option value="Voitures de luxe">Voitures de luxe</option>
-                                                        <option value="Transports touristique">Transports touristique</option>
+                                                    <select name="categorie" class="c form-control @error('categorie') is-invalid @enderror" value="{{ old('categorie') }}" name="categorie" id="categorie">
+                                                        <option id="c1" data="1" value="Voitures de luxe">{{__('Voitures de luxe')}}</option>
+                                                        <option id="c2" data="2" value="Transports touristique">{{__('Transports touristique')}}</option>
                                                     </select>
 
                                                     @error('categorie')
@@ -40,11 +40,11 @@
                                     </div>
                                     <div class="form-group row">
                                         <label for="marque" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('marque de voiture') }}</label>
-                                            <select name="marque_" class="form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="marque">
+                                            <select name="marque_" class=" mc form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="marque">
                                                         @foreach($marques as  $marque)
-                                                            <option value="{{ $marque->libelle }}">{{ $marque->libelle }}</option>
+                                                            <option class="op" data="{{$marque->categorie_id}}" value="{{ $marque->libelle }}">{{ $marque->libelle }}</option>
                                                         @endforeach
-                                                        <option value="...">autre</option>
+                                                        <option value="...">{{__('autre')}}</option>
                                             </select>
 
                                             <input id="marque_sub" type="text" class="form-control @error('marque') is-invalid @enderror" name="marque" value="{{ old('marque') }}"  autocomplete="marque" hidden>
@@ -174,26 +174,11 @@
                                             @enderror
 
                                     </div>
-{{-- 
-                                    <div class="form-group row">
-                                        <label for="pic_src" class="text-md-left text-md-left col-form-label text-md-left">{{ __('image officielle de voiture') }}</label>
-
-
-                                            <input id="pic_src" type="file" class="form-control @error('pic_src') is-invalid @enderror" name="pic_src" value="{{ old('pic_src') }}"  autocomplete="pic_src">
-
-                                            @error('pic_src')
-                                                <span class="invalid-feedback-mx" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                    </div> --}}
-
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-left col-12   mx-cap">{{ __('image officielle de voiture') }}</label>
                                         <div class="col-sm-12 ">
                                           <div id="image-preview" class="image-preview mx-image-preview">
-                                            <label for="image-upload" id="image-label">Image ici</label>
+                                            <label for="image-upload" id="image-label">{{__('Image ici')}}</label>
                                             <input id="image-upload" type="file" class=" @error('pic_src') is-invalid @enderror" name="pic_src" value="{{ old('pic_src') }}"  autocomplete="pic_src">
 
                                             @error('pic_src')
@@ -209,7 +194,7 @@
                                         <label class="col-form-label text-md-left col-12   mx-cap">{{ __('images secondaire 1') }}</label>
                                         <div class="col-sm-12 ">
                                           <div id="image-preview_1" class="image-preview mx-image-preview">
-                                            <label for="image-upload_1" id="image-label_1">Image ici</label>
+                                            <label for="image-upload_1" id="image-label_1">{{__('Image ici')}}</label>
                                             <input id="image-upload_1" type="file" class=" @error('img_1') is-invalid @enderror" name="img_1" value="{{ old('img_1') }}"  autocomplete="img_1">
 
                                             @error('img_1')
@@ -225,7 +210,7 @@
                                         <label class="col-form-label text-md-left col-12   mx-cap">{{ __('images secondaire 2') }}</label>
                                         <div class="col-sm-12 ">
                                           <div id="image-preview_2" class="image-preview mx-image-preview">
-                                            <label for="image-upload_2" id="image-label_2">Image ici</label>
+                                            <label for="image-upload_2" id="image-label_2">{{__('Image ici')}}</label>
                                             <input id="image-upload_2" type="file" class=" @error('img_2') is-invalid @enderror" name="img_2" value="{{ old('img_2') }}"  autocomplete="img_2">
 
                                             @error('img_2')
@@ -241,7 +226,7 @@
                                         <label class="col-form-label text-md-left col-12   mx-cap">{{ __('images secondaire 3') }}</label>
                                         <div class="col-sm-12 ">
                                           <div id="image-preview_3" class="image-preview mx-image-preview">
-                                            <label for="image-upload_3" id="image-label_3">Image ici</label>
+                                            <label for="image-upload_3" id="image-label_3">{{__('Image ici')}}</label>
                                             <input id="image-upload_3" type="file" class=" @error('img_3') is-invalid @enderror" name="img_3" value="{{ old('img_3') }}"  autocomplete="img_3">
 
                                             @error('img_3')
@@ -257,7 +242,7 @@
                                         <label class="col-form-label text-md-left col-12   mx-cap">{{ __('images secondaire 4') }}</label>
                                         <div class="col-sm-12 ">
                                           <div id="image-preview_4" class="image-preview mx-image-preview">
-                                            <label for="image-upload_4" id="image-label_4">Image ici</label>
+                                            <label for="image-upload_4" id="image-label_4">{{__('Image ici')}}</label>
                                             <input id="image-upload_4" type="file" class=" @error('img_4') is-invalid @enderror" name="img_4" value="{{ old('img_4') }}"  autocomplete="img_4">
 
                                             @error('img_4')
@@ -268,63 +253,8 @@
                                           </div>
                                         </div>
                                     </div>
-{{-- 
-                                    <div class="form-group row">
-                                        <label for="img_1" class="text-md-left text-md-left col-form-label text-md-left">{{ __('images secondaire 1') }}</label>
-
-
-                                            <input id="img_1" type="file" class="form-control @error('img_1') is-invalid @enderror" name="img_1" value="{{ old('img_1') }}"  autocomplete="img_1">
-
-                                            @error('img_1')
-                                                <span class="invalid-feedback-mx" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="img_2" class="text-md-left text-md-left col-form-label text-md-left">{{ __('images secondaire 2') }}</label>
-
-
-                                            <input id="img_2" type="file" class="form-control @error('img_2') is-invalid @enderror" name="img_2" value="{{ old('img_2') }}"  autocomplete="img_2">
-
-                                            @error('img_2')
-                                                <span class="invalid-feedback-mx" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="img_3" class="text-md-left text-md-left col-form-label text-md-left">{{ __('images secondaire 3') }}</label>
-
-
-                                            <input id="img_3" type="file" class="form-control @error('img_3') is-invalid @enderror" name="img_3" value="{{ old('img_3') }}"  autocomplete="img_3">
-
-                                            @error('img_3')
-                                                <span class="invalid-feedback-mx" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="img_4" class="text-md-left text-md-left col-form-label text-md-left">{{ __('images secondaire 4') }}</label>
-
-
-                                            <input id="img_4" type="file" class="form-control @error('img_4') is-invalid @enderror" name="img_4" value="{{ old('img_4') }}"  autocomplete="img_4">
-
-                                            @error('img_4')
-                                                <span class="invalid-feedback-mx" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-
-                                    </div>
- --}}
                                     <div class="form-group row  mt-0 ml-auto">
-                                        <button class="btn btn-primary" name="create_car">Creer</button>
+                                        <button class="btn btn-primary" name="create_car">{{__('Creer')}}</button>
                                     </div>
                                    </div>
                                 </div>

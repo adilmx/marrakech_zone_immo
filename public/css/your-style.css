@@ -896,7 +896,7 @@ margin: 0;
 }
 
 .pmx-p{
-    padding-top: 100px !important;
+    padding-top: 180px !important;
 }
 .btn-all-mx{
     background-color: transparent;
@@ -905,7 +905,16 @@ margin: 0;
     color: #f06712;
     transform: scale(1.2);
 }
-
+.btn-cr-bien{
+background-color: transparent;
+color: #f06712;
+font-size: 1vw;
+}
+.btn-cr-bien:hover{
+   background:  linear-gradient(to right, rgba(77, 77, 77, 0.4) , rgb(235, 97, 5) 100%);
+   border-radius: .90rem;
+   color: #ffffff;
+}
 /**/
 @media screen and (max-width: 1700px){
 .form-control {
@@ -1306,4 +1315,7 @@ margin: 0;
 
 
 
-             
+       /* for mx.js search btn*/      
+       display-wd-p{
+          display: none;
+       }

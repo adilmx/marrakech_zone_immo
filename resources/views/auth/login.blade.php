@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="{{ asset('/') }}node_modules/bootstrap-social/bootstrap-social.css">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="assetsAdmin/css/style.css">
-    <link rel="stylesheet" href="assetsAdmin/css/components.css">
+    <link rel="stylesheet" href="{{ asset('/') }}assetsAdmin/css/style.css">
+    <link rel="stylesheet" href="{{ asset('/') }}assetsAdmin/css/components.css">
 </head>
 
 <body style="background-image: url('/images/bg/annie-spratt-IDdpNyXPEjg-unsplash.jpg');background-position:center;background-size:cover">
@@ -33,9 +33,9 @@
 
                             <div class="card-header">
                                 <h4>{{__('Connexion')}}</h4>
-                               
+
                             </div>
-                          
+
                             <div class="card-body">
                                 <form method="POST" action="{{ route('login') }}" class="needs-validation">
                                     @csrf
@@ -50,7 +50,7 @@
                                         <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
 
 
-                                       
+
                          </div>
 
                                     <div class="form-group">
@@ -59,7 +59,7 @@
 
                                             @if (Route::has('password.request'))
                                             <div class="float-right">
-                                                <a href="auth-forgot-password.html" class="text-small">
+                                                <a href="{{route('password.forget')}}" class="text-small">
                                                     {{__('Mot de passe oublié?')}}
                                                 </a>
                                             </div>
@@ -69,7 +69,7 @@
                                         </div>
                                         <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
 
-                                       
+
                                     </div>
 
                                     <div class="form-group">
@@ -94,7 +94,7 @@
                     </div>
                     </div>
 
-                     
+
                 </div>
             </div>
     </div>

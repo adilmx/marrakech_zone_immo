@@ -198,7 +198,7 @@
                     $url = "reservationLocation.create";
                 @endphp
             @endif
-            <a href="{{ route($url,['immobilier' => $immobilier->id]) }}" class="btn btn-primary ">
+            <a href="{{ route($url,['lang'=>app()->getLocale(),'immobilier' => $immobilier->id]) }}" class="btn btn-primary ">
                 Reserver maintenant</a>
         </div>
 

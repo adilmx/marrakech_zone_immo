@@ -153,7 +153,7 @@
 					<div class="horizontal-featured-icon-sm clearfix">
 						<div class="icon"> <i class="ri ri-user"></i></div>
 						<div class="content text-center">
-							<h6 style="color:#F07D37">Besoin d'un chauffeur qui vous guide?</h6>
+							<h6 style="color:#F07D37">{{__("Besoin d'un chauffeur qui vous guide?")}}</h6>
 							<span>Nous somme ici pour vous aider.</span>
 						</div>
 					</div>
@@ -277,7 +277,7 @@
             <div class="caption">
                 <h1>{{$myQueri[0]->designation}}</h1>
             </div>
-            <a  href="{{route('immo.show',['immobilier'=>$myQueri[0]->id])}}">
+            <a  href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$myQueri[0]->id])}}">
                 DETAILS
             </a>
         </div>
@@ -288,7 +288,7 @@
             <div class="caption">
                 <h1>{{$myQueri[1]->designation}}</h1>
             </div>
-            <a  href="{{route('immo.show',['immobilier'=>$myQueri[1]->id])}}">
+            <a  href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$myQueri[1]->id])}}">
                 DETAILS
             </a>
         </div>
@@ -298,7 +298,7 @@
             <div class="caption">
                 <h1>{{$myQueri[2]->designation}}</h1>
             </div>
-            <a  href="{{route('immo.show',['immobilier'=>$myQueri[2]->id])}}">
+            <a  href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$myQueri[2]->id])}}">
                 DETAILS
             </a>
         </div>
@@ -308,7 +308,7 @@
             <div class="caption">
                 <h1>{{$myQueri[3]->designation}}</h1>
             </div>
-            <a  href="{{route('immo.show',['immobilier'=>$myQueri[3]->id])}}">
+            <a  href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$myQueri[3]->id])}}">
                 DETAILS
             </a>
         </div>
@@ -318,7 +318,7 @@
             <div class="caption">
                 <h1>{{$myQueri[4]->designation}}</h1>
             </div>
-            <a  href="{{route('immo.show',['immobilier'=>$myQueri[4]->id])}}">
+            <a  href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$myQueri[4]->id])}}">
                 DETAILS
             </a>
                 </div>

@@ -14,7 +14,13 @@ class CarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(\App\CategorieCar $categorie)
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['create','store','edit','storeEdit','delete']);
+    }
+
+
+    public function index($lang,\App\CategorieCar $categorie)
     {
         $home_carasoul = DB::table('gallery_home_carasouls')->where('id',1)->get();
 
@@ -48,7 +54,7 @@ class CarController extends Controller
      * @param  \App\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function show(\App\Car $car)
+    public function show($lang,\App\Car $car)
     {
 
         $car = DB::table('cars')->where('cars.id',$car->id)
@@ -75,7 +81,10 @@ class CarController extends Controller
 
     public function createByUser()
     {
-        return view('cars.createByUser');
+        $home_carasoul = DB::table('gallery_home_carasouls')->where('id',1)->get();
+            return view('cars.createByUser',[
+                'home_carasoul'=>$home_carasoul ,
+            ]);
     }
     /**
      * Store a newly created resource in storage.
@@ -166,7 +175,9 @@ class CarController extends Controller
      */
      public function edit(\App\Car $car)
      {
-         $marques = DB::table('marques')->get();
+         $marques = DB::table('marques')
+         ->join('categorie_cars','categorie_cars.id','=','marques.categorie_id')
+         ->get();
 
          $car = DB::table('cars')->where('cars.id',$car->id)
                 ->join('marques','marque_id','=','marques.id')
@@ -176,7 +187,7 @@ class CarController extends Controller
                 ->get();
          return view('cars.update',compact('car','marques'));
      }
- 
+
      /**
       * Store a newly created resource in storage.
       *
@@ -188,6 +199,7 @@ class CarController extends Controller
          $data= request()->validate([
              'categorie' => '',
              'marque' => '',
+             'marque_exc' => '',
              'etat' => '',
              'numm_immat' => '',
              'nbr_place' => ['integer'],
@@ -214,7 +226,7 @@ class CarController extends Controller
             }else{
                 $imgpath_1 = $car[0]->pic_src;
             }
-            
+
             if(array_key_exists("img_1",$data)){
             $imgpath_2 = request('img_1')->store('uploads-mx', 'public');
             }else{
@@ -235,27 +247,27 @@ class CarController extends Controller
                         }else{
                             $imgpath_5 = $car[0]->fourth_img;
                         }
-          
- 
+
+
          $etat = DB::table('etats')->where('id',$car[0]->etat_id)
          ->update(
              ['description' => $data['etat']],
          );
-         
+
          $categorie = DB::table('categorie_cars')->where('designation',$data['categorie'])->get();
          $marque = DB::table('marques')->where('libelle',$data['marque'])->get();
-         if($marque->isEmpty()){
- 
+         if($marque->isEmpty() || $marque[0]->libelle == $data['marque_exc']){
+
              $id_marque = DB::table('marques')->where('id',$car[0]->marque_id)
              ->update(
                  ['categorie_id' => $categorie[0]->id,'libelle' => $data['marque']],
              );
          }else{
              $id_marque = $marque[0]->id ;
- 
+
          }
- 
- 
+
+
          $car_ = DB::table('cars')->where('id',$car[0]->id)
          ->update(
              [
@@ -286,8 +298,8 @@ class CarController extends Controller
          $lib = "produit" ;
          return view('done.modificationDone',compact('url','lib'));
      }
- 
-   
+
+
 
     /**
      * Update the specified resource in storage.

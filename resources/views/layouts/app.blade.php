@@ -40,7 +40,8 @@
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+    <![endif]-->
+    @yield('css-up')
 
 </head>
 
@@ -78,9 +79,9 @@
 							<li>
 								<a href="#">Immobilier</a>
 								<ul>
-									<li><a href="{{ route('immobilier_vente.index') }}">Immobilier Vente</a>
+									<li><a href="{{ route('immobilier_vente.index',['lang'=> app()->getLocale()]) }}">Immobilier Vente</a>
 									</li>
-									<li><a href="{{ route('immobilier_loc.index') }}">Immobilier Location</a>
+									<li><a href="{{ route('immobilier_loc.index',['lang'=> app()->getLocale()]) }}">Immobilier Location</a>
 
 									</li>
 							</li>
@@ -88,21 +89,21 @@
 						</li>
 
 						<li>
-							<a href="{{ route('car.index',['categorie' => 1]) }}">Voitures de luxe</a>
+							<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 1]) }}">Voitures de luxe</a>
 
 						</li>
 
 						<li>
-							<a href="{{ route('car.index',['categorie' => 2]) }}">Transport touristique</a>
+							<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 2]) }}">Transport touristique</a>
 
 						</li>
 						<li>
 							<a href="#" > <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
              height: 37;"></i> Fr</a>
 								<ul>
-									<li><a href="#">Arabe</a></li>
-									<li class="active"><a href="#" class="active"> Français</a></li>
-									<li><a href="#">Anglais</a></li>
+									<li><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'ar']) ) }}">Arabe</a></li>
+									<li class="active"><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'fr']) ) }}" class="active"> Français</a></li>
+									<li><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'en']) ) }}">Anglais</a></li>
 
 								</ul>
 
@@ -112,9 +113,13 @@
 							<a href="#"><em> <i class="fas fa-phone-alt" aria-hidden="true" style="width: 40;
     height: 40;
 "></i>  </em></a>
+@php
+    $info=DB::table('infos')->where('id',1)->get();
+@endphp
 								<ul>
-									<li><a>Tel : +212524808080</a></li>
-									<li >    <i class="fab fa-whatsapp" style="display:inline-block;    PADDING-LEFT: 20px;"></i> +212625109819 </li>
+                                    <li ><i class="fas fa-at" style="display:inline-block;PADDING-LEFT: 20px;"></i> <span style="font-size: .9vw;">{{ $info[0]->email }}</span></li>
+									<li><i class="fas fa-phone-square-alt" style="display:inline-block;PADDING-LEFT: 20px;"></i>{{$info[0]->tele}}</li>
+									<li ><i class="fab fa-whatsapp" style="display:inline-block;PADDING-LEFT: 20px;"></i> {{$info[0]->wp_tele}} </li>
 								</ul>
 
 						</li>

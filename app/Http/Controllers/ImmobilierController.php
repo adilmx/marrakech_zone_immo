@@ -53,7 +53,7 @@ class ImmobilierController extends Controller
      * @param  \App\Immobilier  $immobilier
      * @return \Illuminate\Http\Response
      */
-    public function show(Immobilier $immobilier)
+    public function show($lang,Immobilier $immobilier)
     {
 
         $gallery=DB::table('gallery_immos')->where('immobilier_id',$immobilier->id)->get();

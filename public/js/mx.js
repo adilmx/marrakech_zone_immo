@@ -8,7 +8,6 @@ $(document).ready(function(){
         var l_wd = wds.length ;
 
         var id =  event.target.getAttribute("id-pg");
-
         $("li[data-id='page-li'][id-pg='"+id+"']").addClass("active");
         $("[class*=GridLex-grid]>[class*=_mx-widget][data-widget='"+id+"']").removeClass("display-wd");
 
@@ -30,7 +29,7 @@ $(document).ready(function(){
 
 
     $("a[aria-label='next-pg']").click(function(){
-        var links = $("li[data-id='page-li']").toArray();
+        var links = $("li[data-id='page-li']:not([class='display-wd'])").toArray();
         var l_lnk = links.length ;
 
         var wds = $("[class*=GridLex-grid]>[class*=_mx-widget]").toArray();
@@ -65,7 +64,7 @@ $(document).ready(function(){
     });
 
     $("a[aria-label='prev-pg']").click(function(){
-        var links = $("li[data-id='page-li']").toArray();
+        var links = $("li[data-id='page-li']:not([class='display-wd'])").toArray();
         var l_lnk = links.length ;
 
         var wds = $("[class*=GridLex-grid]>[class*=_mx-widget]").toArray();
@@ -112,23 +111,72 @@ $(document).ready(function(){
        var wds = ".mx-trip-guide-content h3";
        if(srh_txt != ""){
        $(".hero-mx-srch .form .btn-all-mx").removeClass("display-wd");
-       $(".tmx").addClass("display-wd");
-       $(".pmx").addClass("pmx-p");
-       }
+
+       
+
+       var count_page = 0;
+       var count_page_ele = 0;
+
        $(wds).each(function(){
         var txt = $(this).text().toLowerCase();
+        $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").removeAttr("data-aos");
+        $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").removeAttr("data-aos-duration");
         if(txt.includes(srh_txt)){
+            ++count_page_ele;
             $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").removeClass("display-wd");
+             /* real number +1  mx-n */
+            if(count_page_ele < 4){
+              count_page = 1;
+              $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").attr("data-widget","1");
+            }else{
+              /* real number +1 mx-n */
+              if(count_page_ele%4 == 0){
+                ++count_page;
+
+              }
+              $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").addClass("display-wd");
+              $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").attr("data-widget",count_page);
+            }
+
         }else{
             $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").addClass("display-wd");
+            $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").attr("data-widget","0");
             l_wd = l_wd - 1;
         }
 
        });
        if(l_wd == 0){
         $(".smx").removeClass("display-wd");
+        $(".tmx").addClass("display-wd");
+       $(".pmx").addClass("pmx-p");
+       }else{
+        $(".smx").addClass("display-wd");
+        $(".tmx").removeClass("display-wd");
+       $(".pmx").removeClass("pmx-p");
        }
+       $("#nbr_ele").text(count_page_ele);
+/* backup pagination */
+       var links = $("li[data-id='page-li']").toArray();
+       var l_lnk = links.length ;
 
+       $("li[data-id='page-li'][id-pg='"+1+"']").addClass("active");
+
+      links.forEach(element => {
+
+        for(var i = count_page;i >= 1;i = i - 1){
+          if( element.getAttribute("id-pg") != i+"" ){
+            element.classList.add("display-wd");
+
+        }else{
+          /* alert("ok"+i); */
+          i = 0;
+          element.classList.remove("display-wd");
+        }
+        }
+
+
+      });
+    }
    });
    $(".hero-mx-srch .form .btn-all-mx").click(function(){
     $(this).addClass("display-wd");
@@ -136,15 +184,41 @@ $(document).ready(function(){
     $(".tmx").removeClass("display-wd");
        $(".pmx").removeClass("pmx-p");
        var wds = ".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget";
+       count_page_ele = 0;
+       count_page = 0;/*
+        $(this).attr("data-aos","fade-up");
+        $(this).attr("data-aos-duration","2000"); */
+        $(wds).each(function(){
+              
+               /* real number  mx-n */
+              if(count_page_ele < 3){
+                count_page = 1;
+                $(this).attr("data-widget","1");
+                $(this).removeClass("display-wd");
+              }else{
+                /* real number mx-n */
+                if(count_page_ele%3 == 0){
+                  ++count_page;
 
-       $(wds).each(function(){
-        if( $(this).attr("data-widget") != 1 ){
-            $(this).addClass("display-wd");
-        }else{
-            $(this).removeClass("display-wd");
-        }
-       });
+                }
+                $(this).addClass("display-wd");
+                $(this).attr("data-widget",count_page);
+              }
 
+              ++count_page_ele;
+         });
+
+         $("#nbr_ele").text(count_page_ele);
+
+         var links = $("li[data-id='page-li']").toArray();
+         var l_lnk = links.length ;
+  
+
+  
+        links.forEach(element => {
+            element.classList.remove("display-wd");
+  
+        });
     });
 
 });
@@ -212,7 +286,7 @@ $(document).ready(function(){
         var pmin = $(".mx-price").attr('pmin') ;
         var pmax = $(".mx-price").attr('pmax') ;
         var pdays = $(".mx-price").attr('pdays') ;
-        
+
         if(pdays == ""){
             pdays = 7;
         }
@@ -237,4 +311,6 @@ function diffDays(d1,d2){
 
    return Math.round(Math.abs(days));
 }
+
+/* affichage marque en fonction de categorie */
 

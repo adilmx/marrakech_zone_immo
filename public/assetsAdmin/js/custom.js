@@ -22,7 +22,7 @@ $(window).ready(function(){
     }
 
     /* to update images */
-    
+
 });
 $("#marque").change(function(){
     if($("#marque").val() == "..."){
@@ -35,3 +35,105 @@ $("#marque").change(function(){
 
 /* */
 
+/* search button */
+
+$(document).ready(function(){
+    $(".search-element button").click(function(){
+     var wds_t = $(".mxd-1").toArray();
+     var l_wd = wds_t.length ;
+        var srh_txt = $(".search-element input").val().toLowerCase();
+        var wds = ".mxd-2 .mxd-3";
+        if(srh_txt != ""){
+        
+        /* $(".tmx").addClass("display-wd");
+        $(".pmx").addClass("pmx-p"); */
+        }
+        $(wds).each(function(){
+         var txt = $(this).text().toLowerCase();
+         if(txt.includes(srh_txt)){
+             $(this).parent().closest(".mxd-1").removeClass("display-wd");
+         }else{
+             $(this).parent().closest(".mxd-1").addClass("display-wd");
+             l_wd = l_wd - 1;
+         }
+
+        });
+        if(l_wd == 0){
+          var wds = ".mxd-1";
+          swal("Recherche introuvable!", "verifiez votre recherche et réeassayer à nouveau!", "error");
+          $(wds).each(function(){
+            $(this).removeClass("display-wd");
+            
+       });
+          
+                                                
+        }else{
+          $(".btn-all-mx").removeClass("display-wd");
+        }
+
+    });
+    $(".btn-all-mx").click(function(){
+     $(this).addClass("display-wd");
+        $(".pmx").removeClass("pmx-p");
+        var wds = ".mxd-1";
+
+        $(wds).each(function(){
+             $(this).removeClass("display-wd");
+        });
+
+     });
+
+ });
+
+ /*  */
+ $(document).ready(function(){
+  var val =  $(".mc").children("option:selected").val();
+  $("#marque_sub_exc").val(val);
+
+  /*before event change */
+  var cat_ids = $(".op").toArray();
+      var l_lnk = cat_ids.length ;
+
+      var id =  $(".c").children("option:selected").attr('data');
+
+    cat_ids.forEach(element => {
+      if( element.getAttribute("data") == id ){
+          element.classList.remove("display-wd");
+      }else{
+        element.classList.add("display-wd");
+      }
+
+/*end before event change */
+  $(".c").change(function(){
+      var cat_ids = $(".op").toArray();
+      var l_lnk = cat_ids.length ;
+
+      var c1 = $(".c1").attr('data');
+      var c2 = $(".c2").attr('data');
+
+      var id =  $(this).children("option:selected").attr('data');
+
+    cat_ids.forEach(element => {
+      if( element.getAttribute("data") == id ){
+          element.classList.remove("display-wd");
+      }else{
+        element.classList.add("display-wd");
+      }
+
+    });
+
+    cat_ids.forEach(element => {
+      if( element.getAttribute("value") == val ){
+          element.classList.remove("display-wd");
+          element.style.background = "pink";
+      }
+
+    });
+
+  });
+
+
+  
+
+  });
+});

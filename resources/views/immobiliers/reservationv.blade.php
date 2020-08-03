@@ -29,7 +29,7 @@
                                 </div>
 
                             </div>
-                            <form action="/rsimmov" enctype="multipart/form-data" method="POST">
+                            <form action="{{ route('reservationVente.store',['lang'=>app()->getLocale()])}}" enctype="multipart/form-data" method="POST">
                                 @csrf
 
                                     <div class="row">
@@ -134,12 +134,12 @@
 											<li class="divider"></li>
 
 											<li>
-												<a href="{{ route('immobilier_vente.index') }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE</a>
+												<a href="{{ route('immobilier_vente.index',['lang'=>app()->getLocale(),]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE</a>
                                             </li>
                                             <li class="divider"></li>
 
 											<li>
-												<a href="{{route('immo.show',['immobilier'=>$immobilier->id])}}" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
+												<a href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$immobilier->id])}}" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
 											</li>
 
 										</ul>

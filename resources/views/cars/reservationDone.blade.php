@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-container-5" >
+<div class="container mx-container-7" >
     <div class="pt-50 pb-50">
 
         <div class="container">
@@ -18,10 +18,10 @@
                             </div>
                         </div>
 
-                        <h1 class="text-lowercase">Félicitations!</h1>
-                        <p class="lead">Votre reservation a bien été crée</p>
-                        <h3>Merci pour votre confiance</h3>
-                        <a href="{{ route('car.index',['categorie' => $data['c_id'] ]) }}" class="btn btn-primary btn-wide">choisir une autre voiture</a>
+                        <h1 class="text-lowercase">{{__('Félicitations!')}}</h1>
+                        <p class="lead">{{__('Votre reservation a bien été crée')}}</p>
+                        <h3>{{__('Merci pour votre confiance')}}</h3>
+                        <a href="{{ route('car.index',['lang'=>app()->getLocale(),'categorie' => $data['c_id'] ]) }}" class="btn btn-primary btn-wide">{{__('choisir une autre voiture')}}</a>
                     </div>
 
                 </div>

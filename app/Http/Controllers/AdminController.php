@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -10,6 +11,10 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function login()
     {
@@ -20,8 +25,69 @@ class AdminController extends Controller
 
     public function index()
     {
-        // dd(Auth::user());
-        return view('admin.index');
+        $cars = DB::table('cars')
+                ->join('marques','marque_id','=','marques.id')
+                ->join('categorie_cars','categorie_cars.id','=','marques.categorie_id')
+                ->join('etats','etat_id','=','etats.id')
+                ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
+                ->get();
+        $cars_count = DB::table('cars')
+                ->join('marques','marque_id','=','marques.id')
+                ->join('categorie_cars','categorie_cars.id','=','marques.categorie_id')
+                ->join('etats','etat_id','=','etats.id')
+                ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
+                ->count();
+
+        $customers = DB::table('customers')
+                   ->get();
+        $customers_count = DB::table('customers')
+                   ->count();
+
+        $reservation_cars = DB::table('reservation_cars')
+        ->join('customers','customer_id','=','customers.id')
+        ->join('cars','car_id','=','cars.id')
+        ->join('marques','marque_id','=','marques.id')
+                ->join('categorie_cars','categorie_cars.id','=','marques.categorie_id')
+                ->join('etats','etat_id','=','etats.id')
+                ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
+                ->get();
+        $reservation_cars_count = DB::table('reservation_cars')
+                   ->count();
+
+        $reservation_locations = DB::table('reservation_locations')
+        ->join('customers','id_customer','=','customers.id')
+        ->join('immobiliers','id_immo_loc','=','immobiliers.id')
+        ->join('gallery_immos','gallery_immos.immobilier_id','=','immobiliers.id')
+                   ->get();
+        $reservation_locations_count = DB::table('reservation_locations')
+                   ->count();
+
+        $reservation_ventes = DB::table('reservation_ventes')
+        ->join('customers','id_customer','=','customers.id')
+        ->join('immobiliers','id_immo_ventes','=','immobiliers.id')
+        ->join('gallery_immos','gallery_immos.immobilier_id','=','immobiliers.id')
+                   ->get();
+        $reservation_ventes_count = DB::table('reservation_ventes')
+                   ->count();
+
+        $reservation_total_count = $reservation_cars_count + $reservation_locations_count + $reservation_ventes_count;
+        $immobiliers = DB::table('immobiliers')
+        ->join('gallery_immos','gallery_immos.immobilier_id','=','immobiliers.id')
+                    ->get();
+
+        $immobiliers_count = DB::table('immobiliers')
+        ->join('gallery_immos','gallery_immos.immobilier_id','=','immobiliers.id')
+                    ->count();
+
+
+        return view('admin.index',compact('cars','cars_count',
+        'immobiliers','immobiliers_count',
+        'customers','customers_count',
+        'reservation_cars','reservation_cars_count',
+        'reservation_locations','reservation_locations_count',
+        'reservation_ventes' ,'reservation_ventes_count',
+        'reservation_total_count'
+    ));
     }
 
 
@@ -95,7 +161,6 @@ class AdminController extends Controller
 
     public function indexCar(\App\CategorieCar $categorie)
     {
-
         $marques = DB::table('marques')->where('categorie_id',$categorie->id)
         ->join('cars','cars.marque_id','=','marques.id')
         ->join('categorie_cars','marques.categorie_id','=','categorie_cars.id')

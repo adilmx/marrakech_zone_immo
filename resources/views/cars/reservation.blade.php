@@ -19,7 +19,7 @@
 
                                             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" >
                                                 <div data-aos="zoom-out-left">
-                                                <h2>l'aventure commence ici</h2>
+                                                <h2>{{__("l'aventure commence ici")}}</h2>
                                             </div>
                                             </div>
                                         </div>
@@ -29,7 +29,7 @@
                                 </div>
 
                             </div>
-                            <form action="/rs" enctype="multipart/form-data" method="POST">
+                            <form action="{{route('reservationCar.store',['lang'=>app()->getLocale()])}}" enctype="multipart/form-data" method="POST">
                                 @csrf
 
                                     <div class="row">
@@ -141,7 +141,7 @@
                                     </div>
 
                                     <div class="form-group row  mt-0 ml-auto">
-                                        <button class="btn btn-primary">RESERVER</button>
+                                        <button class="btn btn-primary">{{__('RESERVER')}}</button>
                                     </div>
                                    </div>
                                 </div>
@@ -184,12 +184,12 @@
 											<li class="divider"></li>
 
 											<li>
-												<a href="{{ route('car.index',['categorie' => $car[0]->categorie_id ]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE VOITURE</a>
+												<a href="{{ route('car.index',['lang'=>app()->getLocale(),'categorie' => $car[0]->categorie_id ]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE VOITURE</a>
                                             </li>
                                             <li class="divider"></li>
 
 											<li>
-												<a href="{{ route('car.show',['car' => $car[0]->id]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
+												<a href="{{ route('car.show',['lang'=>app()->getLocale(),'car' => $car[0]->id]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
 											</li>
 
 										</ul>

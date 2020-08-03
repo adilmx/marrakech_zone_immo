@@ -74,7 +74,7 @@
   -->
 			<div class="carousel-caption mx-carousoul-p">
 
-				<p class="meri-titles">Garantir la meilleure qualité des voitures est notre plaisir</p>
+				<p class="meri-titles">{{__('Garantir la meilleure qualité des voitures est notre plaisir')}}</p>
 
 			</div>
 
@@ -84,7 +84,7 @@
 
 			<div class="carousel-caption mx-carousoul-p">
 
-				<p class="meri-titles">Trouvez votre place avec une expérience photo immersive</p>
+				<p class="meri-titles">{{__('Trouvez votre place avec une expérience photo immersive')}}</p>
 			</div>
 		</div>
 		<div class="item three d-block w-100">
@@ -92,7 +92,7 @@
 
 			<div class="carousel-caption mx-carousoul-p">
 
-				<p class="meri-titles">Le confort et la sécurité que vous ne trouverez nulle part ailleurs</p>
+				<p class="meri-titles">{{__('Le confort et la sécurité que vous ne trouverez nulle part ailleurs')}}</p>
 			</div>
 		</div>
 		<div class="item four d-block w-100">
@@ -100,7 +100,7 @@
 
 			<div class="carousel-caption mx-carousoul-p">
 
-				<p class="meri-titles">Nous vous aidons à trouvez l'appartement que vous aimerez</p>
+				<p class="meri-titles">{{__("Nous vous aidons à trouvez l'appartement que vous aimerez")}}</p>
 			</div>
 		</div>
 	</div>
@@ -122,13 +122,13 @@
 
     <div class="hero-mx-srch">
     <div class="container">
-
+        {{-- <a href="#" class="btn btn-cr-bien">{{__('Creer votre produit')}}</a> --}}
         <div class="form">
             <div class="form-group">
-                <input type="text" placeholder="Ferrari..." class="form-control fmx" title="Acces rapide!trouvez ici votre preferable voiture facilement" >
+                <input type="text" placeholder="Ferrari..." class="form-control fmx" title="{{__("Acces rapide!trouvez ici votre preferable voiture facilement")}}" >
                 <button class="btn"><i class="icon-magnifier"></i></button>
             </div>
-            <button class="btn btn-all-mx display-wd">Afficher touts</button>
+            <button class="btn btn-all-mx display-wd">{{__('Afficher touts')}}</button>
         </div>
 
     </div>
@@ -151,7 +151,7 @@
                                     ++$key_c;
                                 @endphp
                                 <!-- real number  mx-n -->
-                                @if($key < 6)
+                                @if($key < 3)
                                 @php
                                     $style = "";
                                 @endphp
@@ -161,10 +161,10 @@
                                 @endphp
                                 @endif
                                 <!-- real number +1 mx-n -->
-                                @if($key_c == 7)
+                                @if($key_c == 4)
                                 @php
                                     ++$c_data;
-                                    $key_c = 0;
+                                    $key_c = 1;
                                 @endphp
                                 @endif
 
@@ -172,7 +172,7 @@
 								<div class="GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget {{ $style }}" data-widget="{{ $c_data }}" data-aos="fade-up" data-aos-duration="2000">
 
 									<div class="mx-trip-guide-item trip-guide-item" >
-                                     <a href="{{ route('car.show',['car' => $car->id]) }}">
+                                     <a href="{{ route('car.show',['lang'=>app()->getLocale(),'car' => $car->id]) }}">
 										<div class="trip-guide-image mx-trip-guide-image" title="cliquez ici pour plus de details">
                                             <img src="/storage/{{ $car->pic_src }}" alt="images" />
                                         </div>
@@ -184,26 +184,26 @@
 										<div class="trip-guide-bottom">
                                             <div class="trip-guide-person mx-trip-guide-person clearfix">
                                                       <i class="fas fa-car-side"> </i>
-												<p class="name">Nombre de places : <span>{{ $car->nbr_place }}</span></p>
+												<p class="name">{{__('Nombre de places')}} : <span>{{ $car->nbr_place }}</span></p>
 											</div>
                                             <div class="trip-guide-person mx-trip-guide-person-color mx-trip-guide-person clearfix">
 												<i class="fas fa-palette color-ico"> </i>
-                                                <p class="name color-txt">Couleur : </p>
+                                                <p class="name color-txt">{{__('Couleur')}} : </p>
                                                 <div class="color-fill" style="background-color: {{ $car->couleur }}"></div>
 											</div>
 											<div class="trip-guide-person mx-trip-guide-person clearfix">
 												<i class="fas fa-briefcase"> </i>
-												<p class="name">charge maximale: <span>{{ $car->charge_max }}Kg</span></p>
+												<p class="name">{{__("charge maximale")}}: <span>{{ $car->charge_max }}Kg</span></p>
 											</div>
 											<div class="row gap-10 mx-price">
 												<div class="col-xs-12 col-sm-6">
 													<div class="trip-guide-price">
-														Á partir de
+														{{__('Á partir de')}}
 														<span class="number">{{ $car->prix_min_per_day }}$</span>
 													</div>
 												</div>
 												<div class="col-xs-12 col-sm-6 text-right">
-													<a href="{{ route('reservationCar.create',['car' => $car->id]) }}" class="btn btn-primary">Reserver</a>
+													<a href="{{ route('reservationCar.create',['lang'=>app()->getLocale(),'car' => $car->id]) }}" class="btn btn-primary">{{__('Reserver')}}</a>
 												</div>
 											</div>
 
@@ -231,10 +231,10 @@
                                 @endphp
                                 @endforeach
 								<div class="clearfix tmx">
-									plus de {{ $key }} marques de voitures à choisir
+									{{__('plus de')}} <span id="nbr_ele">{{ $key }}</span> {{__('marques de voitures à choisir')}}
                                 </div>
                                 <div class="clearfix smx display-wd">
-                                 Pas de resultat à afficher pour cette recherche!
+                                 {{__('Pas de resultat à afficher pour cette recherche!')}}
 								</div>
 
 								<div class="clearfix tmx">
@@ -254,7 +254,7 @@
                                             @php
                                                 ++$counter;
                                                 /* real number +1 mx-n */
-                                                $cm = $counter%7 ;
+                                                $cm = $counter%4 ;
                                             @endphp
                                             @if($cm == 1 or $counter == 1)
                                             @if($counter == 1)

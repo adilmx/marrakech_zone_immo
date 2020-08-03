@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use DB;
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['createCarasoul','storeCarasoul','createSections','storeESections']);
+    }
 
 
      public function createCarasoul()
@@ -23,7 +27,7 @@ class HomeController extends Controller
             'img_3' => ['image'],
             'img_4' => ['image'],
          ]);
-            
+
             if(array_key_exists("img_1",$data)){
             $imgpath_1 = request('img_1')->store('uploads-mx', 'public');
             }else{

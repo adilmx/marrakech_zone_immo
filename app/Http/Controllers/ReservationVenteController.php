@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ReservationVente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Mail;
 
 class ReservationVenteController extends Controller
 {
@@ -23,7 +24,7 @@ class ReservationVenteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(\App\Immobilier $immobilier)
+    public function create($lang,\App\Immobilier $immobilier)
     {
         return view('immobiliers.reservationv',compact('immobilier'));
     }
@@ -53,21 +54,42 @@ class ReservationVenteController extends Controller
             ],
         );
 
-        $id_car = DB::table('reservation_ventes')->insertGetId(
+        $id_vente = DB::table('reservation_ventes')->insertGetId(
             [
                 'id_customer' => $id_customer ,
                 'id_immo_ventes' => $data['id'] ,
+                'res_created_at' => date("y-m-d h:i:s"),
             ],
         );
 
 
 
 
-
+ /*send mail */
+ $immo = DB::table('immobiliers')->where('immobiliers.id',$data['id'])
+ ->join('type_immobiliers','id_type','=','type_immobiliers.id')
+ ->get();
+ $Rese_immo = DB::table('reservation_ventes')->where('reservation_ventes.id',$id_vente)
+ 
+ ->get();
+ $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToAdminVenteImmo');
+ $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToCustomerVenteImmo');
+ /* end send mail */
         $type_pro = "immobilier_v" ;
 
 
         return view('immobiliers.reservationDone',compact('type_pro'));
+    }
+
+    /*send mail */
+    public function sendEmail_($data ,$pro,$res,$to_email,$msg ){
+        Mail::send($msg, 
+            ['data' => $data , 'pro' => $pro ,'res' => $res], 
+            function ($message) use($data,$to_email){
+            $message->to("".$to_email);
+            $message->subject("".$data['prenom']." ".$data['nom']."");
+	    $message->from('adilmax1999@gmail.com');
+        });
     }
 
     /**

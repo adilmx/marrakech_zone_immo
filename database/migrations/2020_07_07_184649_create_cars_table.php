@@ -17,7 +17,7 @@ class CreateCarsTable extends Migration
             $table->id();
             $table->foreignId('etat_id');
             $table->foreignId('marque_id');
-            $table->string('numm_immatric');
+            $table->string('numm_immatric')->unique();
             $table->date('date_mise_service');
             $table->double('kilometrage');
             $table->integer('nbr_place');

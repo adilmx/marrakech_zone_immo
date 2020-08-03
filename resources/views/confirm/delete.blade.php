@@ -18,10 +18,10 @@
                             </div>
                         </div>
 
-                        <h1 class="text-lowercase">Suppréssion faite avec succsée!</h1>
-                        <p class="lead">de produit {{ $produit[0]->libelle}}</p>
-                        <h3>retourner à la page precdente</h3>
-                        <a href="{{ route('adminCar.index',['categorie' => $produit[0]->categorie_id ]) }}" class="btn btn-primary btn-wide">Retour</a>
+                        <h1 class="text-lowercase">{{__('Suppréssion faite avec succsée')}}!</h1>
+                        <p class="lead">{{__('de produit')}} {{ $produit[0]->libelle}}</p>
+                        <h3>{{__('retourner à la page precdente')}}</h3>
+                        <a href="{{ route('adminCar.index',['categorie' => $produit[0]->categorie_id ]) }}" class="btn btn-primary btn-wide">{{__('Retour')}}</a>
                     </div>
 
                 </div>

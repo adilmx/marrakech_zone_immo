@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
-
+use App;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -20,7 +20,7 @@ class LoginController extends Controller
     |
     */
 
- 
+
     use AuthenticatesUsers {
         logout as doLogout;
     }
@@ -38,15 +38,15 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        
-           
-         
- 
+
+
+
+
     }
     public function logout(Request $request)
     {
         $this->doLogout($request);
-    
-        return redirect()->route('login');
+
+        return redirect()->route('login',['lang'=>app()->getLocale()]);
     }
 }

@@ -18,10 +18,10 @@
                             </div>
                         </div>
 
-                        <h1 class="text-lowercase">Félicitations!</h1>
-                        <p class="lead">Votre {{ $lib }} a bien été crée</p>
-                        <h3>vous pouvez verifier votre creation ici</h3>
-                        <a href="{{$url}}" class="btn btn-primary btn-wide">verifier ici</a>
+                        <h1 class="text-lowercase">{{__('Félicitations!')}}</h1>
+                        <p class="lead">{{__('Votre')}} {{ $lib }} {{__('a bien été crée')}}</p>
+                        <h3>{{__('vous pouvez verifier votre creation ici')}}</h3>
+                        <a href="{{$url}}" class="btn btn-primary btn-wide">{{__('verifier ici')}}</a>
                     </div>
 
                 </div>

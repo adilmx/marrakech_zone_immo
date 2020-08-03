@@ -12,7 +12,7 @@
 
                     <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                         <div data-aos="zoom-out-left">
-                        <h2>Les meilleurs voitures à choisir</h2>
+                        <h2>{{__('Les meilleurs voitures à choisir')}}</h2>
                         <p></p>
                     </div>
                     </div>
@@ -58,8 +58,8 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">PRIX POUR moins DE {{$car[0]->days_separator}} JOURS : <span>{{ $car[0]->prix_min_per_day }}$/jour</span></div>
-                                            <div class="mx-txt-detail">PRIX POUR plus DE {{$car[0]->days_separator}} JOURS : <span>{{ $car[0]->prix_max_per_day }}$/jour</span></div>
+                                            <div class="mx-txt-detail">{{__('Prix pour plus de')}}  {{$car[0]->days_separator}} {{__('JOURS')}} : <span>{{ $car[0]->prix_min_per_day }}$/{{__('jour')}}</span></div>
+                                            <div class="mx-txt-detail">{{__('Prix pour moins de')}} {{$car[0]->days_separator}} {{__('JOURS')}} : <span>{{ $car[0]->prix_max_per_day }}$/{{__('jour')}}</span></div>
                                             </div>
                                         </div>
 
@@ -91,7 +91,7 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">nombre de places : <span>{{ $car[0]->nbr_place }}</span></div>
+                                            <div class="mx-txt-detail">{{__('nombre de places')}} : <span>{{ $car[0]->nbr_place }}</span></div>
                                             </div>
                                         </div>
 
@@ -121,7 +121,7 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">charge maximale : <span>{{ $car[0]->charge_max }}kg</span></div>
+                                            <div class="mx-txt-detail">{{__('charge maximale')}} : <span>{{ $car[0]->charge_max }}kg</span></div>
                                             </div>
                                         </div>
 
@@ -152,7 +152,7 @@
                                             </div>
                                             <div class="txt-box-infos">
                                             <div class="mx-txt-detail  mx-color-trip-guide-person">
-                                                <p class="name color-txt">Couleur : </p>
+                                                <p class="name color-txt">{{__('Couleur')}} : </p>
                                                 <div class="color-fill" style="background-color: {{ $car[0]->couleur }}"></div>
                                             </div>
                                         </div>
@@ -183,7 +183,7 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">Numero immatriculation : <span>{{ $car[0]->numm_immatric }}</span></div>
+                                            <div class="mx-txt-detail">{{__('Numero immatriculation')}} : <span>{{ $car[0]->numm_immatric }}</span></div>
                                             </div>
                                         </div>
 
@@ -213,7 +213,7 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">kilometrage : <span>{{ $car[0]->kilometrage }}km/h</span></div>
+                                            <div class="mx-txt-detail">{{__('kilometrage')}} : <span>{{ $car[0]->kilometrage }}km/h</span></div>
                                             </div>
                                         </div>
 
@@ -233,7 +233,7 @@
 
             <div class="mx-container-1 container">
 
-                <h3 class="section-title">Plus d'images</h3>
+                <h3 class="section-title">{{__("Plus d'images")}}</h3>
 
                 <div class="gallery-grid-equal-width-wrapper mb-50">
                     <div id="gallery1">
@@ -242,14 +242,14 @@
 
             </div>
     <div class="col-xs-12 col-sm-6 text-right mx-btn-reserver">
-            <a href="{{ route('reservationCar.create',['car' => $car[0]->id]) }}" class="btn btn-primary ">
-                Reserver maintenant</a>
+            <a href="{{ route('reservationCar.create',['lang'=>app()->getLocale(),'car' => $car[0]->id]) }}" class="btn btn-primary ">
+                {{__('Reserver maintenant')}}</a>
         </div>
         </div>
 
         <div class="bb mb-40 mt-40-xs"></div>
 
-        
+
 
         <div class="bb mb-40 mt-40-xs"></div>
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ReservationLocation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Mail;
 
 class ReservationLocationController extends Controller
 {
@@ -23,7 +24,7 @@ class ReservationLocationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(\App\Immobilier $immobilier)
+    public function create($lang,\App\Immobilier $immobilier)
     {
         return view('immobiliers.reservation',compact('immobilier'));
     }
@@ -63,12 +64,34 @@ class ReservationLocationController extends Controller
                 'date_debut_reservation' => $data['date_debut_reservation'],
                 'date_fin_reservation' => $data['date_fin_reservation'],
                 'nbr_personnes' => $data['nbr_personnes'],
+                'res_created_at' => date("y-m-d h:i:s"),
             ],
         );
        $type_pro = "immobilier_loc" ;
 
 
+        /*send mail */
+$immo = DB::table('immobiliers')->where('immobiliers.id',$data['id'])
+->join('type_immobiliers','id_type','=','type_immobiliers.id')
+->get();
+$Rese_immo = DB::table('reservation_locations')->where('reservation_locations.id',$id_location)
+
+->get();
+$this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToAdminLocImmo');
+$this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToCustomerLocImmo');
+/* end send mail */
+
         return view('immobiliers.reservationDone',compact('type_pro'));
+    }
+    /*send mail */
+    public function sendEmail_($data ,$pro,$res,$to_email,$msg ){
+        Mail::send($msg, 
+            ['data' => $data , 'pro' => $pro ,'res' => $res], 
+            function ($message) use($data,$to_email){
+            $message->to("".$to_email);
+            $message->subject("".$data['prenom']." ".$data['nom']."");
+	    $message->from('adilmax1999@gmail.com');
+        });
     }
 
     /**

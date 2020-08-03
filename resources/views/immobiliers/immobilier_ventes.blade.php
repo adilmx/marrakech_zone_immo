@@ -161,7 +161,7 @@
 							<div class="GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget {{ $style }}" data-widget="{{ $c_data }}" data-aos="fade-up" data-aos-duration="2000">
 
 								<div class="mx-trip-guide-item trip-guide-item" style="background-color:white">
-									<a href="{{route('immo.show',['immobilier'=>$immo->id])}}">
+									<a href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}">
 										<div class="trip-guide-image mx-trip-guide-image meri-widget" title="cliquez ici pour plus de details">
 											<img src="/storage/{{ $immo->pic_src }}" alt="images" />
 										</div>
@@ -192,7 +192,7 @@
 												</div>
 											</div>
 											<div class="col-xs-12 col-sm-6 text-right">
-												<a href="{{route('reservationVente.create',['immobilier'=>$immo->id])}}" class="btn btn-primary">Reserver</a>
+												<a href="{{route('reservationVente.create',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}" class="btn btn-primary">Reserver</a>
 
 											</div>
 										</div>

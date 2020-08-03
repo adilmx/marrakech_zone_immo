@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\ReservationCar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Mail;
 
 class ReservationCarController extends Controller
 {
@@ -23,7 +24,7 @@ class ReservationCarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(\App\Car $car)
+    public function create($lang,\App\Car $car)
     {
         $car = DB::table('cars')->where('cars.id',$car->id)
                 ->join('marques','marque_id','=','marques.id')
@@ -62,23 +63,45 @@ class ReservationCarController extends Controller
                 'tele' => $data['tele'] ,
             ],
         );
-        $id_car = DB::table('reservation_cars')->insertGetId(
+        $id_rese_car = DB::table('reservation_cars')->insertGetId(
             [
                 'customer_id' => $id_customer ,
                 'car_id' => $data['id'] ,
                 'date_debut_reservation' => $data['date_debut_reservation'],
                 'date_fin_reservation' => $data['date_fin_reservation'],
                 'car_driver' => $data['car_driver'],
+                'res_created_at' => date("y-m-d h:i:s"),
             ],
         );
 
-
-
+        /*send mail */
+$car = DB::table('cars')->where('cars.id',$data['id'])
+                ->join('marques','marque_id','=','marques.id')
+                ->join('categorie_cars','categorie_cars.id','=','marques.categorie_id')
+                ->join('etats','etat_id','=','etats.id')
+                ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
+                ->get();
+$Rese_car = DB::table('reservation_cars')->where('id',$id_rese_car)->get();
+$this->sendEmail_($data,$car,$Rese_car,$data['email'],"auth.msgResToAdmin");
+         $this->sendEmail_($data,$car,$Rese_car,$data['email'],"auth.msgResToCustomer");
+  /* end send mail */
          return view('cars.reservationDone',[
              'data' => $data
          ]);
     }
 
+
+
+    /*send mail */
+    public function sendEmail_($data ,$pro,$res,$to_email,$msg ){
+        Mail::send($msg, 
+            ['data' => $data , 'pro' => $pro ,'res' => $res], 
+            function ($message) use($data,$to_email){
+            $message->to("".$to_email);
+            $message->subject("".$data['prenom']." ".$data['nom']."");
+	    $message->from('adilmax1999@gmail.com');
+        });
+    }
     /**
      * Display the specified resource.
      *

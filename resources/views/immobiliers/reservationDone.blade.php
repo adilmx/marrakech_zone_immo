@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-container-5" >
+<div class="container mx-container-7" >
     <div class="pt-50 pb-50">
 
         <div class="container">
@@ -30,7 +30,7 @@
                             $url = "immobilier_loc.index";
                         @endphp
                         @endif
-                        <a href="{{route($url)}}" class="btn btn-primary btn-wide">retour au choix des immobiliers</a>
+                        <a href="{{route($url,['lang'=>app()->getLocale()])}}" class="btn btn-primary btn-wide">retour au choix des immobiliers</a>
                     </div>
 
                 </div>
