@@ -38,9 +38,9 @@ class ReservationLocationController extends Controller
     public function store(Request $request)
     {
         $data= request()->validate([
-            'nom' => ['required','string'],
-            'prenom' => ['required','string'],
-            'tele' => ['required','string'],
+            'nom' => ['required','alpha'],
+            'prenom' => ['required','alpha'],
+            'tele' => ['required','numeric'],
             'email' => ['required','email'],
             'date_debut_reservation' => ['required','date'],
             'date_fin_reservation' => ['required','date'],
@@ -74,19 +74,20 @@ class ReservationLocationController extends Controller
 $immo = DB::table('immobiliers')->where('immobiliers.id',$data['id'])
 ->join('type_immobiliers','id_type','=','type_immobiliers.id')
 ->get();
+$infos = DB::table('infos')->where('infos.id',1)->get();
 $Rese_immo = DB::table('reservation_locations')->where('reservation_locations.id',$id_location)
 
 ->get();
-$this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToAdminLocImmo');
-$this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToCustomerLocImmo');
+$this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToAdminLocImmo',$infos);
+$this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToCustomerLocImmo',$infos);
 /* end send mail */
 
         return view('immobiliers.reservationDone',compact('type_pro'));
     }
     /*send mail */
-    public function sendEmail_($data ,$pro,$res,$to_email,$msg ){
-        Mail::send($msg, 
-            ['data' => $data , 'pro' => $pro ,'res' => $res], 
+    public function sendEmail_($data ,$pro,$res,$to_email,$msg,$infos ){
+        Mail::send($msg,
+            ['data' => $data , 'pro' => $pro ,'res' => $res , 'infos' => $infos ],
             function ($message) use($data,$to_email){
             $message->to("".$to_email);
             $message->subject("".$data['prenom']." ".$data['nom']."");
@@ -134,8 +135,10 @@ $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToCustomerLo
      * @param  \App\ReservationLocation  $reservationLocation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ReservationLocation $reservationLocation)
+    public function destroy($reservationLocation)
     {
-        //
+        $immoL = DB::table('reservation_locations')->where('id',$reservationLocation)
+         ->delete();
+         return redirect()->route("admin.index");
     }
 }

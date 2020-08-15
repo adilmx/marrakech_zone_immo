@@ -22,7 +22,7 @@ class CarController extends Controller
 
     public function index($lang,\App\CategorieCar $categorie)
     {
-        $home_carasoul = DB::table('gallery_home_carasouls')->where('id',1)->get();
+        $home_carasoul = DB::table('gallery_home_carasouls')->where('id',2)->get();
 
         $marques = DB::table('marques')->where('categorie_id',$categorie->id)
         ->join('cars','cars.marque_id','=','marques.id')

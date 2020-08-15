@@ -12,7 +12,7 @@
 
                     <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                         <div data-aos="zoom-out-left">
-                        <h2>Les meilleurs immobiliers à choisir</h2>
+                        <h2>{{ __("Les meilleurs immobiliers à choisir") }}</h2>
                         <p></p>
                     </div>
                     </div>
@@ -60,8 +60,8 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">PRIX minimale : <span>{{ $immobilier->price_min }}$</span></div>
-                                            <div class="mx-txt-detail">PRIX maximale : <span>{{ $immobilier->price_max }}$</span></div>
+                                            <div class="mx-txt-detail">{{ __("PRIX minimale") }} : <span>{{ $immobilier->price_min }}$</span></div>
+                                            <div class="mx-txt-detail">{{ __("PRIX maximale") }} : <span>{{ $immobilier->price_max }}$</span></div>
                                             </div>
                                         </div>
 
@@ -93,8 +93,8 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">nombre d'étages : <span>{{ $immobilier->nbr_etage }} étages</span></div>
-                                            <div class="mx-txt-detail">nombre de chambres : <span>{{ $immobilier->nbr_chambre }} Chambres</span></div>
+                                            <div class="mx-txt-detail">{{ __("nombre d'étages") }} : <span>{{ $immobilier->nbr_etage }} {{ __("étages") }}</span></div>
+                                            <div class="mx-txt-detail">{{ __("nombre de chambres") }} : <span>{{ $immobilier->nbr_chambre }} {{ __("Chambres") }}</span></div>
 
                                             </div>
                                         </div>
@@ -125,7 +125,7 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">PATENTE : <span>{{ $immobilier->patente }}</span></div>
+                                            <div class="mx-txt-detail">{{ __("PATENTE") }} : <span>{{ $immobilier->patente }}</span></div>
                                             </div>
                                         </div>
 
@@ -157,7 +157,7 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">SUPERFECIE : <span>{{ $immobilier->superfecie }}m<sup>2</sup></span></div>
+                                            <div class="mx-txt-detail">{{ __("SUPERFECIE") }} : <span>{{ $immobilier->superfecie }}{{ __("m") }}<sup>2</sup></span></div>
                                             </div>
                                         </div>
 
@@ -180,7 +180,7 @@
 
             <div class="mx-container-1 container">
 
-                <h3 class="section-title">Plus d'images</h3>
+                <h3 class="section-title">{{ __("Plus d'images") }}</h3>
 
                 <div class="gallery-grid-equal-width-wrapper mb-50">
                     <div id="gallery1">
@@ -199,7 +199,7 @@
                 @endphp
             @endif
             <a href="{{ route($url,['lang'=>app()->getLocale(),'immobilier' => $immobilier->id]) }}" class="btn btn-primary ">
-                Reserver maintenant</a>
+                {{ __("Reserver maintenant") }}</a>
         </div>
 
         </div>
@@ -229,10 +229,10 @@
 <script>
     $('#gallery1').imagesGrid({
 	images: [
-			{ src: "{{ asset('/') }}storage/{{ $gallery[0]->first_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption One' },
-			{ src: "{{ asset('/') }}storage/{{ $gallery[0]->sec_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Two' },
-			{ src: "{{ asset('/') }}storage/{{ $gallery[0]->third_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Three' },
-			{ src: "{{ asset('/') }}storage/{{ $gallery[0]->fourth_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Fpur' },
+			{ src: "{{ asset('/') }}storage/{{ $gallery[0]->first_img }}", alt: 'Second image', title: "{{ __('cliquer pour afficher l image en plein ecran') }}", caption: '{{ __('IMAGE 1')}}' },
+			{ src: "{{ asset('/') }}storage/{{ $gallery[0]->sec_img }}", alt: 'Second image', title: "{{ __('cliquer pour afficher l image en plein ecran') }}", caption: '{{ __('IMAGE 2')}}' },
+			{ src: "{{ asset('/') }}storage/{{ $gallery[0]->third_img }}", alt: 'Second image', title: "{{ __('cliquer pour afficher l image en plein ecran') }}", caption: '{{ __('IMAGE 3')}}' },
+			{ src: "{{ asset('/') }}storage/{{ $gallery[0]->fourth_img }}", alt: 'Second image', title: "{{ __('cliquer pour afficher l image en plein ecran') }}", caption: '{{ __('IMAGE 4')}}' },
 			],
 		cells: 5,
 		align: true
@@ -241,10 +241,10 @@
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		$('#gallery-in-tab').imagesGrid({
 			images: [
-				{ src: "{{ asset('/') }}storage/{{ $gallery[0]->first_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption One' },
-				{ src: "{{ asset('/') }}storage/{{ $gallery[0]->sec_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Two' },
-				{ src: "{{ asset('/') }}storage/{{ $gallery[0]->third_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Three' },
-				{ src: "{{ asset('/') }}storage/{{ $gallery[0]->fourth_img }}", alt: 'Second image', title: "cliquer pour afficher l'image en plein ecran", caption: 'Image Caption Fpur' },
+				{ src: "{{ asset('/') }}storage/{{ $gallery[0]->first_img }}", alt: 'Second image', title: "{{ __('cliquer pour afficher l image en plein ecran') }}", caption: '{{ __('IMAGE 1')}}' },
+				{ src: "{{ asset('/') }}storage/{{ $gallery[0]->sec_img }}", alt: 'Second image', title: "{{ __('cliquer pour afficher l image en plein ecran') }}", caption: '{{ __('IMAGE 2')}}' },
+				{ src: "{{ asset('/') }}storage/{{ $gallery[0]->third_img }}", alt: 'Second image', title: "{{ __('cliquer pour afficher l image en plein ecran') }}", caption: '{{ __('IMAGE 3')}}' },
+				{ src: "{{ asset('/') }}storage/{{ $gallery[0]->fourth_img }}", alt: 'Second image', title: "{{ __('cliquer pour afficher l image en plein ecran') }}", caption: '{{ __('IMAGE 4')}}' },
 				],
 			cells: 5,
 			align: true

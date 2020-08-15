@@ -50,6 +50,7 @@ class AdminController extends Controller
                 ->join('categorie_cars','categorie_cars.id','=','marques.categorie_id')
                 ->join('etats','etat_id','=','etats.id')
                 ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
+                ->select("*","reservation_cars.id as res_id")
                 ->get();
         $reservation_cars_count = DB::table('reservation_cars')
                    ->count();
@@ -58,6 +59,7 @@ class AdminController extends Controller
         ->join('customers','id_customer','=','customers.id')
         ->join('immobiliers','id_immo_loc','=','immobiliers.id')
         ->join('gallery_immos','gallery_immos.immobilier_id','=','immobiliers.id')
+        ->select("*","reservation_locations.id as res_id")
                    ->get();
         $reservation_locations_count = DB::table('reservation_locations')
                    ->count();
@@ -66,6 +68,7 @@ class AdminController extends Controller
         ->join('customers','id_customer','=','customers.id')
         ->join('immobiliers','id_immo_ventes','=','immobiliers.id')
         ->join('gallery_immos','gallery_immos.immobilier_id','=','immobiliers.id')
+        ->select("*","reservation_ventes.id as res_id")
                    ->get();
         $reservation_ventes_count = DB::table('reservation_ventes')
                    ->count();
@@ -79,9 +82,21 @@ class AdminController extends Controller
         ->join('gallery_immos','gallery_immos.immobilier_id','=','immobiliers.id')
                     ->count();
 
+                    $immobiliers_nc = DB::table('immobiliers')->where("immobiliers.deleted",0)
+                    ->join('type_immobiliers','type_immobiliers.id','=','immobiliers.id_type')
+        ->join('gallery_immos','gallery_immos.immobilier_id','=','immobiliers.id')
+        ->join('customers','customers.id','=','immobiliers.created_by')
+                    ->get();
+
+        $immobiliers_nc_count = DB::table('immobiliers')->where("immobiliers.deleted",0)
+        ->join('type_immobiliers','type_immobiliers.id','=','immobiliers.id_type')
+        ->join('gallery_immos','gallery_immos.immobilier_id','=','immobiliers.id')
+        ->join('customers','customers.id','=','immobiliers.created_by')
+                    ->count();
 
         return view('admin.index',compact('cars','cars_count',
         'immobiliers','immobiliers_count',
+        'immobiliers_nc','immobiliers_nc_count',
         'customers','customers_count',
         'reservation_cars','reservation_cars_count',
         'reservation_locations','reservation_locations_count',

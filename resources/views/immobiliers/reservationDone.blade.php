@@ -18,9 +18,9 @@
                             </div>
                         </div>
 
-                        <h1 class="text-lowercase">Félicitations!</h1>
-                        <p class="lead">Votre reservation a bien été crée</p>
-                        <h3>Merci pour votre confiance</h3>
+                        <h1 class="text-lowercase">{{__('Félicitations!')}}</h1>
+                        <p class="lead">{{__('Votre reservation a bien été crée')}}</p>
+                        <h3>{{__('Merci pour votre confiance')}}</h3>
                         @if($type_pro == "immobilier_v")
                         @php
                             $url = "immobilier_vente.index";
@@ -30,7 +30,7 @@
                             $url = "immobilier_loc.index";
                         @endphp
                         @endif
-                        <a href="{{route($url,['lang'=>app()->getLocale()])}}" class="btn btn-primary btn-wide">retour au choix des immobiliers</a>
+                        <a href="{{route($url,['lang'=>app()->getLocale()])}}" class="btn btn-primary btn-wide">{{__("retour au choix des immobiliers")}}</a>
                     </div>
 
                 </div>

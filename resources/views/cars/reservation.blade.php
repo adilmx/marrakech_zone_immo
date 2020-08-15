@@ -119,10 +119,10 @@
 
 
                                         <select name="car_driver" class="form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="" >
-                                            <option value="1">oui</option>
+                                            <option value="1">{{__("oui")}}</option>
                                             @if($car[0]->categorie_id == 1)
 
-                                            <option value="0">non</option>
+                                            <option value="0">{{__("non")}}</option>
 
                                         @endif
                                         </select>
@@ -172,8 +172,8 @@
 											<li>
 												<div class="row gap-10 mt-10">
 													<div class="col-xs-7 col-sm-7">
-														<span class="font600">PRIX</span>
-                                                        <div class="font-smaller " style="color: rgb(241, 64, 10)">* depend de duree que vous avez choisie</div>
+														<span class="font600">{{__("PRIX")}}</span>
+                                                        <div class="font-smaller " style="color: rgb(241, 64, 10)">* {{__("depend de duree que vous avez choisie")}}</div>
                                                     </div>
 													<div class="col-xs-5 col-sm-5 text-right">
 														<span class="font600 font26 block text-primary mt-5 mx-price" pdays="{{ $car[0]->days_separator }}" pmin="{{ $car[0]->prix_min_per_day }}" pmax="{{ $car[0]->prix_max_per_day }}">{{ $car[0]->prix_min_per_day }}$</span>
@@ -184,12 +184,12 @@
 											<li class="divider"></li>
 
 											<li>
-												<a href="{{ route('car.index',['lang'=>app()->getLocale(),'categorie' => $car[0]->categorie_id ]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE VOITURE</a>
+												<a href="{{ route('car.index',['lang'=>app()->getLocale(),'categorie' => $car[0]->categorie_id ]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">{{__("CHOISIR UNE AUTRE VOITURE")}}</a>
                                             </li>
                                             <li class="divider"></li>
 
 											<li>
-												<a href="{{ route('car.show',['lang'=>app()->getLocale(),'car' => $car[0]->id]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
+												<a href="{{ route('car.show',['lang'=>app()->getLocale(),'car' => $car[0]->id]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">{{__("RETOUR AU DETAILS")}}</a>
 											</li>
 
 										</ul>

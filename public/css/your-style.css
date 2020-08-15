@@ -26,7 +26,7 @@
 }
 .mx-container-5{
     padding-top: 3%;
-    width: 95%;/* 
+    width: 95%;/*
     height: 100vh; */
 }
 .mx-container-6{
@@ -789,7 +789,7 @@ margin: 0;
     margin: 10px auto 25px;
 }
 .hero-mx-srch .form-group {
-    width: 660px;
+    width: 80%;
     margin: 25px auto 0;
     position: relative;
 }
@@ -1315,7 +1315,33 @@ font-size: 1vw;
 
 
 
-       /* for mx.js search btn*/      
+       /* for mx.js search btn*/
        display-wd-p{
           display: none;
        }
+/* home infos */
+       @media screen and (max-width: 1700px){
+        .mx-mail-infos {
+           font-size: .9vw !important;
+        }
+        }
+        @media screen and (max-width: 1200px){
+           .mx-mail-infos{
+              font-size: 1vw !important;
+        }
+        }
+            @media screen and (max-width: 992px){
+              .mx-mail-infos{
+                 font-size: 2vw !important;
+            }
+            }
+                @media screen and (max-width: 768px){
+                 .mx-mail-infos{
+                    font-size: 3vw !important;
+                }
+                }
+                    @media screen and (max-width: 576px){
+                       .mx-mail-infos{
+                          font-size: 4vw !important;
+                    }
+                    }

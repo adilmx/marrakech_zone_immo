@@ -121,7 +121,7 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">{{__('charge maximale')}} : <span>{{ $car[0]->charge_max }}kg</span></div>
+                                            <div class="mx-txt-detail">{{__('charge maximale')}} : <span>{{ $car[0]->charge_max }}{{__("Kg")}}</span></div>
                                             </div>
                                         </div>
 
@@ -166,7 +166,7 @@
 
                             <div class="bt mt-30 mb-40"></div>
 
-                             <!-- start box info -->
+                            {{--  <!-- start box info -->
                              <div class="featured-icon-simple-wrapper">
 
                                 <div class="GridLex-gap-30-mx">
@@ -192,7 +192,7 @@
                                 </div>
 
                             </div>
-                            <!-- end box info -->
+                            <!-- end box info --> --}}
 
                             <div class="bt mt-30 mb-40"></div>
 
@@ -213,7 +213,7 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">{{__('kilometrage')}} : <span>{{ $car[0]->kilometrage }}km/h</span></div>
+                                            <div class="mx-txt-detail">{{__('kilometrage')}} : <span>{{ $car[0]->kilometrage }}{{ __("Km/h") }}</span></div>
                                             </div>
                                         </div>
 

@@ -1,5 +1,14 @@
 @extends('layouts.admin')
 
+@section('section-search')
+
+        <div class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+          </ul>
+        </div>
+@endsection
+
 @section('content')
 <div class="section">
 <div class="section-header">
@@ -42,9 +51,12 @@
                                     <div class="form-group row">
                                         <label for="marque" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('marque de voiture') }}</label>
                                             <select name="marque_" class="mc form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="marque">
+                                                <option class="op" data="0" value="" ></option>
+                                                        @if(count($marques) >= 1)
                                                         @foreach($marques as  $marque)
                                                             <option class="op" data="{{$marque->categorie_id}}" value="{{ $marque->libelle }}" @if(old("marque_") == $car[0]->libelle) selected @endif >{{ $marque->libelle }}</option>
                                                         @endforeach
+                                                        @endif
                                                         <option value="...">autre</option>
                                             </select>
 

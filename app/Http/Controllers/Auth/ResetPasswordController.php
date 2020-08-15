@@ -55,7 +55,7 @@ class ResetPasswordController extends Controller
             ['user' => $user , 'code' => $code], 
             function ($message) use($user){
             $message->to($user[0]->email);
-            $message->subject('$user[0]->name, reset password');
+            $message->subject($user[0]->name.', reset password');
 	    $message->from('adilmax1999@gmail.com');
         });
     }

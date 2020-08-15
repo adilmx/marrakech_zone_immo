@@ -1,4 +1,187 @@
 {
-    "Creer une fiche de voiture": "إنشاء بطاقة المعلومات لسيارتك" ,
-    "Besoin d'un chauffeur qui vous guide?": "تحتاج إلى سائق ليرشدك؟"
+    "/start/layouts/app": "" ,
+
+    "Accueil": "الرئيسية" ,
+    "Immobilier": "العقار" ,
+    "Immobilier Vente": "بيع/شراء" ,
+    "Immobilier Location": "كراء" ,
+    "Voitures de luxe": "سيارات راقية" ,
+    "Transport touristique": "النقل السياحي" ,
+
+    "/end/layouts/app": "" ,
+
+
+    "/start/welcome": "" ,
+
+    "Acquérir votre bien à Marrakech": "إقتني عقارك في مراكش" ,
+    "locations saisonnières dans une villas luxueuses à Marrakech": "ايجارات موسمية في فيلات فاخرة بمراكش" ,
+    "ventes et achats des biens immobilier" : "بيع وشراء العقارات",
+    "lot de terrain , villas , appartement ,Riad": "قطعة أرض ، فيلات ، شقة ، رياض" ,
+    "Ventes Riad": "مبيعات الرياض" ,
+    "Transport et location" : "النقل والتأجير" ,
+    "Besoin d'un chauffeur qui vous guide?": "تحتاج إلى سائق ليرشدك؟",
+    "Nous somme ici pour vous aider.": "نحن هنا لمساعدتك" ,
+    "Vous cherchez un appartement luxieux avec un prix convenable?": "تبحث عن شقة راقية بثمن مناسب؟" ,
+    "Notre entreprise vous offre une collection riche avec les options que vous désirez.": ".نحن نوفر لكم مجموعة غنية من الإختيارات التي تناسبك" ,
+    "Besoin d'une voiture luxe pour une longue durée?": "تحتاج لسيارة راقية لمدة من إختيارك؟" ,
+    "Vous êtes dans la meilleures voie.": ".أنت في المكان المناسب" ,
+    "VOITURES DE LUXE ET TRANSPORT TOURISTIQUE": "سيارات راقية و نقل سياحي" ,
+    "Nous vous proposons un large parc de voitures de luxe avec ou sans chauffeur Avec des services de transport touristique": "نقترح عليكم مجموعة راقية و متكاملة من السيارات الراقية مع أو بدون سائق مرافقة مع خدمات النقل السياحي ذو الجودة العالية" ,
+    "IMMOBILIERS DE LUXE ET DE QUALITÉ": "عقارات التميز و الجودة" ,
+    "Nous vous proposons des immobiliers de luxe à vendre ou à louer": "نقدم لكم عقارات فاخرة للبيع أو الكراء" ,
+    "DÉCOUVRIR MAINTENANT": "إكتشف الآن" ,
+    "Les Meilleurs immobiliers pour  votre confort": "أفضل الشقق و العقارات من أجل راحتكم" ,
+    "DETAILS": "تفاصيل" ,
+
+    "/end/welcome": "" ,
+
+
+    "start/cars/index": "" ,
+
+    "Acces rapide!trouvez ici votre preferable voiture facilement": "البحث السريع ! يمكنك إيجاد سيارتك المفضلة بسرعة" ,
+    "Afficher touts": "عرض الكل" ,
+    "cliquez ici pour plus de details": "إضغط هنا لمزيد من التفاصيل" ,
+    "Nombre de places": "عدد الأماكن",
+    "Couleur": "لون" ,
+    "charge maximale": "الحمولة القصوى" ,
+    "Á partir de": "إبتداء من" ,
+    "plus de": "أكثر من" ,
+    "Kg": "كغ" ,
+    "Km/h": "كم/س" ,
+    "marques de voitures à choisir": "سيارة جاهزة للإختيار" ,
+    "Pas de resultat à afficher pour cette recherche!": "لا توجد نتائج لعرضها من أجل هذا البحث" ,
+     "Reserver": "حجز" ,
+
+    "end/cars/index": "" ,
+
+
+    "start/immobiliers/immo_location": "" ,
+
+    "Acces rapide!trouvez ici votre preferable immobilier facilement": "البحث السريع ! يمكنك إيجاد شقتك المفضلة بسرعة" ,
+    "Nombre d'étage": "عدد الطوابق" ,
+    "Nombre de chambre": "عدد الغرف" ,
+    "type d'immobiliers à choisir": "عقار جاهز للإختيار" ,
+
+    "end/immobiliers/immo_location": "" ,
+
+
+    "start/immobiliers/immo_vente": "" ,
+
+
+
+    "end/immobiliers/immo_vente": "" ,
+
+
+    "start/cars/details": "" ,
+
+    "Les meilleurs voitures à choisir": "أفضل السيارات للإنتقاء",
+    "Prix pour plus de": "الثمن لأكثر من",
+    "Prix pour moins de": "الثمن لأقل من",
+    "JOURS": "أيام",
+    "jour": "يوم",
+    "nombre de places": "عدد المقاعد",
+    "Numero immatriculation": "رقم لوحة تسجيل السيارة",
+    "kilometrage": "السرعة",
+    "Plus d'images": "مزيد من الصور",
+    "Reserver maintenant": "إحجز الآن",
+    "cliquer pour afficher l image en plein ecran": "إضغط هنا لعرض الصورة بشكل مكبر",
+    "IMAGE 1": "الصورة الأولى",
+    "IMAGE 2": " الصورة الثانية",
+    "IMAGE 3": "الصورة الثالثة",
+    "IMAGE 4": "الصورة الرابعة",
+
+    "end/cars/details": "" ,
+
+
+    "start/immobiliers/details": "" ,
+
+    "Les meilleurs immobiliers à choisir": "أفضل العقارات للإختيار",
+    "PRIX minimale": "الثمن الأقصى",
+    "PRIX maximale": "الثمن الأدنى",
+    "nombre d'étages": "عدد الطوابق",
+    "nombre de chambres": "عدد الغرف",
+    "Chambres": "غرف",
+    "étages": "طوابق" ,
+    "PATENTE": "رقم تسجيل العقار",
+    "SUPERFECIE": "المساحة",
+    "m": "م",
+
+    "end/immobiliers/details": "" ,
+
+    "start/cars/reservation": "" ,
+
+    "l'aventure commence ici":"المغامرة تبدأ الآن",
+    "nom":"الإسم العائلي",
+    "Prenom":"الإسم الأول",
+    "Telephone":"الهاتف",
+    "email":"عنوان البريد الإلكتروني",
+    "date de debut de reservation":"تاريخ بداية الكراء",
+    "date de fin de reservation":"تاريخ نهاية الكرء",
+    "avec chauffeur":"مع السائق",
+    "oui":"نعم",
+    "non":"بدون",
+    "RESERVER":"حجز",
+    "PRIX":"الثمن",
+    "depend de duree que vous avez choisie":"مرتبط بالمدة التي إخترتها",
+    "CHOISIR UNE AUTRE VOITURE":"إختيار واحدة أخرى",
+    "RETOUR AU DETAILS":"الرجوع للتفاصيل",
+
+    "end/cars/reservation": "" ,
+
+    "start/cars/reservationDone": "" ,
+
+    "Félicitations!":"!تهانينا" ,
+    "Votre reservation a bien été crée":"حجزك قد تم بنجاح" ,
+    "Merci pour votre confiance":"نشكركم على تقتكم بنا" ,
+    "choisir une autre voiture":"إختيار واحدة أخرى" ,
+
+    "end/cars/reservationDone": "" ,
+
+    "start/immobiliers/reservation": "" ,
+
+    "nombre de personnes":"عدد الأشخاص",
+    "CHOISIR UNE AUTRE":"إختيار واحدة أخرى",
+    "prix maximale":"الثمن الأقصى",
+
+    "retour au choix des immobiliers":"إختيار واحدة أخرى" ,
+
+    "end/immobiliers/reservation": "" ,
+
+    "start/auth/msgResCarCustomer": "" ,
+
+    "Bonjour":"مرحبا",
+    "Merci Pour Votre Visite":"شكرا لزيارتك لنا",
+    "Votre Reservation a bien été faite":"حجزك قد تم بنجاح",
+    "Informations sur votre reservation":"معلومات عن حجزك",
+    "libellée de voiture":"إسم السيارة",
+    "date reservation":"تاريخ الحجز",
+    "tele":"الهاتف",
+    "vous pouvez nous contacter , si vous voulez plus d'information sur votre reservation et pour la confirmer veuillez utiliser notre email ou notre numéro tele":"يمكنك الاتصال بنا ، إذا كنت تريد المزيد من المعلومات حول الحجز الخاص بك ولتأكيده ، يرجى استخدام بريدنا الإلكتروني أو رقم الهاتف الخاص بنا",
+    "Cordialement":"مع أطيب التهاني",
+    "Marrakech Zone Immo à votre service":" في خدمتكم Marrakech Zone Immo",
+
+    "end/auth/msgResCarCustomer": "" ,
+
+    "start/auth/msgResCarAdmin": "" ,
+
+    "Une nouvelle reservation a été faite par ":" حجز جديد من طرف ",
+    "Informations sur ce client":"معلومات عن الزبون",
+    "Informations sur cette reservation":"معلومات عن حجز الزبون",
+    "Par":"من طرف",
+
+    "end/auth/msgResCarAdmin": "" ,
+
+    "start/auth/msgResimmoCustomer": "" ,
+
+    "libellée de l'immobilier(Location)":"(إسم العقار(كراء",
+    "Type de l'immobilier":"نوع العقار",
+
+    "libellée de l'immobilier(Vente)":"(إسم العقار(شراء",
+
+    "end/auth/msgResimmoCustomer": "" ,
+
+    "start/auth/msgResimmoAdmin": "" ,
+
+    "end/auth/msgResimmoAdmin": ""
+
 }

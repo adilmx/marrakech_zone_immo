@@ -125,12 +125,12 @@ $(document).ready(function(){
             ++count_page_ele;
             $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").removeClass("display-wd");
              /* real number +1  mx-n */
-            if(count_page_ele < 4){
+            if(count_page_ele < 21){
               count_page = 1;
               $(this).parent().closest(".GridLex-col-3_mdd-4_sm-6_xs-6_xss-12_mx-widget").attr("data-widget","1");
             }else{
               /* real number +1 mx-n */
-              if(count_page_ele%4 == 0){
+              if(count_page_ele%21 == 0){
                 ++count_page;
 
               }
@@ -191,13 +191,13 @@ $(document).ready(function(){
         $(wds).each(function(){
               
                /* real number  mx-n */
-              if(count_page_ele < 3){
+              if(count_page_ele < 20){
                 count_page = 1;
                 $(this).attr("data-widget","1");
                 $(this).removeClass("display-wd");
               }else{
                 /* real number mx-n */
-                if(count_page_ele%3 == 0){
+                if(count_page_ele%20 == 0){
                   ++count_page;
 
                 }
@@ -247,13 +247,13 @@ function dte(date , date_mxid){
     if(m < 10 && d < 10){
         document.getElementById(date_mxid).min = y+"-0"+m+"-0"+d ;
     }
-    if(m >= 10 && d >= 10){
+    else if(m >= 10 && d >= 10){
         document.getElementById(date_mxid).min = y+"-"+m+"-"+d ;
     }
-    if(d < 10){
+    else if(d < 10){
         document.getElementById(date_mxid).min = y+"-"+m+"-0"+d ;
     }
-    if(m < 10){
+    else if(m < 10){
         document.getElementById(date_mxid).min = y+"-0"+m+"-"+d ;
     }
 }
@@ -262,16 +262,16 @@ function dte_val(date , date_mxid){
     var d = date.getDate();
     var m =date.getMonth() + 1 ;
     var y = date.getFullYear() ;
-    if(m < 10 && d < 10){
+    if(m <= 10 && d <= 10){
         $(date_mxid).val(y+"-0"+m+"-0"+d);
     }
-    if(m >= 10 && d >= 10){
+    else if(m >= 10 && d >= 10){
         $(date_mxid).val(y+"-"+m+"-"+d);
     }
-    if(d < 10){
+    else if(d < 10){
         $(date_mxid).val(y+"-"+m+"-0"+d);
     }
-    if(m < 10){
+    else if(m < 10){
         $(date_mxid).val(y+"-0"+m+"-"+d);
     }
 }

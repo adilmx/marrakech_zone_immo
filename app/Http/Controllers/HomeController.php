@@ -26,6 +26,7 @@ class HomeController extends Controller
             'img_2' => ['image'],
             'img_3' => ['image'],
             'img_4' => ['image'],
+            'img_5' => ['image'],
          ]);
 
             if(array_key_exists("img_1",$data)){
@@ -48,6 +49,11 @@ class HomeController extends Controller
                         }else{
                             $imgpath_4 = $carasoul->fourth_img;
                         }
+                        if(array_key_exists("img_5",$data)){
+                            $imgpath_5 = request('img_5')->store('uploads-mx', 'public');
+                            }else{
+                                $imgpath_5 = $carasoul->fifth_img;
+                            }
 
 
 
@@ -59,9 +65,10 @@ class HomeController extends Controller
                 'sec_img' => $imgpath_2 ,
                 'third_img' => $imgpath_3 ,
                 'fourth_img' => $imgpath_4 ,
+                'fifth_img' => $imgpath_5 ,
             ],
         );
-        $url = route('home') ;
+        $url = route('homeCarasoul.create') ;
         $lib = "diaporama";
         return view('done.modificationDone',compact('url','lib'));
     }
@@ -102,7 +109,7 @@ class HomeController extends Controller
                 'sec_img' => $imgpath_2 ,
             ],
         );
-        $url = route('home') ;
+        $url = route('homeSections.create') ;
         $lib = "section";
         return view('done.modificationDone',compact('url','lib'));
     }
@@ -112,11 +119,51 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    public function createInfos()
+    {
+       $infos = DB::table('infos')->where('id',1)->get();
+        return view('home.infos',compact('infos'));
+    }
+
+
+    public function storeInfos()
+   {
+       $data= request()->validate([
+           'email' => ['string','email'],
+           'tele' => ['numeric'],
+           'wp_tele' => ['numeric'],
+           'facebook' => ['string','url'],
+           'twitter' => ['string','url'],
+           'instagram' => ['string','url'],
+        ]);
+
+       $id_info = DB::table('infos')
+       ->where('id',1)
+       ->update(
+           [
+            'email' => $data['email'],
+            'tele' => $data['tele'],
+            'wp_tele' => $data['wp_tele'],
+            'facebook' => $data['facebook'],
+            'twitter' => $data['twitter'],
+            'instagram' => $data['instagram'],
+           ],
+       );
+       $url = route('homeInfos.create') ;
+       $lib = "informations";
+       return view('done.modificationDone',compact('url','lib'));
+   }
+
+
+
+
+
     public function index()
     {
         $myQueri=DB::table('immobiliers')->where('categorie',3)->limit(5)->get();
-        $home_carasoul = DB::table('gallery_home_carasouls')->where('id',1)->get();
-        $home_sections = DB::table('gallery_home_sections')->where('id',1)->get();
+        $home_carasoul = DB::table('gallery_home_carasouls')->where('id',2)->get();
+        $home_sections = DB::table('gallery_home_sections')->where('id',2)->get();
         return view('welcome',compact('myQueri','home_carasoul','home_sections'));
     }
 }

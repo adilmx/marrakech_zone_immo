@@ -44,7 +44,7 @@ $(document).ready(function(){
         var srh_txt = $(".search-element input").val().toLowerCase();
         var wds = ".mxd-2 .mxd-3";
         if(srh_txt != ""){
-        
+
         /* $(".tmx").addClass("display-wd");
         $(".pmx").addClass("pmx-p"); */
         }
@@ -63,10 +63,10 @@ $(document).ready(function(){
           swal("Recherche introuvable!", "verifiez votre recherche et réeassayer à nouveau!", "error");
           $(wds).each(function(){
             $(this).removeClass("display-wd");
-            
+
        });
-          
-                                                
+
+
         }else{
           $(".btn-all-mx").removeClass("display-wd");
         }
@@ -96,13 +96,29 @@ $(document).ready(function(){
 
       var id =  $(".c").children("option:selected").attr('data');
 
-    cat_ids.forEach(element => {
-      if( element.getAttribute("data") == id ){
-          element.classList.remove("display-wd");
-      }else{
-        element.classList.add("display-wd");
-      }
-
+      $(".op").each(function(){
+        if( $(this).attr("data") == id ){
+          $(this).removeClass("display-wd");
+          $(this).prop('disabled',false);
+        }else{
+          $(this).addClass("display-wd");
+          $(this).prop('disabled',true);
+        }
+        if( $(this).attr("value") == val ){
+          $(this).removeClass("display-wd");
+          $(this).prop('disabled',false);
+          $(this).css("background","pink");
+        }
+      $(".op[data="+id+"]").first().prop('selected',true);
+      $(".mc").val($(".op[data="+id+"]").first().val());
+      $(".op").each(function(){
+        if($(this).css("background-color") == "rgb(255, 192, 203)"){
+          $(this).prop('selected',true);
+          $(".mc").val($(this).val());
+        }
+      });
+      
+      $("#marque_sub").val($("#marque").val());
 /*end before event change */
   $(".c").change(function(){
       var cat_ids = $(".op").toArray();
@@ -113,23 +129,34 @@ $(document).ready(function(){
 
       var id =  $(this).children("option:selected").attr('data');
 
-    cat_ids.forEach(element => {
-      if( element.getAttribute("data") == id ){
-          element.classList.remove("display-wd");
-      }else{
-        element.classList.add("display-wd");
+      $(".op").each(function(){
+        if( $(this).attr("data") == id ){
+          $(this).removeClass("display-wd");
+          $(this).prop('disabled',false);
+        }else{
+          $(this).addClass("display-wd");
+          $(this).prop('disabled',true);
+  
+        }
+
+    });
+    $(".op[data="+id+"]").first().prop('selected',true);
+    $(".mc").val($(".op[data="+id+"]").first().val());
+    $(".op").each(function(){
+      if($(this).css("background-color") == "rgb(255, 192, 203)"){
+        $(this).prop('selected',true);
+        $(".mc").val($(this).val());
+      }
+    });
+    $(".op").each(function(){
+      if( $(this).attr("value") == val ){
+        $(this).removeClass("display-wd");
+        $(this).prop('disabled',false);
+        $(this).css("background","pink");
       }
 
     });
-
-    cat_ids.forEach(element => {
-      if( element.getAttribute("value") == val ){
-          element.classList.remove("display-wd");
-          element.style.background = "pink";
-      }
-
-    });
-
+    $("#marque_sub").val($("#marque").val());
   });
 
 

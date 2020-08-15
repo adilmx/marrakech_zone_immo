@@ -38,9 +38,9 @@ class ReservationVenteController extends Controller
     public function store(Request $request)
     {
         $data= request()->validate([
-            'nom' => ['required','string'],
-            'prenom' => ['required','string'],
-            'tele' => ['required','string'],
+            'nom' => ['required','alpha'],
+            'prenom' => ['required','alpha'],
+            'tele' => ['required','numeric'],
             'email' => ['required','email'],
             'id' => 'required',
          ]);
@@ -69,11 +69,12 @@ class ReservationVenteController extends Controller
  $immo = DB::table('immobiliers')->where('immobiliers.id',$data['id'])
  ->join('type_immobiliers','id_type','=','type_immobiliers.id')
  ->get();
+ $infos = DB::table('infos')->where('infos.id',1)->get();
  $Rese_immo = DB::table('reservation_ventes')->where('reservation_ventes.id',$id_vente)
  
  ->get();
- $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToAdminVenteImmo');
- $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToCustomerVenteImmo');
+ $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToAdminVenteImmo',$infos);
+ $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToCustomerVenteImmo',$infos);
  /* end send mail */
         $type_pro = "immobilier_v" ;
 
@@ -82,9 +83,9 @@ class ReservationVenteController extends Controller
     }
 
     /*send mail */
-    public function sendEmail_($data ,$pro,$res,$to_email,$msg ){
+    public function sendEmail_($data ,$pro,$res,$to_email,$msg ,$infos){
         Mail::send($msg, 
-            ['data' => $data , 'pro' => $pro ,'res' => $res], 
+            ['data' => $data , 'pro' => $pro ,'res' => $res , "infos" => $infos ], 
             function ($message) use($data,$to_email){
             $message->to("".$to_email);
             $message->subject("".$data['prenom']." ".$data['nom']."");
@@ -134,6 +135,8 @@ class ReservationVenteController extends Controller
      */
     public function destroy(ReservationVente $reservationVente)
     {
-        //
+        $immoV = DB::table('reservation_ventes')->where('id',$reservationVente)
+         ->delete();
+         return redirect()->route("admin.index");
     }
 }

@@ -46,6 +46,14 @@
 
 		background-size: cover;
 		-moz-background-size: cover;
+    }
+    .carousel .five {
+		background: url({{ $str }}{{ $home_carasoul[0]->fifth_img }});
+		background-position: center;
+		background-repeat: no-repeat;
+
+		background-size: cover;
+		-moz-background-size: cover;
 	}
 	.fas .fa-star{
 		background-color:#C89005;
@@ -64,6 +72,7 @@
 		<li data-target="#myCarousel" data-slide-to="1"></li>
 		<li data-target="#myCarousel" data-slide-to="2"></li>
 		<li data-target="#myCarousel" data-slide-to="3"></li>
+		<li data-target="#myCarousel" data-slide-to="4"></li>
 
 	</ol>
 	<div class="carousel-inner" role="listbox" style="height:40vh">
@@ -73,7 +82,7 @@
   -->
 			<div class="carousel-caption mx-carousoul-p">
 
-				<p class="meri-titles">Garantir la meilleure qualité des voitures est notre plaisir</p>
+				<p class="meri-titles">{{__('Acquérir votre bien à Marrakech')}}</p>
 
 			</div>
 
@@ -83,7 +92,7 @@
 
 			<div class="carousel-caption mx-carousoul-p">
 
-				<p class="meri-titles">Trouvez votre place avec une expérience photo immersive</p>
+				<p class="meri-titles">{{__('locations saisonnières dans une villas luxueuses à Marrakech')}}</p>
 			</div>
 		</div>
 		<div class="item three d-block w-100">
@@ -91,7 +100,7 @@
 
 			<div class="carousel-caption mx-carousoul-p">
 
-				<p class="meri-titles">Le confort et la sécurité que vous ne trouverez nulle part ailleurs</p>
+				<p class="meri-titles">{{__('ventes et achats des biens immobilier')}}</p>
 			</div>
 		</div>
 		<div class="item four d-block w-100">
@@ -99,7 +108,15 @@
 
 			<div class="carousel-caption mx-carousoul-p">
 
-				<p class="meri-titles">Nous vous aidons à trouvez l'appartement que vous aimerez</p>
+				<p class="meri-titles">{{__("Ventes Riad")}}</p>
+			</div>
+        </div>
+        <div class="item five d-block w-100">
+			<!-- <img class="third-slide" src="{{ asset('/') }}images/hero-header/04.jpg" alt="Third slide"> -->
+
+			<div class="carousel-caption mx-carousoul-p">
+
+				<p class="meri-titles">{{__("Transport et location")}}</p>
 			</div>
 		</div>
 	</div>
@@ -123,10 +140,10 @@
 
 			<div class="form">
                 <div class="form-group">
-                    <input type="text" placeholder="Immobilier..." class="form-control fmx" title="Acces rapide!trouvez ici votre preferable voiture facilement" >
+                    <input type="text" placeholder="Immobilier..." class="form-control fmx" title="{{__("Acces rapide!trouvez ici votre preferable immobilier facilement")}}" >
                     <button class="btn"><i class="icon-magnifier"></i></button>
                 </div>
-                <button class="btn btn-all-mx display-wd">Afficher touts</button>
+                <button class="btn btn-all-mx display-wd">{{ __("Afficher touts") }}</button>
             </div>
 
 		</div>
@@ -144,13 +161,15 @@
 						$c_data= 1;
 						$key_c = 0;
 						@endphp
+						@if(isset($immos))
 						@foreach ($immos as $key=>$immo)
 						@php
 						++$key_c;
 						@endphp
 						<!-- real number  mx-n -->
-						@if($key < 6) @php $style="" ; @endphp @else @php $style="display-wd" ; @endphp @endif <!-- real number +1 mx-n -->
-							@if($key_c == 7)
+						@if($key < 20) @php $style="" ; @endphp @else @php $style="display-wd" ; @endphp @endif 
+						<!-- real number +1 mx-n -->
+							@if($key_c == 21)
 							@php
 							++$c_data;
 							$key_c = 0;
@@ -162,7 +181,7 @@
 
 								<div class="mx-trip-guide-item trip-guide-item" style="background-color:white">
 									<a href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}">
-										<div class="trip-guide-image mx-trip-guide-image meri-widget" title="cliquez ici pour plus de details">
+										<div class="trip-guide-image mx-trip-guide-image meri-widget" title="{{ __("cliquez ici pour plus de details") }}">
 											<img src="/storage/{{ $immo->pic_src }}" alt="images" />
 										</div>
 									</a>
@@ -175,11 +194,11 @@
 
 										<div class="trip-guide-person mx-trip-guide-person clearfix" style="border: 0px;">
 											<i class="fas fa-home"></i>
-											<p class="name">Nombre d'étage : <span>{{ $immo->nbr_etage }}</span></p>
+											<p class="name">{{ __("Nombre d'étage") }} : <span>{{ $immo->nbr_etage }}</span></p>
 
 										</div><div class="trip-guide-person mx-trip-guide-person clearfix" style="border: 0px;">
 										<i class="fas fa-home"></i>
-											<p class="name">Nombre de chambre : <span>{{ $immo->nbr_chambre }}</span></p>
+											<p class="name">{{ __("Nombre de chambre") }} : <span>{{ $immo->nbr_chambre }}</span></p>
 
 										</div>
 
@@ -187,12 +206,12 @@
 										<div class="row gap-10 mx-price">
 											<div class="col-xs-12 col-sm-6">
 												<div class="trip-guide-price">
-													Á partir de
+													{{ __("Á partir de") }}
 													<span class="number">{{ $immo->price_min }}$</span>
 												</div>
 											</div>
 											<div class="col-xs-12 col-sm-6 text-right">
-												<a href="{{route('reservationVente.create',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}" class="btn btn-primary">Reserver</a>
+												<a href="{{route('reservationVente.create',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}" class="btn btn-primary">{{__("Reserver")}}</a>
 
 											</div>
 										</div>
@@ -204,6 +223,7 @@
 							</div>
 							<!-- end car widget -->
 							@endforeach
+							@endif
 
 					</div>
 
@@ -221,11 +241,11 @@
 					@endphp
 					@endforeach
 					<div class="clearfix tmx">
-						plus de {{ $key }} type d'immobiliers à choisir
+						{{ __("plus de") }} {{ $key }} {{ __("type d'immobiliers à choisir") }}
                     </div>
 
                     <div class="clearfix smx display-wd">
-                        Pas de resultat à afficher pour cette recherche!
+                        {{ __("Pas de resultat à afficher pour cette recherche!") }}
                        </div>
 
 					<div class="clearfix tmx">
@@ -245,7 +265,7 @@
 								@php
 								++$counter;
 								/* real number +1 mx-n */
-								$cm = $counter%7 ;
+								$cm = $counter%21 ;
 								@endphp
 								@if($cm == 1 or $counter == 1)
 								@if($counter == 1)

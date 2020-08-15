@@ -44,12 +44,12 @@ class ReservationCarController extends Controller
     public function store(Request $request)
     {
         $data= request()->validate([
-            'nom' => ['required','string'],
-            'prenom' => ['required','string'],
-            'tele' => ['required','string'],
+            'nom' => ['required','alpha'],
+            'prenom' => ['required','alpha'],
+            'tele' => ['required','numeric'],
             'email' => ['required','email'],
             'date_debut_reservation' => ['required','date'],
-            'date_fin_reservation' => ['required','date','after:date_debut_reservation'],
+            'date_fin_reservation' => ['required','date'],
             'car_driver' => ['required'],
             'id' => 'required',
             'c_id' => 'required',
@@ -82,8 +82,9 @@ $car = DB::table('cars')->where('cars.id',$data['id'])
                 ->join('gallery_cars','gallery_cars.car_id','=','cars.id')
                 ->get();
 $Rese_car = DB::table('reservation_cars')->where('id',$id_rese_car)->get();
-$this->sendEmail_($data,$car,$Rese_car,$data['email'],"auth.msgResToAdmin");
-         $this->sendEmail_($data,$car,$Rese_car,$data['email'],"auth.msgResToCustomer");
+$infos = DB::table('infos')->where('infos.id',1)->get();
+$this->sendEmail_($data,$car,$Rese_car,$data['email'],"auth.msgResToAdmin",$infos);
+         $this->sendEmail_($data,$car,$Rese_car,$data['email'],"auth.msgResToCustomer",$infos);
   /* end send mail */
          return view('cars.reservationDone',[
              'data' => $data
@@ -93,9 +94,9 @@ $this->sendEmail_($data,$car,$Rese_car,$data['email'],"auth.msgResToAdmin");
 
 
     /*send mail */
-    public function sendEmail_($data ,$pro,$res,$to_email,$msg ){
-        Mail::send($msg, 
-            ['data' => $data , 'pro' => $pro ,'res' => $res], 
+    public function sendEmail_($data ,$pro,$res,$to_email,$msg ,$infos){
+        Mail::send($msg,
+            ['data' => $data , 'pro' => $pro ,'res' => $res , "infos" => $infos ],
             function ($message) use($data,$to_email){
             $message->to("".$to_email);
             $message->subject("".$data['prenom']." ".$data['nom']."");
@@ -144,6 +145,8 @@ $this->sendEmail_($data,$car,$Rese_car,$data['email'],"auth.msgResToAdmin");
      */
     public function destroy(ReservationCar $reservationCar)
     {
-        //
+        $car_ = DB::table('reservation_cars')->where('id',$reservationCar)
+         ->delete();
+         return redirect()->route("admin.index");
     }
 }

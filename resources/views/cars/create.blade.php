@@ -41,9 +41,11 @@
                                     <div class="form-group row">
                                         <label for="marque" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('marque de voiture') }}</label>
                                             <select name="marque_" class=" mc form-control @error('marque') is-invalid @enderror" value="{{ old('marque') }}" name="marque" id="marque">
+                                                        @if(isset($marques))
                                                         @foreach($marques as  $marque)
                                                             <option class="op" data="{{$marque->categorie_id}}" value="{{ $marque->libelle }}">{{ $marque->libelle }}</option>
                                                         @endforeach
+                                                        @endif
                                                         <option value="...">{{__('autre')}}</option>
                                             </select>
 
@@ -110,7 +112,7 @@
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="prix_min" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('prix minimale pour jour') }}</label>
+                                        <label for="prix_min" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('prix minimale pour jour') }}($)</label>
 
 
                                             <input id="prix_min" type="text" class="form-control @error('prix_min') is-invalid @enderror" name="prix_min" value="{{ old('prix_min') }}"  autocomplete="prix_min">
@@ -123,7 +125,7 @@
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="prix_max" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('prix maximale pour jour') }}</label>
+                                        <label for="prix_max" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('prix maximale pour jour') }}($)</label>
 
 
                                             <input id="prix_max" type="text" class="form-control @error('prix_max') is-invalid @enderror" name="prix_max" value="{{ old('prix_max') }}"  autocomplete="prix_max">
@@ -149,7 +151,7 @@
 
                                     </div>
                                     <div class="form-group row">
-                                        <label for="chare_max" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('charge maximale de voiture') }}</label>
+                                        <label for="chare_max" class="text-md-left text-md-left col-form-label text-md-left mx-cap">{{ __('charge maximale de voiture') }}{{  __("Kg") }}</label>
 
 
                                             <input id="chare_max" type="text" class="form-control @error('chare_max') is-invalid @enderror" name="chare_max" value="{{ old('chare_max') }}"  autocomplete="chare_max">

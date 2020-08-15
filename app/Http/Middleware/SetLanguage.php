@@ -6,6 +6,7 @@ session_start();
 use App;
 use Closure;
 use URL;
+use Route;
 class SetLanguage
 {
     /**
@@ -17,8 +18,7 @@ class SetLanguage
      */
     public function handle($request, Closure $next)
     {
-        
-     if(URL::current() == "http://127.0.0.1:8000"){
+     if(Route::current()->uri == "/"){
         $request->lang = $_SESSION['lang'];
         if($_SESSION['lang'] == null){
             $_SESSION['lang'] = $request->lang;

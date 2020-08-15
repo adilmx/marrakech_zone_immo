@@ -50,4 +50,14 @@ $.uploadPreview({
   no_label: false,                // Default: false
   success_callback: null          // Default: null
 });
+$.uploadPreview({
+  input_field: "#image-upload_5",   // Default: .image-upload
+  preview_box: "#image-preview_5",  // Default: .image-preview
+  label_field: "#image-label_5",    // Default: .image-label
+  label_default: "Choose File",   // Default: Choose File
+  label_selected: "Change File",
+  img_top: "#img_top_5",  // Default: Change File
+  no_label: false,                // Default: false
+  success_callback: null          // Default: null
+});
 $(".inputtags").tagsinput('items');

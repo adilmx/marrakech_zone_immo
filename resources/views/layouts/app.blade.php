@@ -32,7 +32,7 @@
 	<link href="{{ asset('/') }}dist/aos.css" rel="stylesheet">
 
 	<!-- FontAwesome Style File -->
-	<link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">{{-- 
+	<link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">{{--
 	<link href="{{ asset('/') }}myIcons/css/fontawesome.css" rel="stylesheet">
   <link href="{{ asset('/') }}myIcons/css/brands.css" rel="stylesheet">
   <link href="{{ asset('/') }}myIcons/css/solid.css" rel="stylesheet"> --}}
@@ -73,15 +73,15 @@
 						<ul class="nav navbar-nav" id="responsive-menu">
 
 							<li>
-								<a href="{{ asset('/') }}">Accueil</a>
+								<a href="{{ asset('/') }}">{{ __("Accueil") }}</a>
 							</li>
 
 							<li>
-								<a href="#">Immobilier</a>
+								<a href="#">{{ __("Immobilier") }}</a>
 								<ul>
-									<li><a href="{{ route('immobilier_vente.index',['lang'=> app()->getLocale()]) }}">Immobilier Vente</a>
+									<li><a href="{{ route('immobilier_vente.index',['lang'=> app()->getLocale()]) }}">{{ __("Immobilier Vente") }}</a>
 									</li>
-									<li><a href="{{ route('immobilier_loc.index',['lang'=> app()->getLocale()]) }}">Immobilier Location</a>
+									<li><a href="{{ route('immobilier_loc.index',['lang'=> app()->getLocale()]) }}">{{ __("Immobilier Location") }}</a>
 
 									</li>
 							</li>
@@ -89,20 +89,20 @@
 						</li>
 
 						<li>
-							<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 1]) }}">Voitures de luxe</a>
+							<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 1]) }}">{{ __("Voitures de luxe") }}</a>
 
 						</li>
 
 						<li>
-							<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 2]) }}">Transport touristique</a>
+							<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 2]) }}">{{ __("Transport touristique") }}</a>
 
 						</li>
 						<li>
-							<a href="#" > <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
-             height: 37;"></i> Fr</a>
+							<a > <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
+             height: 37;"></i> {{ app()->getLocale() }}</a>
 								<ul>
-									<li><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'ar']) ) }}">Arabe</a></li>
-									<li class="active"><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'fr']) ) }}" class="active"> Français</a></li>
+									<li class="active"><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'ar']) ) }}">Arabe</a></li>
+									<li ><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'fr']) ) }}" class="active"> Français</a></li>
 									<li><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'en']) ) }}">Anglais</a></li>
 
 								</ul>
@@ -110,14 +110,14 @@
 						</li>
 
 						<li>
-							<a href="#"><em> <i class="fas fa-phone-alt" aria-hidden="true" style="width: 40;
+							<a><em> <i class="fas fa-phone-alt" aria-hidden="true" style="width: 40;
     height: 40;
 "></i>  </em></a>
 @php
     $info=DB::table('infos')->where('id',1)->get();
 @endphp
 								<ul>
-                                    <li ><i class="fas fa-at" style="display:inline-block;PADDING-LEFT: 20px;"></i> <span style="font-size: .9vw;">{{ $info[0]->email }}</span></li>
+                                    <li ><i class="fas fa-at" style="display:inline-block;PADDING-LEFT: 20px;"></i> <span class="mx-mail-infos">{{ $info[0]->email }}</span></li>
 									<li><i class="fas fa-phone-square-alt" style="display:inline-block;PADDING-LEFT: 20px;"></i>{{$info[0]->tele}}</li>
 									<li ><i class="fab fa-whatsapp" style="display:inline-block;PADDING-LEFT: 20px;"></i> {{$info[0]->wp_tele}} </li>
 								</ul>
@@ -174,10 +174,9 @@
 
 						<div class="col-xs-12 col-sm-12 col-md-4">
 							<ul class="bottom-footer-menu for-social">
-								<li><a href="#"><i class="icon-social-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
-								<li><a href="#"><i class="icon-social-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
-								<li><a href="#"><i class="icon-social-google" data-toggle="tooltip" data-placement="top" title="google plus"></i></a></li>
-								<li><a href="#"><i class="icon-social-instagram" data-toggle="tooltip" data-placement="top" title="instrgram"></i></a></li>
+								<li><a target="_blank" href="{{$info[0]->twitter}}"><i class="icon-social-twitter" data-toggle="tooltip" data-placement="top" title="twitter"></i></a></li>
+								<li><a target="_blank" href="{{$info[0]->facebook}}"><i class="icon-social-facebook" data-toggle="tooltip" data-placement="top" title="facebook"></i></a></li>
+								<li><a target="_blank" href="{{$info[0]->instagram}}"><i class="icon-social-instagram" data-toggle="tooltip" data-placement="top" title="instrgram"></i></a></li>
 							</ul>
 						</div>
 

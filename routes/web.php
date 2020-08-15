@@ -28,13 +28,12 @@ Route::post('/edit_profile', 'AdminController@save')->name('admin.save.profile')
 
 
 
+Route::post('/admin/ajax', 'AjaxController@ajax')/* ->name('admin.ajax') */;
+
+Auth::routes();
 
 
 
-
-/*
-Route::get('/car/create', 'CarController@createByUser')->name('car.createByUser');
-Route::post('/scarbyuser', 'CarController@storeByUser')->name('car.storeByUser'); */
 
 Route::get('/admin/car/create', 'CarController@create')->name('car.create');
 Route::post('/scar', 'CarController@store')->name('car.store');
@@ -52,6 +51,13 @@ Route::post('/shomecarasoul/{carasoul}', 'HomeController@storeCarasoul')->name('
 Route::get('/admin/home/sections', 'HomeController@createSections')->name('homeSections.create');
 Route::post('/shomesections/{section}', 'HomeController@storeSections')->name('homeSections.store');
 
+Route::get('/admin/home/infos', 'HomeController@createInfos')->name('homeInfos.create');
+Route::post('/shomeinfos', 'HomeController@storeInfos')->name('homeInfos.store');
+
+Route::get('/admin/reservationCar/delete/{reservation}', 'ReservationCarController@destroy')->name('reservationC.delete');
+Route::get('/admin/reservationImmoL/delete/{reservation}', 'ReservationLocationController@destroy')->name('reservationIL.delete');
+Route::get('/admin/reservationImmoV/delete/{reservation}', 'ReservationVenteController@destroy')->name('reservationIV.delete');
+
 /* passwords */
 Route::get('/forgetPassword', 'Auth\ResetPasswordController@email')->name('password.forget');
 Route::post('/fsendingResetLink', 'Auth\ResetPasswordController@sendEmail')->name('password.send');
@@ -60,7 +66,7 @@ Route::get('/reset_password/{user}/{token}', 'Auth\ResetPasswordController@prev_
 Route::post('/reset_password_', 'Auth\ResetPasswordController@reset')->name('password.reset');
 
 
-Auth::routes();
+
 
 /***** Site */
 if(!isset($_SESSION['lang'])){
@@ -93,6 +99,13 @@ Route::get('/details_immo/{immobilier}', 'ImmobilierController@show')->name('imm
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/car/create', 'CarController@createByUser')->name('car.createByUser');
+Route::post('/scarbyuser', 'CarController@storeByUser')->name('car.storeByUser');
+
+Route::get('/error/404', function(){
+    return view("errors.404");
+})->name('error.404');
 
 });
 

@@ -19,7 +19,7 @@
 
                                             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" >
                                                 <div data-aos="zoom-out-left">
-                                                <h2>l'aventure commence ici</h2>
+                                                <h2>{{__("l'aventure commence ici")}}</h2>
                                             </div>
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                                         <input type="text" value="{{ $immobilier->id }}" name="id" hidden>
                                     </div>
                                     <div class="form-group row  mt-0 ml-auto">
-                                        <button class="btn btn-primary">RESERVER</button>
+                                        <button class="btn btn-primary">{{__("RESERVER")}}</button>
                                     </div>
                                    </div>
                                 </div>
@@ -122,8 +122,8 @@
 											<li>
 												<div class="row gap-10 mt-10">
 													<div class="col-xs-7 col-sm-7">
-														<span class="font600">PRIX</span>
-                                                        <div class="font-smaller " style="color: rgb(241, 64, 10)">* prix maximale </div>
+														<span class="font600">{{__("PRIX")}}</span>
+                                                        <div class="font-smaller " style="color: rgb(241, 64, 10)">* {{__("prix maximale")}} </div>
                                                     </div>
 													<div class="col-xs-5 col-sm-5 text-right">
 														<span class="font600 font26 block text-primary mt-5 mx-price" pdays="" pmin="{{ $immobilier->price_min }}" pmax="{{ $immobilier->price_max }}">{{ $immobilier->price_max }}$</span>
@@ -134,12 +134,12 @@
 											<li class="divider"></li>
 
 											<li>
-												<a href="{{ route('immobilier_vente.index',['lang'=>app()->getLocale(),]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">CHOISIR UNE AUTRE</a>
+												<a href="{{ route('immobilier_vente.index',['lang'=>app()->getLocale(),]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">{{__("CHOISIR UNE AUTRE")}}</a>
                                             </li>
                                             <li class="divider"></li>
 
 											<li>
-												<a href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$immobilier->id])}}" class="btn btn-primary btn-sm mt-5 btn-mx-1">RETOUR AU DETAILS</a>
+												<a href="{{route('immo.show',['lang'=>app()->getLocale(),'immobilier'=>$immobilier->id])}}" class="btn btn-primary btn-sm mt-5 btn-mx-1">{{__("RETOUR AU DETAILS")}}</a>
 											</li>
 
 										</ul>
