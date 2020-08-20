@@ -143,7 +143,7 @@ $this->sendEmail_($data,$car,$Rese_car,$data['email'],"auth.msgResToAdmin",$info
      * @param  \App\ReservationCar  $reservationCar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ReservationCar $reservationCar)
+    public function destroy($reservationCar)
     {
         $car_ = DB::table('reservation_cars')->where('id',$reservationCar)
          ->delete();

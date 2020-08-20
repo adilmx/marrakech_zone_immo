@@ -71,7 +71,7 @@ class ReservationVenteController extends Controller
  ->get();
  $infos = DB::table('infos')->where('infos.id',1)->get();
  $Rese_immo = DB::table('reservation_ventes')->where('reservation_ventes.id',$id_vente)
- 
+
  ->get();
  $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToAdminVenteImmo',$infos);
  $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToCustomerVenteImmo',$infos);
@@ -84,8 +84,8 @@ class ReservationVenteController extends Controller
 
     /*send mail */
     public function sendEmail_($data ,$pro,$res,$to_email,$msg ,$infos){
-        Mail::send($msg, 
-            ['data' => $data , 'pro' => $pro ,'res' => $res , "infos" => $infos ], 
+        Mail::send($msg,
+            ['data' => $data , 'pro' => $pro ,'res' => $res , "infos" => $infos ],
             function ($message) use($data,$to_email){
             $message->to("".$to_email);
             $message->subject("".$data['prenom']." ".$data['nom']."");
@@ -133,7 +133,7 @@ class ReservationVenteController extends Controller
      * @param  \App\ReservationVente  $reservationVente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ReservationVente $reservationVente)
+    public function destroy($reservationVente)
     {
         $immoV = DB::table('reservation_ventes')->where('id',$reservationVente)
          ->delete();
