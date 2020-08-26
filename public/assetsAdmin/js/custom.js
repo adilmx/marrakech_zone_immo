@@ -9,6 +9,91 @@
 
 /**  */
 $(window).ready(function(){
+
+  /* */
+  $(".oi").each(function(){
+    if( $(this).val() == $(".oic").attr("type") ){
+      $(this).prop('selected',true);
+    }else{
+      $(this).prop('selected',false);
+    }
+  });
+  /* */
+  $(".ok").each(function(){
+    if( $(this).val() == $(".okc").attr("cat") ){
+      $(this).prop('selected',true);
+    }else{
+      $(this).prop('selected',false);
+    }
+    });
+    /** */
+  /*for immo */
+  var selectVal = $("#mytype").val();
+
+                                            if (selectVal == "...") {
+
+                                                $("#type_sub").prop("hidden", false);
+                                            } else {
+                                                $("#type_sub").prop("hidden", true);
+                                            }
+                                            $("#type_sub").val($("#mytype").val());
+                                          if(selectVal=="Terrain"){
+                                            document.getElementById("nbr_chbr").disabled = true;
+                                             document.getElementById("nbr_chbr").value=0;
+
+                                            document.getElementById("nbr_etg").disabled = true;
+                                            document.getElementById("nbr_etg").value=0;
+
+                                            document.getElementById("prix_min").disabled = true;
+                                            document.getElementById("prix_min").value=0;
+
+
+                                            document.getElementById("date_sep").disabled = true;
+                                            document.getElementById("date_sep").value=0;
+
+
+                                          }
+                                          else{
+                                            document.getElementById("nbr_chbr").disabled =false;
+                                            document.getElementById("nbr_chbr").value=0;
+
+                                            document.getElementById("nbr_etg").disabled =false;
+                                            document.getElementById("nbr_etg").value=0;
+
+                                            document.getElementById("prix_min").disabled =false;
+                                            document.getElementById("prix_min").value=0;
+
+
+                                            document.getElementById("date_sep").disabled =false;
+                                            document.getElementById("date_sep").value=0;
+
+                                          }
+
+                                          var selectVal = $("#myCat").val();
+
+                                            
+                                            if(selectVal== 3){
+
+                                            document.getElementById("prix_min").disabled = true;
+                                            document.getElementById("prix_min").value=0;
+
+
+                                            document.getElementById("date_sep").disabled = true;
+                                            document.getElementById("date_sep").value=0;
+
+
+                                          }
+                                          else{
+
+                                            document.getElementById("prix_min").disabled =false;
+                                            document.getElementById("prix_min").value=0;
+
+
+                                            document.getElementById("date_sep").disabled =false;
+                                            document.getElementById("date_sep").value=0;
+
+                                          }
+    /*for immmo end */
     $("#marque_sub").val($("#marque").val());
 
     var marque = $("#data_cm").attr("marque");
@@ -44,7 +129,6 @@ $(document).ready(function(){
         var srh_txt = $(".search-element input").val().toLowerCase();
         var wds = ".mxd-2 .mxd-3";
         if(srh_txt != ""){
-
         /* $(".tmx").addClass("display-wd");
         $(".pmx").addClass("pmx-p"); */
         }
@@ -117,7 +201,7 @@ $(document).ready(function(){
           $(".mc").val($(this).val());
         }
       });
-      
+
       $("#marque_sub").val($("#marque").val());
 /*end before event change */
   $(".c").change(function(){
@@ -136,7 +220,7 @@ $(document).ready(function(){
         }else{
           $(this).addClass("display-wd");
           $(this).prop('disabled',true);
-  
+
         }
 
     });
@@ -160,7 +244,7 @@ $(document).ready(function(){
   });
 
 
-  
+
 
   });
 });

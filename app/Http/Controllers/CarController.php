@@ -187,7 +187,6 @@ class CarController extends Controller
                 ->get();
          return view('cars.update',compact('car','marques'));
      }
-
      /**
       * Store a newly created resource in storage.
       *

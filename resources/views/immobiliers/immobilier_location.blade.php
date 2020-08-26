@@ -133,6 +133,53 @@
 @endsection
 
 @section('content')
+<div class="filter-full-width-wrapper">
+
+
+
+    <div class="filter-full-primary">
+
+        <div class="container">
+
+            <div class="filter-full-primary-inner">
+
+                <div class="form-holder">
+
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+
+                            <div class="filter-item bb-sm no-bb-xss">
+
+                                <div class="input-group input-group-addon-icon no-border no-br-sm">
+                                    <span class="input-group-addon input-group-addon-icon bg-white"><label><i class="fa fa-map-marker"></i> Ville:</label></span>
+                                    <input type="text" class="form-control" id="autocompleteTagging" value="Marrakech" placeholder="" readonly/>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+          <!-- <button type="submit" class="btn btn-primary">Ok</button> -->
+    </div>
+
+
+
+
+
+</div>
 <div class="container mx-container-1">
 
 	<div class="hero-mx-srch">

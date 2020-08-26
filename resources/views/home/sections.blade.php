@@ -46,7 +46,6 @@
                                           </div>
                                         </div>
                                     </div>
-
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-left col-12  col-lg-3 mx-cap">{{ __("image de section d'immobilier") }}</label>
                                         <div class="col-sm-12 col-md-7">
@@ -74,7 +73,6 @@
 
 
 						</div>
-
 
 
 					</div>

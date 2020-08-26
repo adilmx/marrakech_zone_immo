@@ -69,7 +69,7 @@
 
                             </div>
                             <div class="form-group col-md-6 col-12">
-                            <form method="POST" action="{{ route('admin.password_reset') }}">
+                            <form method="POST" action="{{ route('admin.password_reset') }}" name="myform">
                         @csrf
 
                             <label>{{__('Mot de passe ancien')}}</label>
@@ -98,8 +98,10 @@
 
                         </div>
                         <div class="card-footer text-right">
-                            <button type="submit" class="btn btn-primary">{{__('Enregistrer les modifications')}}</button>
-                        </div>
+                    <button class="btn btn-primary" data-confirm="Realy?|Do you want to continue?"
+                     data-confirm-yes="submitform();">{{__('Enregistrer les modifications')}}</button>
+                            
+                         </div>
 
                     </form>
                      </div>

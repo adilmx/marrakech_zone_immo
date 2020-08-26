@@ -162,7 +162,6 @@ $(document).ready(function(){
        $("li[data-id='page-li'][id-pg='"+1+"']").addClass("active");
 
       links.forEach(element => {
-
         for(var i = count_page;i >= 1;i = i - 1){
           if( element.getAttribute("id-pg") != i+"" ){
             element.classList.add("display-wd");
@@ -213,8 +212,6 @@ $(document).ready(function(){
          var links = $("li[data-id='page-li']").toArray();
          var l_lnk = links.length ;
   
-
-  
         links.forEach(element => {
             element.classList.remove("display-wd");
   
@@ -222,6 +219,8 @@ $(document).ready(function(){
     });
 
 });
+
+
 
 /* reservation date */
 $("#date_debut_reservation").focusout(function(){
@@ -286,7 +285,7 @@ $(document).ready(function(){
         var pmin = $(".mx-price").attr('pmin') ;
         var pmax = $(".mx-price").attr('pmax') ;
         var pdays = $(".mx-price").attr('pdays') ;
-
+        
         if(pdays == ""){
             pdays = 7;
         }
@@ -297,7 +296,7 @@ $(document).ready(function(){
         }else{
             price = (parseFloat(pmax) * parseFloat(days)).toFixed(2) ;
         }
-        $(".mx-price").text(price+"$ / "+days+"jours");/*
+        $(".mx-price").text(price+"$ / "+days);/*
         alert("days :"+days+"pmin :"+pmin+"pmax :"+pmax+"price :"+price); */
     }
 

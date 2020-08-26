@@ -11,7 +11,6 @@
 @endif
 <style>
 	/* .carousel { z-index: -99; } keeps this behind all content */
-
 	.carousel .one {
 		background: url({{ $str }}{{ $home_carasoul[0]->first_img }});
 		background-size: cover;
@@ -19,31 +18,31 @@
 		background-repeat: no-repeat;
 		-moz-background-size: cover;
 	}
-
 	.carousel .two {
 		background: url({{ $str }}{{ $home_carasoul[0]->sec_img }});
 		background-size: cover;
 		background-repeat: no-repeat;
-
 		background-position: center;
-
 		-moz-background-size: cover;
 	}
-
 	.carousel .three {
 		background: url({{ $str }}{{ $home_carasoul[0]->third_img }});
 		background-position: center;
 		background-repeat: no-repeat;
-
 		background-size: cover;
 		-moz-background-size: cover;
 	}
-
 	.carousel .four {
 		background: url({{ $str }}{{ $home_carasoul[0]->fourth_img }});
 		background-position: center;
 		background-repeat: no-repeat;
-
+		background-size: cover;
+		-moz-background-size: cover;
+	}
+	.carousel .five {
+		background: url({{ $str }}{{ $home_carasoul[0]->fifth_img }});
+		background-position: center;
+		background-repeat: no-repeat;
 		background-size: cover;
 		-moz-background-size: cover;
 	}
@@ -61,7 +60,6 @@
 	.icon:hover{
 		color: orangered !important;
 	}
-
 </style>
     <!-- Carousel
                 ================================================== -->
@@ -155,7 +153,6 @@
 		margin: auto;
 		margin-top: 30px;
 		margin-bottom: 50px;
-
 	}
 </style>
             <div class="row">
@@ -250,7 +247,7 @@
 
                         </div>
 
-                    <a  href="{{ route('immobilier_loc.index',['lang'=> app()->getLocale()]) }}">
+                    <a  href="{{route('immobilier.show',['lang'=> app()->getLocale(),'mycategorie'=> 3,'type'=> 1])}}">
                         {{ __("DÉCOUVRIR MAINTENANT") }}
                     </a>
                     </div>

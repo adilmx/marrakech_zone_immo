@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<!-- Title Of Site -->
+	<!-- Title Of Site -->
 	<title>Marrakech Zone Immo</title>
 	<meta name="description" content="HTML template for multiple tour agency, local agency, traveller, tour hosting based on Twitter Bootstrap 3.x.x" />
 	<meta name="keywords" content="tour agency, tour guide, travel, trip, holiday, vocation, relax, adventure, virtual tour, tour planner" />
@@ -18,18 +18,18 @@
 	<link rel="shortcut icon" href="{{ asset('/') }}images/ico/logo-zh-tours.png">
 
 	<!-- CSS Plugins -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('/') }}bootstrap/css/bootstrap.min.css" media="screen">
-	<link href="{{ asset('/') }}css/main.css" rel="stylesheet">
-	<link href="{{ asset('/') }}css/plugin.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{{url('bootstrap/css/bootstrap.min.css')}} " media="screen">
+	<link href="{{ url('css/main.css') }} " rel="stylesheet">
+	<link href="{{ url('css/plugin.css') }} " rel="stylesheet">
 
 	<!-- CSS Custom -->
-	<link href="{{ asset('/') }}css/style.css" rel="stylesheet">
+	<link href="{{ url('css/style.css') }} " rel="stylesheet">
 
 	<!-- Add your style -->
-	<link href="{{ asset('/') }}css/your-style.css" rel="stylesheet">
+	<link href="{{ url('css/your-style.css') }}" rel="stylesheet">
 
 	<!-- AOS libs -->
-	<link href="{{ asset('/') }}dist/aos.css" rel="stylesheet">
+	<link href="{{ url('dist/aos.css') }} " rel="stylesheet">
 
 	<!-- FontAwesome Style File -->
 	<link rel="stylesheet" href="{{ asset('/') }}css/all.min.css">{{--
@@ -76,38 +76,63 @@
 								<a href="{{ asset('/') }}">{{ __("Accueil") }}</a>
 							</li>
 
-							<li>
-								<a href="#">{{ __("Immobilier") }}</a>
-								<ul>
-									<li><a href="{{ route('immobilier_vente.index',['lang'=> app()->getLocale()]) }}">{{ __("Immobilier Vente") }}</a>
-									</li>
-									<li><a href="{{ route('immobilier_loc.index',['lang'=> app()->getLocale()]) }}">{{ __("Immobilier Location") }}</a>
+							@php
+							$types=DB::select("select distinct lib,id_type,categorie from type_immobiliers,immobiliers where
+							immobiliers.id_type=type_immobiliers.id and categorie='3'");
+							@endphp
+							<li><a href="#">{{__('Immobilier Vente')}}</a>
 
-									</li>
+
+							@if(count($types)>0)
+							<ul>
+							@foreach($types as $type)
+							<li><a href="{{route('immobilier.show',['lang'=> app()->getLocale(),'mycategorie'=> $type->categorie,'type'=> $type->id_type])}}">{{ __($type->lib) }}</a> </li>
+							@endforeach
+							@endif
+							</ul>
+						</li>
+							<li><a href="#">{{__('Immobilier Location')}}</a>
+
+							@php
+							$types1=DB::select("select distinct lib,id_type,categorie from type_immobiliers,immobiliers where
+							immobiliers.id_type=type_immobiliers.id and categorie='1'");
+							@endphp
+							@if(count($types1)>0)
+							<ul>
+							@foreach($types1 as $type)
+							<li><a href="{{route('immobilier.show',['lang'=> app()->getLocale(),'mycategorie'=> $type->categorie,'type'=> $type->id_type])}}">{{ __($type->lib) }}</a> </li>
+							@endforeach
+
+							</ul>
+							@endif
 							</li>
-						</ul>
-						</li>
 
-						<li>
-							<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 1]) }}">{{ __("Voitures de luxe") }}</a>
 
-						</li>
+							<li>
+								<a href="#">{{__('Véhicules')}} </a>
+								<ul>
+									<li>
+										<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 1]) }}">{{__('Voitures de luxe')}}</a>
 
-						<li>
-							<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 2]) }}">{{ __("Transport touristique") }}</a>
+									</li>
 
-						</li>
-						<li>
-							<a > <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
+									<li>
+										<a href="{{ route('car.index',['lang'=> app()->getLocale(),'categorie' => 2]) }}">{{__('Transport touristique')}}</a>
+
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#"> <i class="fa fa-globe " id="earth" aria-hidden="true" style="width: 37;
              height: 37;"></i> {{ app()->getLocale() }}</a>
 								<ul>
-									<li class="active"><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'ar']) ) }}">Arabe</a></li>
-									<li ><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'fr']) ) }}" class="active"> Français</a></li>
-									<li><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'en']) ) }}">Anglais</a></li>
+									<li><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'ar']) ) }}">{{__('Arabe')}}</a></li>
+									<li class="active"><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'fr']) ) }}" class="active"> {{__('Français')}}</a></li>
+									<li><a href="{{ route(Route::currentRouteName(), array_merge(Route::current()->parameters(),['lang' => 'en']) ) }}">{{__('Anglais')}}</a></li>
 
 								</ul>
 
-						</li>
+							</li>
 
 						<li>
 							<a><em> <i class="fas fa-phone-alt" aria-hidden="true" style="width: 40;
@@ -122,7 +147,7 @@
 									<li ><i class="fab fa-whatsapp" style="display:inline-block;PADDING-LEFT: 20px;"></i> {{$info[0]->wp_tele}} </li>
 								</ul>
 
-						</li>
+							</li>
 
 						</ul>
 
@@ -143,15 +168,15 @@
 		<!-- start Main Wrapper -->
 
 
-        <div class="main-wrapper scrollspy-container">
-            @yield('carousel-section')
+		<div class="main-wrapper scrollspy-container">
+			@yield('carousel-section')
 
-		<!-- start our content -->
-        <main class="py-4">
-            @yield('content')
-        </main>
+			<!-- start our content -->
+			<main class="py-4">
+				@yield('content')
+			</main>
 
-        </div>
+		</div>
 		<!-- end our content -->
 
 		<!-- end Main Wrapper -->
@@ -215,14 +240,11 @@
 
 
 	<!-- Core JS -->
-	<script type="text/javascript" src="{{ asset('/') }}js/jquery.min.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/core-plugins.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/customs.js"></script>
-	<script type="text/javascript" src="{{ asset('/') }}js/mx.js"></script>
+	<script type="text/javascript" src="{{ url('js/jquery.min.js') }} "></script>
+	<script type="text/javascript" src="{{ url('js/core-plugins.js') }} "></script>
+	<script type="text/javascript" src="{{ url('js/customs.js') }} "></script>
+	<script type="text/javascript" src="{{ url('js/mx.js') }} "></script>
 
-	<!-- Only in Home Page -->
-	<script type="text/javascript" src="{{ asset('/') }}js/jquery.flexdatalist.js"></script>
 
 	@yield('script-details-car')
 

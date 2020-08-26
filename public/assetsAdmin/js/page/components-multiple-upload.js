@@ -1,10 +1,33 @@
 "use strict";
+ 
+ 
+Dropzone.options.mydropzone = {
+  autoProcessQueue: false,
+  maxFiles:4,
+  acceptedFiles:".png,.jpg,.gif,.bmp,.jpeg",
+  init: function(){
+    this.on('addedfile', function(file) {
+      if (this.files.length > 4) {
 
+        document.getElementById("swal-3").click();
+      
+      }
+    });
+   this.on("complete", function(){
+    if(this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0)
+    {
+     var _this = this;
+     _this.removeAllFiles();
+    }
+    list_image();
+   });
+  },
+ };
+ 
 var dropzone = new Dropzone("#mydropzone", {
   url: "#"
 });
-
-var minSteps = 6,
+  var minSteps = 6,
   maxSteps = 60,
   timeBetweenSteps = 100,
   bytesPerStep = 100000;
@@ -13,7 +36,7 @@ dropzone.uploadFiles = function(files) {
   var self = this;
 
   for (var i = 0; i < files.length; i++) {
-
+ 
     var file = files[i];
       totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
 

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App;
 use App\User;
+use Session;
+use App\TypeImmobilier;
+
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,8 +20,10 @@ class AdminController extends Controller
     }
 
     public function login()
-    {
-        return view('auth/login');
+
+    {   
+        
+        return view('auth.login');
     }
 
 
@@ -93,7 +98,10 @@ class AdminController extends Controller
         ->join('gallery_immos','gallery_immos.immobilier_id','=','immobiliers.id')
         ->join('customers','customers.id','=','immobiliers.created_by')
                     ->count();
-
+   Session::put('types_immo',null);
+                    $types_immo=TypeImmobilier::all();
+                   
+                     Session::put('types_immo',$types_immo);
         return view('admin.index',compact('cars','cars_count',
         'immobiliers','immobiliers_count',
         'immobiliers_nc','immobiliers_nc_count',
@@ -105,7 +113,44 @@ class AdminController extends Controller
     ));
     }
 
+     
+    public function indexImmo($categorie)
+    {   
+        Session::put('categorie',null);
+        Session::put('categorie',$categorie);
 
+        $immobiliers=DB::select('select * from immobiliers where id_type=?  and validated=1 and deleted=0',[$categorie
+        
+       ]);
+        Session::put('empty',0);
+        $lib_type=TypeImmobilier::where('id',$categorie)->get()->get(0)->lib;
+      
+        $count=count($immobiliers);
+       
+        if($count==0){
+         $empty=1;
+        // Session::put('empty',1); 
+         
+          return view('admin.immobilier.index',[
+             'immos'=>$immobiliers,
+                'user'=>Auth::user(),'lib_type'=>$lib_type,
+                'empty'=>$empty
+                
+           ]);
+
+        }
+        else{
+            $types_immo=TypeImmobilier::all();
+
+       
+             return view('admin.immobilier.index',[
+                'user'=>Auth::user(),
+                
+            'immos'=>$immobiliers,
+            'lib_type'=>$lib_type]);
+        }
+   
+    }
 
     public function edit()
     {
@@ -164,7 +209,7 @@ class AdminController extends Controller
                 } else {
                     $query = DB::table('users')->where('email', $user->email)->update(['password' => Hash::make($new_passwd)]);
                     if ($query == 1) {
-                        return back()->with('msg','Modification a été bien effectué');
+                        return view('admin.index',['user'=>$user])->with('msg','Modification a été bien effectuée');
                     } else {
                         return view('admin.errors.500', ['user' => $user]);
                     }

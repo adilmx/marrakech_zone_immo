@@ -134,7 +134,7 @@
 											<li class="divider"></li>
 
 											<li>
-												<a href="{{ route('immobilier_vente.index',['lang'=>app()->getLocale(),]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">{{__("CHOISIR UNE AUTRE")}}</a>
+												<a href="{{route('immobilier.show',['lang'=> app()->getLocale(),'mycategorie'=> 3,'type'=> $immobilier->id_type])}}" class="btn btn-primary btn-sm mt-5 btn-mx-1">{{__("CHOISIR UNE AUTRE")}}</a>
                                             </li>
                                             <li class="divider"></li>
 

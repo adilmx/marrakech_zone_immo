@@ -60,8 +60,13 @@
 
                                             </div>
                                             <div class="txt-box-infos">
-                                            <div class="mx-txt-detail">{{ __("PRIX minimale") }} : <span>{{ $immobilier->price_min }}$</span></div>
+                                                @if($immobilier->categorie != 1 || $type->lib == "Terrain" ){{-- 
+                                            <div class="mx-txt-detail">{{ __("PRIX minimale") }} : <span>{{ $immobilier->price_min }}$</span></div> --}}
                                             <div class="mx-txt-detail">{{ __("PRIX maximale") }} : <span>{{ $immobilier->price_max }}$</span></div>
+                                                 @else
+                                                 <div class="mx-txt-detail">{{__('Prix pour plus de')}}  {{$immobilier->date_sep}} {{__('JOURS')}} : <span>{{ $immobilier->price_min }}$/{{__('jour')}}</span></div>
+                                            <div class="mx-txt-detail">{{__('Prix pour moins de')}} {{$immobilier->date_sep}} {{__('JOURS')}} : <span>{{ $immobilier->price_max }}$/{{__('jour')}}</span></div>   
+                                            @endif
                                             </div>
                                         </div>
 
@@ -73,10 +78,41 @@
 
                             </div>
                             <!-- end box info -->
+                            <div class="bt mt-30 mb-40"></div>
+
+                            <!-- start box info -->
+                            <div class="featured-icon-simple-wrapper">
+
+                               <div class="GridLex-gap-30-mx">
+
+                                   <div class="GridLex-grid-mx-noGutter-equalHeight GridLex-grid-noGutter-equalHeight">
+
+                                       <div class="GridLex-col-mx-4_sm-4-mx_xs-12_xss-12 GridLex-col-mx-4_sm-4_xs-12_xss-12">
+
+                                           <div class="featured-icon-simple-item">
+                                               <div class="icon text-primary mx-icone">
+                                                   <i class="fas fa-home"></i>
+
+                                               </div>
+
+                                           </div>
+                                           <div class="txt-box-infos">
+                                           <div class="mx-txt-detail">{{ __("Type immobilier") }} : <span>{{ __($type->lib) }}</span></div>
+
+                                           </div>
+                                       </div>
+
+                                   </div>
+
+                               </div>
+
+                           </div>
+                           <!-- end box info -->
 
                             <div class="bt mt-30 mb-40"></div>
 
                              <!-- start box info -->
+                             @if($type->lib != "Terrain")
                              <div class="featured-icon-simple-wrapper">
 
                                 <div class="GridLex-gap-30-mx">
@@ -87,7 +123,7 @@
 
                                             <div class="featured-icon-simple-item">
                                                 <div class="icon text-primary mx-icone">
-                                                    <i class="fas fa-car-side"></i>
+                                                    <i class="fas fa-hotel"></i>
 
                                                 </div>
 
@@ -104,6 +140,7 @@
                                 </div>
 
                             </div>
+                            @endif
                             <!-- end box info -->
 
                             <div class="bt mt-30 mb-40"></div>
@@ -119,7 +156,7 @@
 
                                             <div class="featured-icon-simple-item">
                                                 <div class="icon text-primary mx-icone">
-                                                    <i class="fas fa-dollar-sign"></i>
+                                                    <i class="fas fa-barcode"></i>
 
                                                 </div>
 
@@ -151,7 +188,7 @@
 
                                             <div class="featured-icon-simple-item">
                                                 <div class="icon text-primary mx-icone">
-                                                    <i class="fas fa-dollar-sign"></i>
+                                                    <i class="fas fa-vector-square"></i>
 
                                                 </div>
 
@@ -168,6 +205,44 @@
                                 </div>
 
                             </div>
+                            <!-- end box info -->
+                            <div class="bt mt-30 mb-40"></div>
+                            <!-- start box info -->
+                            @if($type->lib != "Terrain")
+                            <div class="featured-icon-simple-wrapper">
+
+                                <div class="GridLex-gap-30-mx">
+
+                                    <div class="GridLex-grid-mx-noGutter-equalHeight GridLex-grid-noGutter-equalHeight">
+
+                                        <div class="GridLex-col-mx-4_sm-4-mx_xs-12_xss-12 GridLex-col-mx-4_sm-4_xs-12_xss-12">
+
+                                            <div class="featured-icon-simple-item">
+                                                <div class="icon text-primary mx-icone">
+                                                    <i class="fas fa-swimming-pool"></i>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="txt-box-infos">
+                                            <div class="mx-txt-detail">{{ __("SUPERFECIE PISCINE") }} : 
+                                                @if($immobilier->piscine != 0)
+                                                <span>{{ $immobilier->piscine }}{{ __("m") }}<sup>2</sup></span>
+                                                @else
+                                                <span>{{ __("Pas de piscine") }}</span>
+                                                @endif
+                                            </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            @endif
                             <!-- end box info -->
 
                             <div class="bt mt-30 mb-40"></div>

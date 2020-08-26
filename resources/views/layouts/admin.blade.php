@@ -5,10 +5,26 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <meta content="{{ csrf_token() }}" name="csrf-token">
 
-
+  
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   
+  <script src="{{url('node_modules/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+
+<link rel="stylesheet" href="{{url('node_modules/bootstrap-daterangepicker/daterangepicker.css')}}">
+  <link rel="stylesheet" href="{{url('node_modules/dropzone/dist/min/dropzone.min.css')}}">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="{{ url('node_modules/summernote/dist/summernote-bs4.css') }}">
+  <link rel="stylesheet" href="{{ url('node_modules/selectric/public/selectric.css') }}">
+  <link rel="stylesheet" href="{{ url('node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
+
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="{{ asset('/') }}node_modules/summernote/dist/summernote-bs4.css">
+  <link rel="stylesheet" href="{{ asset('/') }}node_modules/selectric/public/selectric.css">
+  <link rel="stylesheet" href="{{ asset('/') }}node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
 
 
   <!-- CSS Libraries -->
@@ -21,7 +37,7 @@
 
 	<!-- Fav and Touch Icons -->
     <title>Marrakech Zone Immo</title>
-	<link rel="shortcut icon" href="{{ asset('/') }}images/ico/logo-zh-tours.png">
+	<link rel="shortcut icon" href="{{ url('images/ico/logo-zh-tours.png') }} ">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('/') }}assetsAdmin/css/style.css">
@@ -32,6 +48,10 @@
   <link rel="stylesheet" href="{{ asset('/') }}assetsAdmin/css/custom.css">
 </head>
 
+	<!-- Add your style -->
+  <link rel="stylesheet" href="{{ url('assetsAdmin/css/custom.css') }}">
+</head>
+ 
 <body>
   <div id="app">
     <div class="main-wrapper">
@@ -97,24 +117,25 @@
                   <li><a class="nav-link" href="{{route('adminCar.index',['categorie'=>'2'])}}">{{ __('Transport touristique') }}</a></li>
                 </ul>
               </li>
+              <li class="menu-header"></li>
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-home"></i><span>{{ __('Immobiliers') }}</span></a>
                 <ul class="dropdown-menu">
-                @if(isset($types_immo))
+                @php $types=Session::get('types_immo')
+                 @endphp
 
-                @foreach($types_immo as $type)
-                  <li><a class="nav-link" href="layout-default.html">{{ __($type->lib) }}</a></li>
+                @foreach( $types as $type)
+                  <li><a class="nav-link" href="{{route('admin.immobilier',['categorie'=>$type->id])}}">{{ __($type->lib) }}</a></li>
                 @endforeach
 
-
-                @endif
+               
+             
                 </ul>
               </li>
 
-              <li class="menu-header">{{ __('Paramétre') }}</li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link " data-toggle="dropdown"><i class="fas fa-cog"></i><span>{{ __('Paramétre') }}</span></a>
-
+              <li class="menu-header">{{ __('Paramètre') }}</li>
+              <li class="nav-item dropdown ">
+                <a href="{{route('admin.settings')}}" class="nav-link "><i class="fas fa-cog"></i><span>{{ __('Paramètre') }}</span></a>
               </li>
 
             </ul>
@@ -172,7 +193,14 @@
   <!-- Page Specific JS File -->{{--
   <script src="{{ asset('/') }}assetsAdmin/js/page/index-0.js"></script> --}}
   <script src="{{ asset('/') }}assetsAdmin/js/page/features-post-create.js"></script>
+  <script src="{{ asset('/') }}assetsAdmin/js/page/modules-sweetalert.js"></script>
 
   @yield('script-details-car')
+  <script>
+function goBack() {
+  window.history.back();
+}
+</script>
+ @yield('myscripts')
 </body>
 </html>

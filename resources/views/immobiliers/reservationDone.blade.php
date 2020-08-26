@@ -23,18 +23,15 @@
                         <h3>{{__('Merci pour votre confiance')}}</h3>
                         @if($type_pro == "immobilier_v")
                         @php
-                            $url = "immobilier_vente.index";
+                            $url = 3;
                         @endphp
                         @elseif($type_pro == "immobilier_loc")
                         @php
-                            $url = "immobilier_loc.index";
+                            $url = 1
                         @endphp
                         @endif
-                        <a href="{{route($url,['lang'=>app()->getLocale()])}}" class="btn btn-primary btn-wide">{{__("retour au choix des immobiliers")}}</a>
+                        <a href="{{route('immobilier.show',['lang'=> app()->getLocale(),'mycategorie'=> $url,'type'=> $immo[0]->id_type])}}" class="btn btn-primary btn-wide">{{__("retour au choix des immobiliers")}}</a>
                     </div>
-
-                </div>
-
             </div>
 
         </div>

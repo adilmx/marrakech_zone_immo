@@ -1,4 +1,238 @@
 {
-    "Creer une fiche de voiture": "Create your car sheet" ,
-    "Besoin d'un chauffeur qui vous guide?": "need a driver to guide you?"
+    "/start/layouts/app": "" ,
+
+    "Accueil": "Home" ,
+    "Immobilier": "Real Estate" ,
+    "Immobilier Vente":"Real Estate Sale",
+    "Immobilier Location": "Real Estate Rental" ,
+    "Voitures de luxe":"Luxury cars" ,
+    "Transport touristique": "Tourist transport" ,
+    "Véhicules":"Cars",
+    "/end/layouts/app": "" ,
+
+
+    "/start/welcome": "" ,
+
+    "Acquérir votre bien à Marrakech": "Acquire your property in Marrakech" ,
+    "locations saisonnières dans une villas luxueuses à Marrakech": "seasonal rentals in luxury villas in Marrakech" ,
+    "ventes et achats des biens immobilier" : "sales and purchases of real estate",
+    "lot de terrain , villas , appartement ,Riad": "lot of land, villas, apartment, Riad" ,
+    "Ventes Riad": "Riad sales" ,
+    "Transport et location" : "Transport and rent" ,
+    "Voitures": "Cars" ,
+    "Garantir la meilleure qualité des voitures est notre plaisir": "Guaranteeing the best quality of cars is our pleasure" ,
+    "Villas": "Villas" ,
+    "Trouvez votre place avec une expérience photo immersive": "Find your place with an immersive photo experience" ,
+    "Transport Touristique": "Tourist Transport" ,
+    "Le confort et la sécurité que vous ne trouverez nulle part ailleurs": "The comfort and security you won't find anywhere else" ,
+    "Appartements": "Apartments" ,
+    "Nous vous aidons à trouvez l'appartement que vous aimerez":   "We help you find the apartment you will like" ,
+    "Besoin d'un chauffeur qui vous guide?": "Need a driver to guide you?",
+    "Nous somme ici pour vous aider.":  "We are here to help you." ,
+    "Vous cherchez un appartement luxieux avec un prix convenable?": "Are you looking for a luxury apartment with a decent price?",
+    "Notre entreprise vous offre une collection riche avec les options que vous désirez.":"Our company offers you a rich collection with the options you desire." ,
+    "Besoin d'une voiture luxe pour une longue durée?":     "Need a luxury car for a long time?" ,
+    "Vous êtes dans la meilleures voie.":"You are in the best place.",
+    "VOITURES DE LUXE ET TRANSPORT TOURISTIQUE":  "LUXURY CARS AND TOURIST TRANSPORTATION" ,
+    "Nous vous proposons un large parc de voitures de luxe avec ou sans chauffeur Avec des services de transport touristique": "We offer a large luxury car park with or without driver With tourist transport services",
+    "IMMOBILIERS DE LUXE ET DE QUALITÉ": "LUXURY AND QUALITY REAL ESTATE" ,
+    "Nous vous proposons des immobiliers de luxe à vendre ou à louer": "We offer luxury and quality real estate for sale and for rent" ,
+    "DÉCOUVRIR MAINTENANT": "DISCOVER NOW" ,
+    "Les Meilleurs immobiliers pour  votre confort": "The best real estate for your comfort" ,
+    "DETAILS":  "DETAILS" ,
+    "Suivant":"Next",
+    "Précédent":"Previous",
+    "/end/welcome": "" ,
+
+
+    "start/cars/index": "" ,
+
+    "Acces rapide!trouvez ici votre preferable voiture facilement":   "Quick access! Find your favorite car here easily" ,
+    "Afficher touts":     "Show all" ,
+    "Couleur":   "Color",
+    "charge maximale":   "maximum charge" ,
+    "Á partir de":  "From" ,
+    "plus de":  "more than" ,
+    "marques de voitures à choisir":   "car brands to choose" ,
+    "Pas de resultat à afficher pour cette recherche!": "No results to display for this search!",
+
+
+    "end/cars/index": "" ,
+
+
+    "start/immobiliers/immo_location": "" ,
+
+    "Acces rapide!trouvez ici votre preferable immobilier facilement": "Quick access! Find your favorite real estate here easily" ,
+    "Nombre d'étage":  "Number of floors" ,
+    "Nombre de chambre": "Room number" ,
+    "type d'immobiliers à choisir":  "type of real estate to choose" ,
+
+    "end/immobiliers/immo_location": "" ,
+
+
+    "start/immobiliers/immo_vente": "" ,
+
+
+
+    "end/immobiliers/immo_vente": "" ,
+
+
+    "start/cars/details": "" ,
+
+    "Les meilleurs voitures à choisir": "The best cars to choose",
+    "Prix pour plus de": "Price for more than",
+    "Prix pour moins de":  "Price for less than",
+    "JOURS":"DAYS",
+    "jour":  "day",
+    "nombre de places":  "number of places",
+    "Numero immatriculation": "Registration number",
+    "kilometrage":"mileage",
+    "Plus d'images": "More pictures",
+    "Reserver maintenant": "Reserve now",
+    "cliquer pour afficher l image en plein ecran": "click to display the image in full screen",
+    "IMAGE 1": "PICTURE 1",
+    "IMAGE 2": "PICTURE 2",
+    "IMAGE 3": "PICTURE 3",
+    "IMAGE 4": "PICTURE 4",
+
+    "end/cars/details": "" ,
+
+
+    "start/immobiliers/details": "" ,
+
+    "Les meilleurs immobiliers à choisir":  "The best properties to choose",
+    "PRIX minimale":  "Minimum PRICE",
+    "PRIX maximale": "Maximum PRICE",
+    "nombre d'étages":  "number of floors",
+    "nombre de chambres":  "number of rooms",
+    "étages":  "floors",
+    "Chambres":  "Rooms",
+    "PATENTE": "PATENT",
+    "SUPERFECIE": "AREA",
+    "SUPERFECIE PISCINE": "SWIMMING POOL AREA",
+    "Type immobilier": "real estate type",
+    "Pas de piscine": "Without swimming pool",
+    "Terrain": "land",
+    "Villa": "Villa",
+    "Riad": "Riad",
+    "Apparetement": "apartment",
+
+    "end/immobiliers/details": "" ,
+
+    "start/cars/reservation": "" ,
+
+    "l'aventure commence ici":"adventure starts here",
+    "nom":"last name",
+    "Prenom":"first name",
+    "Telephone":"tele",
+    "email":"email",
+    "date de debut de reservation":"reservation start date",
+    "date de fin de reservation":"reservation end date",
+    "avec chauffeur":"with driver",
+    "oui":"yes",
+    "non":"without",
+    "RESERVER":"RESERVE",
+    "PRIX":"price",
+    "depend de duree que vous avez choisie":"depends on the duration you've chosen",
+    "CHOISIR UNE AUTRE VOITURE":"choose another one",
+    "RETOUR AU DETAILS":"back to details",
+
+    "end/cars/reservation": "" ,
+
+    "start/cars/reservationDone": "" ,
+
+    "Félicitations!":"Congratulation" ,
+    "Votre reservation a bien été crée":"your reservation is done" ,
+    "Merci pour votre confiance":"thanks for your visit",
+    "choisir une autre voiture":"choose another one" ,
+
+    "end/cars/reservationDone": "" ,
+
+    "start/immobiliers/reservation": "" ,
+
+    "nombre de personnes":"number of people",
+    "CHOISIR UNE AUTRE":"choose another one",
+    "prix maximale":"max price",
+
+    "retour au choix des immobiliers":"choose another one" ,
+
+    "end/immobiliers/reservation": "" ,
+
+    "start/auth/msgResCarCustomer": "" ,
+
+    "Bonjour":"hello",
+    "Merci Pour Votre Visite":"thanks for your visit",
+    "Votre Reservation a bien été faite":"your reservation is done",
+    "Informations sur votre reservation":"about your reservation",
+    "libellée de voiture":"car name",
+    "date reservation":"reservation date",
+    "tele":"tele",
+    "vous pouvez nous contacter , si vous voulez plus d'information sur votre reservation et pour la confirmer veuillez utiliser notre email ou notre numéro tele":"you can contact us, if you want more information about your reservation and to confirm it please use our email or our phone number",
+    "Cordialement":"cordially",
+    "Marrakech Zone Immo à votre service":"Marrakech Zone Immo at your service",
+
+    "end/auth/msgResCarCustomer": "" ,
+
+    "start/auth/msgResCarAdmin": "" ,
+
+    "Une nouvelle reservation a été faite par ":"new reservation from",
+    "Informations sur ce client":"about client",
+    "Informations sur cette reservation":"about client reservation",
+    "Par":"from",
+
+    "end/auth/msgResCarAdmin": "" ,
+
+    "start/auth/msgResimmoCustomer": "" ,
+
+    "libellée de l'immobilier(Location)":"real estate name(rent)",
+    "Type de l'immobilier":"real estate type",
+
+    "libellée de l'immobilier(Vente)":"real estate name(sale)",
+
+    "end/auth/msgResimmoCustomer": "" ,
+
+    "start/auth/msgResimmoAdmin": "" ,
+
+    "end/auth/msgResimmoAdmin": "" ,
+
+    "start/immo/createUser": "" ,
+
+"Votre demande a bien été crée":"your request was created successfully",
+"Vous pouvez verifier votre email pour la verification avec les administrateurs":"check your inbox mail to veriy your requet with our administrators",
+"retour au page d'accueil":"back to home page",
+"Créer votre immobilier":"create your real estate",
+"le site qui vous offre la meilleure performance":"our website offers for you the best performance",
+"Pour créer votre propre immobilier veuillez remplir ce formulaire.Merci...":"please,fill in the form to create your real estate",
+"à propos de vous":"about you!",
+
+"Nom":"last name",
+"Prénom":"first name",
+"Email":"email",
+"Téléphone":"tele",
+
+"A propos de votre immobilier":"about your real esatate",
+"Désignation":"designation",
+"Prix de vente":"sale price",
+"Ville":"city",
+"Adresse":"adresse",
+"Quel est le type de votre nouveau immobilier":"what is your real estate type",
+"Type de votre immobilier":"real estate type",
+"Combien de chambres":"number of rooms",
+"Combien d'étages":"number of floors",
+"Détails sur l'Immobilier":"real estate details",
+"Superficie":"area",
+"Superficie piscine":"swimming pool area",
+
+"Image Principale":"principal picture",
+"Gallery":"Gallery",
+"Image ici":"image here",
+"Valider":"validate",
+    "end/immo/createUser": "" ,
+
+"Une nouvelle demade de creation de bien a été faite par":"a new request to put a real estate inside the website", 
+"date creation":"creation date",
+"Pour lui confirmer cette demande, veuillez visitez la page admin de site web":"To confirm this request , you can use the admin panel to confirm it",
+"Votre Demande a bien été enregestrée":"Your request was created successfully",
+"Informations sur votre demande":"About your request",
+"vous pouvez nous contacter , si vous voulez plus d'information sur votre demande et pour la confirmer veuillez utiliser notre email ou notre numéro tele":"you can contact us, if you want more information about your request and to confirm it please use our email or our phone number"
 }

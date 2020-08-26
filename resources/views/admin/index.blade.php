@@ -10,6 +10,14 @@
 @endsection
 
 @section('content')
+@if(!empty(Session::get('msg')))
+
+<script>
+  
+	swal('Good Job', 'You clicked the button!', 'success');
+ 
+</script>
+@endif
   <section class="section">
           <div class="section-header">
             <h1>{{__('Tableau de bords')}}</h1>
@@ -135,9 +143,7 @@
                               <th>patente</th>
                               <th>nombres de chambres</th>
                               <th>nombres d'etages</th>
-                              <th>prix minimale($)</th>
-                              <th>prix maximale($)</th>
-                              <th>nombres de jours séparant prix min et max</th>
+                              <th>prix de vente($)</th>
                               <th>date de demande</th>
                               <th>images(cliquer pour mode plein ecran)</th>
                               <th>confirmée</th>
@@ -170,9 +176,7 @@
                               <td>{{$immobilier->patente}}</td>
                               <td>{{$immobilier->nbr_chambre}}</td>
                               <td>{{$immobilier->nbr_etage}}</td>
-                              <td>{{$immobilier->price_min}}</td>
                               <td>{{$immobilier->price_max}}</td>
-                              <td>{{$immobilier->days_separator}}</td>
                               <td>
                               {{$immobilier->immo_created_at}}
                               </td>

@@ -31,7 +31,7 @@ $("#modal-3").fireModal({
 
 $("#modal-4").fireModal({
   footerClass: 'bg-whitesmoke',
-  body: 'Add the <code>bg-whitesmoke</code> class to the <code>footerClass</code> option.',
+  body: "Aucun Immobilier n'est inséré ,veuillez créer un nouveau immobilier !",
   buttons: [
     {
       text: 'No Action!',

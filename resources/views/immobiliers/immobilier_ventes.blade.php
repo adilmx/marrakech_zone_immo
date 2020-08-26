@@ -63,6 +63,7 @@
 	}
 
 </style>
+
 <!-- Carousel
                 ================================================== -->
 <div id="myCarousel" class="carousel slide hero" data-ride="carousel">
@@ -133,7 +134,54 @@
 @endsection
 
 @section('content')
-<div class="container mx-container-1">
+<div class="filter-full-width-wrapper">
+
+
+
+					<div class="filter-full-primary">
+
+						<div class="container">
+
+							<div class="filter-full-primary-inner">
+
+								<div class="form-holder">
+
+									<div class="row">
+
+										<div class="col-xs-12 col-sm-12 col-md-6">
+
+											<div class="filter-item bb-sm no-bb-xss">
+
+												<div class="input-group input-group-addon-icon no-border no-br-sm">
+													<span class="input-group-addon input-group-addon-icon bg-white"><label><i class="fa fa-map-marker"></i> Ville:</label></span>
+													<input type="text" class="form-control" id="autocompleteTagging" value="Marrakech" placeholder="" readonly/>
+												</div>
+
+											</div>
+
+										</div>
+
+
+
+									</div>
+
+								</div>
+
+
+
+							</div>
+
+						</div>
+
+ 						 <!-- <button type="submit" class="btn btn-primary">Ok</button> -->
+					</div>
+
+
+
+
+
+			</div>
+			<div class="container mx-container-1">
 
 	<div class="hero-mx-srch">
 		<div class="container">
@@ -167,7 +215,7 @@
 						++$key_c;
 						@endphp
 						<!-- real number  mx-n -->
-						@if($key < 20) @php $style="" ; @endphp @else @php $style="display-wd" ; @endphp @endif 
+						@if($key < 20) @php $style="" ; @endphp @else @php $style="display-wd" ; @endphp @endif
 						<!-- real number +1 mx-n -->
 							@if($key_c == 21)
 							@php
@@ -186,12 +234,12 @@
 										</div>
 									</a>
 
-									<div class="trip-guide-content mx-trip-guide-content" style="margin-bottom: 20px;">
+ 									<div class="trip-guide-content mx-trip-guide-content" style="margin-bottom: 20px;">
 										<h3 class="hi">{{ $immo->designation }}</h3><br>
 									</div>
 
-									<div class="trip-guide-bottom" style="padding:10px">
-
+                                    <div class="trip-guide-bottom" style="padding:10px">
+                                        @if($type->lib != "Terrain")
 										<div class="trip-guide-person mx-trip-guide-person clearfix" style="border: 0px;">
 											<i class="fas fa-home"></i>
 											<p class="name">{{ __("Nombre d'étage") }} : <span>{{ $immo->nbr_etage }}</span></p>
@@ -200,8 +248,18 @@
 										<i class="fas fa-home"></i>
 											<p class="name">{{ __("Nombre de chambre") }} : <span>{{ $immo->nbr_chambre }}</span></p>
 
-										</div>
+                                        </div>
+                                        @else
+                                        <div class="trip-guide-person mx-trip-guide-person clearfix" style="border: 0px;">
+											<i class="fas fa-vector-square"></i>
+											<p class="name">{{ __("SUPERFECIE") }} : <span>{{ $immo->superfecie }}{{ __("m") }}<sup>2</sup></span></p>
 
+										</div><div class="trip-guide-person mx-trip-guide-person clearfix" style="border: 0px;">
+										<i class="fas fa-home"></i>
+											<p class="name">{{ __("Type immobilier") }} : <span>{{ __($type->lib) }}</span></p>
+
+                                        </div>
+@endif
 
 										<div class="row gap-10 mx-price">
 											<div class="col-xs-12 col-sm-6">
@@ -211,9 +269,14 @@
 												</div>
 											</div>
 											<div class="col-xs-12 col-sm-6 text-right">
-												<a href="{{route('reservationVente.create',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}" class="btn btn-primary">{{__("Reserver")}}</a>
-
-											</div>
+                                                @if($immo->categorie == 3)
+                                                <a href="{{route('reservationVente.create',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}" class="btn btn-primary">{{__("Reserver")}}</a>
+                                                
+                                                @else
+                                                <a href="{{route('reservationLocation.create',['lang'=>app()->getLocale(),'immobilier'=>$immo->id])}}" class="btn btn-primary">{{__("Reserver")}}</a>
+											
+                                                @endif
+												</div>
 										</div>
 
 									</div>
@@ -269,7 +332,7 @@
 								@endphp
 								@if($cm == 1 or $counter == 1)
 								@if($counter == 1)
-								<li data-id="page-li" id-pg="{{ $counter_nbr }}" class="active"><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
+							<li data-id="page-li" id-pg="{{ $counter_nbr }}" class="active"><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
 								@else
 								<li data-id="page-li" id-pg="{{ $counter_nbr }}"><a href="#link-top" data-id="page-a" id-pg="{{ $counter_nbr }}">{{ $counter_nbr }}</a></li>
 								@endif
@@ -295,4 +358,6 @@
 
 	</div>
 </div>
+<script></script>
+<!--   -->
 @endsection

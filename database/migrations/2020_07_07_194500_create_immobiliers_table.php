@@ -21,7 +21,9 @@ class CreateImmobiliersTable extends Migration
 
             $table->string('designation');
             $table->string('categorie');
-
+            $table->string('validated');
+            $table->string('adresse');
+           
             $table->integer('nbr_chambre');
             $table->integer('nbr_etage');
             $table->string('patente');
@@ -31,6 +33,7 @@ class CreateImmobiliersTable extends Migration
             $table->string('deleted');
             $table->string('confirmed');
             $table->string('pic_src');
+            $table->integer('date_sep')->nullable();
 
             $table->foreign('id_commune')->references('id')->on('communes');
             $table->foreign('created_by')->references('id')->on('customers');

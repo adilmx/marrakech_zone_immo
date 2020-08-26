@@ -7,7 +7,7 @@
     "Immobilier Location": "كراء" ,
     "Voitures de luxe": "سيارات راقية" ,
     "Transport touristique": "النقل السياحي" ,
-
+    "Véhicules":"سيارات" ,
     "/end/layouts/app": "" ,
 
 
@@ -104,6 +104,13 @@
     "étages": "طوابق" ,
     "PATENTE": "رقم تسجيل العقار",
     "SUPERFECIE": "المساحة",
+    "SUPERFECIE PISCINE": "مساحة المسبح",
+    "Pas de piscine": "بدون مسبح",
+    "Type immobilier": "نوع العقار",
+    "Terrain": "بقعة أرضية",
+    "Villa": "فيلا",
+    "Riad": "رياض",
+    "Apparetement": "شقة",
     "m": "م",
 
     "end/immobiliers/details": "" ,
@@ -182,6 +189,49 @@
 
     "start/auth/msgResimmoAdmin": "" ,
 
-    "end/auth/msgResimmoAdmin": ""
+    "end/auth/msgResimmoAdmin": "" ,
+
+    "start/immo/createUser": "" ,
+
+"Votre demande a bien été crée":"لقد تم تسجيل طلبكم بنجاح",
+"Vous pouvez verifier votre email pour la verification avec les administrateurs":"يمكنكم التأكد من بريدك الإلكتروني لتفيل طلبكم مع مدرائنا",
+"retour au page d'accueil":"الرجوع للصفحة الرئيسية",
+"Créer votre immobilier":"إنشاء عقارك",
+"le site qui vous offre la meilleure performance":"اللموقع الذي سيمنحك أفضل تجربة",
+"Pour créer votre propre immobilier veuillez remplir ce formulaire.Merci...":"المرجو ملأ الإستمارة",
+"à propos de vous":"معومات الشخصية للتواصل",
+
+"Nom":"الإسم العائلي",
+"Prénom":"الإسم الأول",
+"Email":"البريد الإلكتروني",
+"Téléphone":"الهاتف",
+
+"A propos de votre immobilier":"معلوات عن العقار",
+"Désignation":"إسم العقار",
+"Prix de vente":"ثمن البيع",
+"Ville":"المدينة",
+"Adresse":"العنوان",
+"Quel est le type de votre nouveau immobilier":"ما هو نوع عقارك",
+"Type de votre immobilier":"نوع العقار",
+"Combien de chambres":"عدد الغرف",
+"Combien d'étages":"عدد الطوابق",
+"Détails sur l'Immobilier":"تفاصيل عن العقار",
+"Superficie":"المساحة",
+"Superficie piscine":"مساحة المسبح",
+
+"Image Principale":"الصورة الرئيسية",
+"Gallery":"الألبوم",
+"Image ici":"الصورة هنا",
+"Valider":"تأكيد",
+    "end/immo/createUser": "" ,
+
+
+"Une nouvelle demade de creation de bien a été faite par":"هناك طلب جديد لإنشاء منفعة في الموقع من طرف ", 
+"date creation":"تاريخ إعداد الطلب",
+"Pour lui confirmer cette demande, veuillez visitez la page admin de site web":"لإثبات الطلب , المرجو إستعمال نافدة الإدارة للموقع ",
+"Votre Demande a bien été enregestrée":"طلبكم قد تسجل بنجاح",
+"Informations sur votre demande":"معلومات عن طلبيتك",
+"vous pouvez nous contacter , si vous voulez plus d'information sur votre demande et pour la confirmer veuillez utiliser notre email ou notre numéro tele":"يمكنك الاتصال بنا ، إذا كنت تريد المزيد من المعلومات حول الطلب الخاص بك ولتأكيده ، يرجى استخدام بريدنا الإلكتروني أو رقم الهاتف الخاص بنا"
+
 
 }

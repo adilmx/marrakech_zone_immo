@@ -82,7 +82,7 @@ $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToAdminLocIm
 $this->sendEmail_($data,$immo,$Rese_immo,$data['email'],'auth.msgResToCustomerLocImmo',$infos);
 /* end send mail */
 
-        return view('immobiliers.reservationDone',compact('type_pro'));
+        return view('immobiliers.reservationDone',compact('type_pro','immo'));
     }
     /*send mail */
     public function sendEmail_($data ,$pro,$res,$to_email,$msg,$infos ){

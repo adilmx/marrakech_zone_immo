@@ -1,17 +1,17 @@
 
 <h1 style="background:#f7810a;"> {{__('Bonjour')}} {{ $data['prenom'] }} {{  $data['nom'] }}</h1>
-<h2 style="background:#212126;"> {{__('Merci Pour Votre Visite')}}</h2>
-<h3 style="background:#212126;"> {{__('Votre Reservation a bien été faite')}}</h4>
+<h2 > {{__('Merci Pour Votre Visite')}}</h2>
+<h3 > {{__('Votre Reservation a bien été faite')}}</h4>
 <br>
 <h2 style="background:#f7810a;"> {{__('Informations sur votre reservation')}}</h2>
 <h4 style="color:#f7810a;">
-    {{__("libellée de l'immobilier(Vente)")}}: <span style="color:#e3e3e3;">{{$pro[0]->designation}}</span>
+    {{__("libellée de l'immobilier(Vente)")}}: <span>{{$pro[0]->designation}}</span>
 </h4>
 <h4 style="color:#f7810a;">
-    {{__("Type de l'immobilier")}} :<span style="color:#e3e3e3;">{{$pro[0]->lib}}</span>
+    {{__("Type de l'immobilier")}} :<span>{{$pro[0]->lib}}</span>
 </h4>
 <h4 style="color:#f7810a;">
-    {{__("date reservation")}} : <span style="color:#e3e3e3;">{{$res[0]->res_created_at}}</span>
+    {{__("date reservation")}} : <span>{{$res[0]->res_created_at}}</span>
 </h4>
 
 

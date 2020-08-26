@@ -165,7 +165,7 @@
                                                         <div class="font-smaller " style="color: rgb(241, 64, 10)">* {{__("depend de duree que vous avez choisie")}}</div>
                                                     </div>
 													<div class="col-xs-5 col-sm-5 text-right">
-														<span class="font600 font26 block text-primary mt-5 mx-price" pdays="" pmin="{{ $immobilier->price_min }}" pmax="{{ $immobilier->price_max }}">{{ $immobilier->price_min }}$</span>
+														<span class="font600 font26 block text-primary mt-5 mx-price" pdays="" pmin="{{ $immobilier->price_min }}" pmax="{{ $immobilier->price_max }}">{{ $immobilier->price_min }}$/1</span><span>{{ __("JOURS") }}</span>
 													</div>
 												</div>
 											</li>
@@ -173,7 +173,7 @@
 											<li class="divider"></li>
 
 											<li>
-												<a href="{{ route('immobilier_loc.index',['lang'=>app()->getLocale()]) }}" class="btn btn-primary btn-sm mt-5 btn-mx-1">{{__("CHOISIR UNE AUTRE")}}</a>
+												<a href="{{route('immobilier.show',['lang'=> app()->getLocale(),'mycategorie'=> 1,'type'=> $immobilier->id_type])}}" class="btn btn-primary btn-sm mt-5 btn-mx-1">{{__("CHOISIR UNE AUTRE")}}</a>
                                             </li>
                                             <li class="divider"></li>
 
